@@ -1,0 +1,447 @@
+
+/* =========================
+   EVENTS HERO
+========================= */
+
+.events-hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1600&q=80");
+
+  background-size: cover;
+  background-position: center;
+  padding: 110px 20px;
+  text-align: center;
+  color: white;
+}
+
+.events-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  color: #b7e4c7;
+}
+
+.events-hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.events-hero-text {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================
+   COMMON HEADING
+========================= */
+
+.events-heading {
+  text-align: center;
+  max-width: 750px;
+  margin: auto;
+}
+
+.events-heading > p {
+  color: #198754;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.events-heading h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.events-heading span {
+  color: #666;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   UPCOMING EVENTS
+========================= */
+
+.upcoming-events-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.event-card {
+  position: relative;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 30px;
+  height: 100%;
+  transition: 0.3s;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  border-color: #198754;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.event-date {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #198754;
+  color: white;
+  width: 58px;
+  height: 65px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-date strong {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.event-date span {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.event-icon {
+  width: 65px;
+  height: 65px;
+  background: #eaf7ef;
+  color: #198754;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.event-card-content {
+  padding-right: 15px;
+}
+
+.event-card-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+  padding-right: 55px;
+}
+
+.event-location {
+  color: #198754;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.event-location i {
+  margin-right: 7px;
+}
+
+.event-description {
+  color: #666;
+  line-height: 1.7;
+  margin: 15px 0 22px;
+}
+
+.event-join-btn {
+  color: #198754;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.event-join-btn:hover {
+  color: #146c43;
+}
+
+.event-join-btn i {
+  margin-left: 7px;
+}
+
+
+/* =========================
+   ACTIVITIES
+========================= */
+
+.event-activities-section {
+  background: #f3faf6;
+  padding: 80px 20px;
+}
+
+.activity-card {
+  background: white;
+  padding: 30px 22px;
+  text-align: center;
+  border-radius: 10px;
+  height: 100%;
+  border: 1px solid #e5eee8;
+  transition: 0.3s;
+}
+
+.activity-card:hover {
+  transform: translateY(-6px);
+  border-color: #198754;
+}
+
+.activity-icon {
+  font-size: 38px;
+  color: #198754;
+  margin-bottom: 20px;
+}
+
+.activity-card h4 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.activity-card p {
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* =========================
+   PAST EVENTS
+========================= */
+
+.past-events-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.past-event-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.past-event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.past-event-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.past-event-content {
+  padding: 25px;
+}
+
+.past-event-date {
+  color: #198754;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.past-event-date i {
+  margin-right: 7px;
+}
+
+.past-event-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.past-event-content > p:last-child {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* =========================
+   PARTICIPATE
+========================= */
+
+.participate-section {
+  background: #f8f9fa;
+  padding: 80px 20px;
+}
+
+.participate-card {
+  background: white;
+  text-align: center;
+  padding: 35px 25px;
+  border-radius: 10px;
+  height: 100%;
+  border: 1px solid #e5e5e5;
+  transition: 0.3s;
+}
+
+.participate-card:hover {
+  transform: translateY(-6px);
+  border-color: #198754;
+}
+
+.participate-card > i {
+  font-size: 40px;
+  color: #198754;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.participate-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.participate-card p {
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.events-cta {
+  background: #198754;
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.events-cta-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.events-cta-content > p {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.events-cta-content h2 {
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.events-cta-content > span {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+}
+
+.events-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+
+/* SAME STYLE AS HOME CTA */
+
+.cta-donate-btn {
+  background: white;
+  color: #198754;
+  padding: 12px 25px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-donate-btn:hover {
+  background: #f3faf6;
+  color: #146c43;
+}
+
+.cta-volunteer-btn {
+  border: 1px solid white;
+  color: white;
+  padding: 12px 25px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-volunteer-btn:hover {
+  background: white;
+  color: #198754;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .events-hero {
+    padding: 80px 20px;
+  }
+
+  .events-hero h1 {
+    font-size: 36px;
+  }
+
+  .events-hero-text {
+    font-size: 15px;
+  }
+
+  .events-heading h2 {
+    font-size: 30px;
+  }
+
+  .upcoming-events-section,
+  .event-activities-section,
+  .past-events-section,
+  .participate-section {
+    padding: 60px 20px;
+  }
+
+  .events-cta {
+    padding: 60px 20px;
+  }
+
+  .events-cta-content h2 {
+    font-size: 30px;
+  }
+
+  .events-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-donate-btn,
+  .cta-volunteer-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+

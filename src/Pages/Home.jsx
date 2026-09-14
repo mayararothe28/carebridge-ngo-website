@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
 import { getCampaigns } from "../Services/Api";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [campaigns, setCampaigns] = useState([]);
@@ -42,16 +43,15 @@ function Home() {
                 We work together to support children, families and
                 communities through education, food, healthcare and
                 meaningful volunteer activities.
-              </p>
+              </p><br></br>
 
               <div className="hero-buttons">
-                <a href="#donate" className="btn donate-main-btn">
-                  Donate Now
-                </a>
-
-                <a href="#volunteer" className="btn volunteer-btn">
-                  Become a Volunteer
-                </a>
+                <Link to="/donate" className="btn donate-main-btn">
+  Donate Now
+</Link>
+             <Link to="/register" className="btn volunteer-btn">
+  Become a Volunteer
+</Link>
               </div>
             </div>
 
@@ -384,9 +384,9 @@ function Home() {
                     {campaign.body}
                   </p>
 
-                  <button className="campaign-btn">
-                    Support Campaign
-                  </button>
+                  <Link to="/donate" className="support-campaign-btn">
+  Support Campaign
+</Link>
 
                 </div>
 
@@ -605,13 +605,13 @@ function Home() {
 
             <div className="cta-buttons">
 
-              <a href="#donate" className="btn cta-donate-btn">
-                Donate Now
-              </a>
+              <Link to="/donate" className="btn cta-donate-btn">
+  Donate Now
+</Link>
 
-              <a href="#register" className="btn cta-volunteer-btn">
-                Become a Volunteer
-              </a>
+             <Link to="/register" className="btn cta-volunteer-btn">
+  Become a Volunteer
+</Link>
 
             </div>
 

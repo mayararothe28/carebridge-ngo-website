@@ -1,0 +1,281 @@
+.register-page {
+  min-height: 100vh;
+  background: #f4f8f5;
+  color: #24352b;
+}
+
+.register-hero {
+  padding: 65px 20px;
+  background: #eaf5ee;
+  text-align: center;
+}
+
+.register-label {
+  color: #198754;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.register-hero h1 {
+  color: #145c38;
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.register-hero p:not(.register-label) {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #66736b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.register-section {
+  padding: 65px 0;
+}
+
+.register-card {
+  max-width: 1150px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(20, 92, 56, 0.10);
+}
+
+/* GREEN SECTION */
+
+.register-info {
+  position: relative;
+  min-height: 100%;
+  padding: 55px 45px !important;
+  background: linear-gradient(145deg, #198754, #126b42);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.register-info::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  top: -90px;
+  right: -90px;
+}
+
+.register-info::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 50%;
+  bottom: -70px;
+  left: -70px;
+}
+
+.register-info h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.register-info > p {
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 42px;
+  max-width: 430px;
+}
+
+.register-benefit {
+  position: relative;
+  z-index: 1;
+  padding: 20px 0;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.register-benefit:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.register-benefit h5 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.register-benefit p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* FORM SECTION */
+
+.register-form-wrapper {
+  padding: 55px 50px !important;
+}
+
+.register-form-wrapper h2 {
+  color: #145c38;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-description {
+  color: #78837d;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.form-label {
+  color: #344b3d;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+  min-height: 50px;
+  border: 1px solid #d8e2dc;
+  border-radius: 9px;
+  padding: 12px 14px;
+  color: #26352d;
+  background-color: #ffffff;
+}
+
+.form-control::placeholder {
+  color: #9aa39e;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.10);
+}
+
+textarea.form-control {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-check-input {
+  margin-top: 0;
+}
+
+.form-check-input:checked {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.form-check-label {
+  color: #69766e;
+  font-size: 13px;
+}
+
+.register-button {
+  width: 100%;
+  min-height: 50px;
+  border: none;
+  border-radius: 9px;
+  background: #198754;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.register-button:hover {
+  background: #146c43;
+  transform: translateY(-1px);
+}
+
+.login-text {
+  margin: 24px 0 0;
+  text-align: center;
+  color: #7a847e;
+  font-size: 14px;
+}
+
+.login-text a {
+  color: #198754;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* TABLET */
+
+@media (max-width: 991px) {
+  .register-card {
+    margin: 0 20px;
+  }
+
+  .register-info {
+    padding: 45px 35px !important;
+  }
+
+  .register-form-wrapper {
+    padding: 45px 35px !important;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+  .register-hero {
+    padding: 50px 20px;
+  }
+
+  .register-hero h1 {
+    font-size: 32px;
+  }
+
+  .register-section {
+    padding: 35px 15px;
+  }
+
+  .register-card {
+    margin: 0;
+    border-radius: 15px;
+  }
+
+  .register-info {
+    padding: 35px 25px !important;
+  }
+
+  .register-form-wrapper {
+    padding: 35px 25px !important;
+  }
+
+  .register-info h2 {
+    font-size: 28px;
+  }
+
+  .register-form-wrapper h2 {
+    font-size: 25px;
+  }
+}

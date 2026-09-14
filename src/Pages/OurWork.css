@@ -1,0 +1,451 @@
+
+/* ===============================
+   OUR WORK HERO
+================================ */
+
+.our-work-hero {
+  background: linear-gradient(
+    rgba(25, 135, 84, 0.88),
+    rgba(25, 135, 84, 0.88)
+  ),
+  url("https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1600&q=80");
+
+  background-size: cover;
+  background-position: center;
+
+  padding: 110px 0;
+  color: white;
+}
+
+.our-work-hero-content {
+  max-width: 760px;
+}
+
+.hero-small-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.our-work-hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 650px;
+  margin-bottom: 0;
+  color: white;
+}
+
+
+/* ===============================
+   COMMON SECTION HEADING
+================================ */
+
+.section-heading {
+  text-align: center;
+  max-width: 750px;
+  margin: auto;
+}
+
+.section-heading p {
+  color: #198754;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.section-heading span {
+  display: block;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* ===============================
+   INTRO / WORK AREAS
+================================ */
+
+.work-intro {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.work-detail-card {
+  height: 100%;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.work-detail-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.09);
+}
+
+.work-detail-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.work-detail-content {
+  padding: 28px;
+}
+
+.work-number {
+  color: #198754;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.work-detail-content h3 {
+  color: #222;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 8px 0 15px;
+}
+
+.work-detail-content p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.work-detail-content ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.work-detail-content li {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+
+/* ===============================
+   HOW WE WORK
+================================ */
+
+.how-we-work {
+  padding: 90px 0;
+  background: #f8f9fa;
+}
+
+.approach-card {
+  height: 100%;
+  background: white;
+  padding: 32px 24px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  transition: 0.3s ease;
+}
+
+.approach-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.approach-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e9f7ef;
+  border-radius: 50%;
+
+  color: #198754;
+  font-size: 27px;
+}
+
+.approach-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.approach-card p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+
+/* ===============================
+   OUR VALUES
+================================ */
+
+.our-values {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.value-card {
+  height: 100%;
+  padding: 30px 22px;
+  text-align: center;
+
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+
+  transition: 0.3s ease;
+}
+
+.value-card:hover {
+  border-color: #198754;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.value-card i {
+  font-size: 30px;
+  color: #198754;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.value-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+
+/* ===============================
+   IMPACT
+================================ */
+
+.work-impact {
+  padding: 90px 0;
+  background: #f8f9fa;
+}
+
+.impact-box {
+  background: white;
+  text-align: center;
+  padding: 35px 15px;
+
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+
+  transition: 0.3s ease;
+}
+
+.impact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.impact-box h3 {
+  color: #198754;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.impact-box p {
+  color: #555;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+
+/* ===============================
+   CTA
+================================ */
+
+.work-cta {
+  background: #198754;
+  padding: 85px 0;
+  color: white;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 750px;
+  margin: auto;
+}
+
+.cta-content > p {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.work-cta h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.work-cta span {
+  display: block;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.volunteer-btn,
+.donate-work-btn {
+  display: inline-block;
+  padding: 13px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.volunteer-btn {
+  background: white;
+  color: #198754;
+}
+
+.volunteer-btn:hover {
+  background: #f1f1f1;
+  color: #198754;
+}
+
+.donate-work-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.donate-work-btn:hover {
+  background: white;
+  color: #198754;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+  .our-work-hero {
+    padding: 80px 0;
+  }
+
+  .our-work-hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .work-intro,
+  .how-we-work,
+  .our-values,
+  .work-impact {
+    padding: 65px 0;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+
+  .work-detail-card img {
+    height: 220px;
+  }
+
+  .work-detail-content {
+    padding: 22px;
+  }
+
+  .work-detail-content h3 {
+    font-size: 21px;
+  }
+
+  .work-cta {
+    padding: 65px 20px;
+  }
+
+  .work-cta h2 {
+    font-size: 30px;
+  }
+
+  .work-cta span {
+    font-size: 16px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .our-work-hero {
+    padding: 65px 0;
+  }
+
+  .our-work-hero h1 {
+    font-size: 32px;
+  }
+
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .work-detail-card img {
+    height: 200px;
+  }
+
+  .impact-box {
+    padding: 25px 10px;
+  }
+
+  .impact-box h3 {
+    font-size: 30px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .volunteer-btn,
+  .donate-work-btn {
+    width: 100%;
+  }
+
+}
+

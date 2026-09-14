@@ -1,0 +1,564 @@
+
+/* =========================
+   CAMPAIGNS HERO
+========================= */
+
+.campaign-hero {
+  min-height: 430px;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1600&q=80");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+}
+
+.campaign-hero-content {
+  max-width: 750px;
+  padding: 60px 0;
+}
+
+.campaign-hero-content span {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.campaign-hero-content h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.campaign-hero-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.campaign-intro {
+  background: white;
+}
+
+.section-label {
+  display: inline-block;
+  color: #198754;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.campaign-intro h2,
+.why-campaign-section h2,
+.how-help-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.campaign-intro-text {
+  max-width: 750px;
+  margin: auto;
+  color: #666;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+
+/* =========================
+   CAMPAIGN CARDS
+========================= */
+
+.campaign-list-section {
+  background: #f8f9fa;
+}
+
+.campaign-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.campaign-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.campaign-content {
+  padding: 24px;
+}
+
+.campaign-tag {
+  display: inline-block;
+  background: #e9f7ef;
+  color: #198754;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.campaign-content h3 {
+  color: #222;
+  font-size: 21px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.campaign-content p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 15px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  min-height: 76px;
+}
+
+
+/* =========================
+   MONEY
+========================= */
+
+.campaign-money {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 12px;
+}
+
+.campaign-money div {
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign-money small {
+  color: #777;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.campaign-money strong {
+  color: #198754;
+  font-size: 16px;
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.campaign-progress {
+  height: 9px;
+  border-radius: 20px;
+  background: #e9ecef;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.campaign-progress .progress-bar {
+  border-radius: 20px;
+  font-size: 9px;
+}
+
+
+/* =========================
+   CAMPAIGN BUTTON
+========================= */
+
+.campaign-btn {
+  display: block;
+  width: 100%;
+
+  text-align: center;
+
+  background: #198754;
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.campaign-btn:hover {
+  background: #146c43;
+  color: white;
+}
+
+
+/* =========================
+   LOADING / ERROR
+========================= */
+
+.campaign-message {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #666;
+}
+
+.campaign-message p {
+  margin-top: 15px;
+}
+
+
+/* =========================
+   WHY SUPPORT
+========================= */
+
+.why-campaign-section {
+  background: white;
+}
+
+.section-description {
+  max-width: 700px;
+  margin: auto;
+
+  color: #666;
+  line-height: 1.7;
+}
+
+.campaign-feature-card {
+  height: 100%;
+
+  padding: 30px 22px;
+
+  text-align: center;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  transition: 0.3s;
+}
+
+.campaign-feature-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 18px;
+
+  background: #e9f7ef;
+  color: #198754;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon i {
+  font-size: 27px;
+}
+
+.campaign-feature-card h3 {
+  font-size: 20px;
+
+  margin-bottom: 12px;
+
+  color: #222;
+}
+
+.campaign-feature-card p {
+  color: #666;
+
+  line-height: 1.7;
+
+  margin-bottom: 0;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   HOW YOU CAN HELP
+========================= */
+
+.how-help-section {
+  background: #f8f9fa;
+}
+
+.help-card {
+  background: white;
+
+  height: 100%;
+
+  padding: 35px 25px;
+
+  text-align: center;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 12px;
+
+  transition: 0.3s;
+}
+
+.help-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.help-card > i {
+  display: block;
+
+  font-size: 38px;
+
+  color: #198754;
+
+  margin-bottom: 18px;
+}
+
+.help-card h3 {
+  font-size: 22px;
+
+  color: #222;
+
+  margin-bottom: 12px;
+}
+
+.help-card p {
+  color: #666;
+
+  line-height: 1.7;
+
+  margin-bottom: 20px;
+}
+
+.help-card a {
+  color: #198754;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.help-card a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.campaign-cta {
+  background: #198754;
+
+  color: white;
+}
+
+.campaign-cta h2 {
+  font-size: 38px;
+
+  font-weight: 700;
+
+  margin-bottom: 15px;
+}
+
+.campaign-cta p {
+  max-width: 650px;
+
+  margin: 0 auto 25px;
+
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.cta-donate-btn,
+.cta-volunteer-btn {
+  padding: 12px 25px;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.cta-donate-btn {
+  background: white;
+
+  color: #198754;
+}
+
+.cta-donate-btn:hover {
+  background: #f1f1f1;
+
+  color: #146c43;
+}
+
+.cta-volunteer-btn {
+  border: 1px solid white;
+
+  color: white;
+}
+
+.cta-volunteer-btn:hover {
+  background: white;
+
+  color: #198754;
+}
+/* =========================
+   SUPPORT CAMPAIGN BUTTON
+========================= */
+
+.campaign-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  background-color: #198754 !important;
+  border: 1px solid #198754 !important;
+  color: #ffffff !important;
+
+  padding: 12px 20px;
+  border-radius: 7px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.campaign-btn:hover {
+  background-color: #146c43 !important;
+  border-color: #146c43 !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .campaign-hero {
+    min-height: 360px;
+  }
+
+  .campaign-hero-content {
+    padding: 45px 20px;
+  }
+
+  .campaign-hero-content h1 {
+    font-size: 36px;
+  }
+
+  .campaign-hero-content p {
+    font-size: 16px;
+  }
+
+  .campaign-intro h2,
+  .why-campaign-section h2,
+  .how-help-section h2 {
+    font-size: 30px;
+  }
+
+  .campaign-image {
+    height: 210px;
+  }
+
+  .campaign-content {
+    padding: 20px;
+  }
+
+  .campaign-cta h2 {
+    font-size: 30px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+  .campaign-hero {
+    min-height: 330px;
+  }
+
+  .campaign-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .campaign-hero-content p {
+    font-size: 15px;
+  }
+
+  .campaign-image {
+    height: 200px;
+  }
+
+  .campaign-intro h2,
+  .why-campaign-section h2,
+  .how-help-section h2 {
+    font-size: 27px;
+  }
+
+}
+

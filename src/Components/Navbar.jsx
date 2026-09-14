@@ -1,45 +1,43 @@
 
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="container-fluid navbar-container">
 
-        
-        <a href="#home" className="navbar-logo">
-          CareBridge
-        </a>
+       <Link to="/" className="navbar-logo">
+  CareBridge
+</Link>
 
       
         <div className="navbar-menu">
 
 
-          <a href="#about">About Us</a>
+          <Link to="/about">About us</Link>
+<Link to="/our-work">Our work</Link>
 
-          <a href="#work">Our Work</a>
+      <Link to="/campaigns">Campaigns</Link>
 
-          <a href="#campaigns">Campaigns</a>
+          <Link to="/events">Events</Link>
 
-          <a href="#events">Events</a>
+                <Link to="/gallery">Gallery</Link>
 
-          <a href="#gallery">Gallery</a>
-
-          <a href="#contact">Contact</a>
+         <Link to="/contact">Contact</Link>
 
         </div>
 
         
         <div className="navbar-buttons">
+<Link to="/donate" className="donate-btn">
+  Donate Now
+</Link>
 
-          <a href="#donate" className="donate-btn">
-            Donate Now
-          </a>
-
-          <a href="#register" className="register-btn">
-            Register
-          </a>
-
+          <Link to="/register" className="register-btn">
+  Register
+</Link>
         </div>
 
       </div>
