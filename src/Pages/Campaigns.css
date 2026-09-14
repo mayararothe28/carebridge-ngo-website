@@ -1,7 +1,4 @@
 
-/* =========================
-   CAMPAIGNS HERO
-========================= */
 
 .campaign-hero {
   min-height: 430px;
@@ -198,25 +195,6 @@
 /* =========================
    CAMPAIGN BUTTON
 ========================= */
-
-.campaign-btn {
-  display: block;
-  width: 100%;
-
-  text-align: center;
-
-  background: #198754;
-  color: white;
-
-  padding: 12px 20px;
-
-  border-radius: 7px;
-
-  text-decoration: none;
-  font-weight: 600;
-
-  transition: 0.3s;
-}
 
 .campaign-btn:hover {
   background: #146c43;
