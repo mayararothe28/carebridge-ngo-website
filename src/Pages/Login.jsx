@@ -14,18 +14,18 @@ function Login() {
 
     setError("");
 
-    // Registered user get karo
+   
     const savedUser = JSON.parse(
       localStorage.getItem("carebridgeUser")
     );
 
-    // Agar registration nahi kiya
+    
     if (!savedUser) {
       setError("No account found. Please register first.");
       return;
     }
 
-    // Email/password check
+   
     if (
       email === savedUser.email &&
       password === savedUser.password

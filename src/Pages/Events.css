@@ -1,7 +1,5 @@
 
-/* =========================
-   EVENTS HERO
-========================= */
+
 
 .events-hero {
   background:
@@ -38,9 +36,7 @@
 }
 
 
-/* =========================
-   COMMON HEADING
-========================= */
+
 
 .events-heading {
   text-align: center;
@@ -69,9 +65,7 @@
 }
 
 
-/* =========================
-   UPCOMING EVENTS
-========================= */
+
 
 .upcoming-events-section {
   padding: 80px 20px;
@@ -176,10 +170,6 @@
 }
 
 
-/* =========================
-   ACTIVITIES
-========================= */
-
 .event-activities-section {
   background: #f3faf6;
   padding: 80px 20px;
@@ -219,9 +209,6 @@
 }
 
 
-/* =========================
-   PAST EVENTS
-========================= */
 
 .past-events-section {
   padding: 80px 20px;
@@ -275,9 +262,6 @@
 }
 
 
-/* =========================
-   PARTICIPATE
-========================= */
 
 .participate-section {
   background: #f8f9fa;
@@ -318,10 +302,6 @@
   margin: 0;
 }
 
-
-/* =========================
-   FINAL CTA
-========================= */
 
 .events-cta {
   background: #198754;
@@ -365,7 +345,7 @@
 }
 
 
-/* SAME STYLE AS HOME CTA */
+
 
 .cta-donate-btn {
   background: white;
@@ -395,10 +375,6 @@
   color: #198754;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 768px) {
 

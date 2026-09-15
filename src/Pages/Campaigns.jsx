@@ -53,7 +53,7 @@ function Campaigns() {
   return (
     <div className="campaigns-page">
 
-      {/* ================= HERO ================= */}
+      
       <section className="campaign-hero">
         <div className="container">
           <div className="campaign-hero-content">
@@ -70,7 +70,7 @@ function Campaigns() {
       </section>
 
 
-      {/* ================= INTRO ================= */}
+      
       <section className="campaign-intro py-5">
         <div className="container text-center">
 
@@ -88,7 +88,7 @@ function Campaigns() {
       </section>
 
 
-      {/* ================= CAMPAIGNS ================= */}
+      
       <section className="campaign-list-section pb-5">
         <div className="container">
 
@@ -140,7 +140,7 @@ function Campaigns() {
                           {campaign.body}
                         </p>
 
-                        {/* Goal & Raised */}
+                        
                         <div className="campaign-money">
 
                           <div>
@@ -156,7 +156,7 @@ function Campaigns() {
                         </div>
 
 
-                        {/* Progress */}
+                        
                         <div className="progress campaign-progress">
 
                           <div
@@ -169,7 +169,7 @@ function Campaigns() {
                         </div>
 
 
-                        {/* Button */}
+                       
                         <Link
                           to="/donate"
                           className="campaign-btn"
@@ -192,7 +192,7 @@ function Campaigns() {
       </section>
 
 
-      {/* ================= WHY SUPPORT ================= */}
+     
       <section className="why-campaign-section py-5">
 
         <div className="container">
@@ -301,7 +301,7 @@ function Campaigns() {
       </section>
 
 
-      {/* ================= HOW YOU CAN HELP ================= */}
+      
       <section className="how-help-section py-5">
 
         <div className="container">
@@ -379,10 +379,9 @@ function Campaigns() {
                   Share our campaigns with your friends and
                   family and help us reach more people.
                 </p>
-
-                <a href="#contact">
-                  Share Our Mission
-                </a>
+<Link to="/contact" className="help-contact-btn">
+  Share Our Mission
+</Link>
 
               </div>
 
@@ -395,7 +394,7 @@ function Campaigns() {
       </section>
 
 
-      {/* ================= FINAL CTA ================= */}
+     
       <section className="campaign-cta py-5">
 
         <div className="container text-center">
@@ -406,20 +405,23 @@ function Campaigns() {
             Together, we can create stronger communities
             and a better future for everyone.
           </p>
+<div className="cta-buttons">
 
-          <div className="cta-buttons">
+  <Link
+    to="/donate"
+    className="cta-donate-btn"
+  >
+    Donate Now
+  </Link>
 
-            <Link
-              to="/donate"
-              className="cta-donate-btn"
-            >
-              Donate Now
-            </Link>
+  <Link
+    to="/register"
+    className="cta-volunteer-btn"
+  >
+    Become a Volunteer
+  </Link>
 
-          <Link to="/register" className="cta-volunteer-btn">
-  Become a Volunteer
-</Link>
-          </div>
+</div>
 
         </div>
 

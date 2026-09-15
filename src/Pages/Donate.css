@@ -1,7 +1,4 @@
 
-/* =========================
-   DONATE HERO
-========================= */
 
 .donate-hero {
   min-height: 430px;
@@ -47,9 +44,6 @@
 }
 
 
-/* =========================
-   DONATION SECTION
-========================= */
 
 .donation-section {
   padding: 80px 0;
@@ -83,9 +77,6 @@
 }
 
 
-/* =========================
-   FORM CARD
-========================= */
 
 .donation-form-card {
   background: white;
@@ -123,9 +114,6 @@
 }
 
 
-/* =========================
-   AMOUNT BUTTONS
-========================= */
 
 .amount-buttons {
   display: flex;
@@ -167,9 +155,7 @@
 }
 
 
-/* =========================
-   PURPOSE
-========================= */
+
 
 .purpose-grid {
   display: grid;
@@ -210,9 +196,7 @@
 }
 
 
-/* =========================
-   INPUTS
-========================= */
+
 
 .donation-form-card .form-control {
   min-height: 50px;
@@ -227,9 +211,7 @@
 }
 
 
-/* =========================
-   DONATE BUTTON
-========================= */
+
 
 .main-donate-btn {
   width: 100%;
@@ -254,9 +236,6 @@
 }
 
 
-/* =========================
-   SUCCESS MESSAGE
-========================= */
 
 .success-message {
   margin-top: 20px;
@@ -289,10 +268,6 @@
   font-size: 14px;
 }
 
-
-/* =========================
-   SUMMARY
-========================= */
 
 .donation-summary {
   background: #198754;
@@ -369,9 +344,6 @@
 }
 
 
-/* =========================
-   TRUST BOX
-========================= */
 
 .trust-box {
   margin-top: 20px;
@@ -410,9 +382,6 @@
 }
 
 
-/* =========================
-   IMPACT SECTION
-========================= */
 
 .donation-impact {
   padding: 80px 0;
@@ -460,9 +429,6 @@
 }
 
 
-/* =========================
-   FINAL CTA
-========================= */
 
 .donation-final-cta {
   padding: 80px 20px;
@@ -521,10 +487,6 @@
   margin-right: 8px;
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 768px) {
 

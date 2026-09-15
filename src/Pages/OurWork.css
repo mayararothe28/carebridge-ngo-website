@@ -343,18 +343,17 @@
   background: #f1f1f1;
   color: #198754;
 }
-
 .donate-work-btn {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
 .donate-work-btn:hover {
-  background: white;
-  color: #198754;
+  color: white;
 }
-
 
 /* ===============================
    RESPONSIVE

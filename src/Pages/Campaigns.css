@@ -46,9 +46,6 @@
 }
 
 
-/* =========================
-   INTRO
-========================= */
 
 .campaign-intro {
   background: white;
@@ -81,9 +78,6 @@
 }
 
 
-/* =========================
-   CAMPAIGN CARDS
-========================= */
 
 .campaign-list-section {
   background: #f8f9fa;
@@ -139,6 +133,7 @@
 
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 
   overflow: hidden;
@@ -147,9 +142,6 @@
 }
 
 
-/* =========================
-   MONEY
-========================= */
 
 .campaign-money {
   display: flex;
@@ -174,9 +166,6 @@
 }
 
 
-/* =========================
-   PROGRESS BAR
-========================= */
 
 .campaign-progress {
   height: 9px;
@@ -192,19 +181,18 @@
 }
 
 
-/* =========================
-   CAMPAIGN BUTTON
-========================= */
 
 .campaign-btn:hover {
   background: #146c43;
   color: white;
 }
+.campaign-btn:hover {
+  background-color: #146c43 !important;
+  border-color: #146c43 !important;
+  color: #ffffff !important;
+}
 
 
-/* =========================
-   LOADING / ERROR
-========================= */
 
 .campaign-message {
   min-height: 250px;
@@ -223,9 +211,7 @@
 }
 
 
-/* =========================
-   WHY SUPPORT
-========================= */
+
 
 .why-campaign-section {
   background: white;
@@ -298,10 +284,6 @@
 }
 
 
-/* =========================
-   HOW YOU CAN HELP
-========================= */
-
 .how-help-section {
   background: #f8f9fa;
 }
@@ -367,9 +349,6 @@
 }
 
 
-/* =========================
-   FINAL CTA
-========================= */
 
 .campaign-cta {
   background: #198754;
@@ -398,50 +377,30 @@
 
   justify-content: center;
 
+
   gap: 15px;
 
   flex-wrap: wrap;
 }
 
+
+
 .cta-donate-btn,
 .cta-volunteer-btn {
-  padding: 12px 25px;
-
-  border-radius: 7px;
-
-  text-decoration: none;
+color:black;
 
   font-weight: 600;
+  transition: 0.3s ease;
+  
 
-  transition: 0.3s;
 }
 
-.cta-donate-btn {
-  background: white;
 
-  color: #198754;
-}
-
-.cta-donate-btn:hover {
-  background: #f1f1f1;
-
-  color: #146c43;
-}
-
-.cta-volunteer-btn {
-  border: 1px solid white;
-
-  color: white;
-}
-
+.cta-donate-btn:hover,
 .cta-volunteer-btn:hover {
-  background: white;
-
-  color: #198754;
+  color: black;
+  text-decoration: none;
 }
-/* =========================
-   SUPPORT CAMPAIGN BUTTON
-========================= */
 
 .campaign-btn {
   display: block;
@@ -468,9 +427,7 @@
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 
 @media (max-width: 768px) {
 
@@ -510,9 +467,7 @@
 }
 
 
-/* =========================
-   SMALL MOBILE
-========================= */
+
 
 @media (max-width: 576px) {
 

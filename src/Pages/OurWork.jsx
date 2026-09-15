@@ -1,6 +1,8 @@
 
 import "./OurWork.css";
 
+import { Link } from "react-router-dom";
+
 function OurWork() {
   return (
     <div className="our-work-page">
@@ -393,9 +395,9 @@ function OurWork() {
 
              
 
-              <a href="#donate" className="donate-work-btn">
-                Donate Now
-              </a>
+              <Link to="/donate" className="donate-work-btn">
+  Donate Now
+</Link>
 
             </div>
 

@@ -13,7 +13,7 @@ function Register() {
     skills: "",
     availability: "",
     reason: "",
-    terms: false
+    terms: false,
   });
 
   const handleChange = (event) => {
@@ -21,51 +21,49 @@ function Register() {
 
     setFormData({
       ...formData,
-      [name]: type === "checkbox" ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     });
   };
 
-const handleSubmit = (event) => {
-  event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  // Password check
-  if (formData.password !== formData.confirmPassword) {
-    alert("Passwords do not match");
-    return;
-  }
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
 
-  // Terms check
-  if (!formData.terms) {
-    alert("Please accept the Terms and Conditions");
-    return;
-  }
+    if (!formData.terms) {
+      alert("Please accept the Terms and Conditions");
+      return;
+    }
 
-  // User data save
-  localStorage.setItem(
-    "carebridgeUser",
-    JSON.stringify({
-      fullName: formData.fullName,
-      email: formData.email,
-      password: formData.password,
-    })
-  );
+   
+    localStorage.setItem(
+      "carebridgeUser",
+      JSON.stringify({
+        fullName: formData.fullName,
+        email: formData.email,
+        password: formData.password,
+      }),
+    );
 
-  alert("Registration successful. You can now login.");
+    alert("Registration successful. You can now login.");
 
-  // Form clear
-  setFormData({
-    fullName: "",
-    email: "",
-    phone: "",
-    password: "",
-    confirmPassword: "",
-    city: "",
-    skills: "",
-    availability: "",
-    reason: "",
-    terms: false,
-  });
-};
+   
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      password: "",
+      confirmPassword: "",
+      city: "",
+      skills: "",
+      availability: "",
+      reason: "",
+      terms: false,
+    });
+  };
 
   return (
     <main className="register-page">
@@ -89,8 +87,8 @@ const handleSubmit = (event) => {
               <div className="col-lg-5 register-info">
                 <h2>Make a Difference</h2>
                 <p>
-                  Your time, skills, and kindness can bring meaningful change
-                  to someone's life.
+                  Your time, skills, and kindness can bring meaningful change to
+                  someone's life.
                 </p>
 
                 <div className="register-benefit">
@@ -200,10 +198,7 @@ const handleSubmit = (event) => {
                       </div>
 
                       <div className="col-md-6 mb-3">
-                        <label
-                          htmlFor="confirmPassword"
-                          className="form-label"
-                        >
+                        <label htmlFor="confirmPassword" className="form-label">
                           Confirm Password
                         </label>
                         <input
@@ -293,10 +288,7 @@ const handleSubmit = (event) => {
                             onChange={handleChange}
                             required
                           />
-                          <label
-                            htmlFor="terms"
-                            className="form-check-label"
-                          >
+                          <label htmlFor="terms" className="form-check-label">
                             I agree to the Terms and Conditions.
                           </label>
                         </div>
@@ -313,10 +305,9 @@ const handleSubmit = (event) => {
                     </div>
                   </form>
 
-                 <p className="login-text">
-  Already have an account?{" "}
-  <Link to="/login">Login here</Link>
-</p>
+                  <p className="login-text">
+                    Already have an account? <Link to="/login">Login here</Link>
+                  </p>
                 </div>
               </div>
             </div>

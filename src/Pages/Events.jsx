@@ -74,7 +74,7 @@ function Events() {
         </div>
       </section>
 
-      {/* UPCOMING EVENTS */}
+      
       <section className="upcoming-events-section">
         <div className="container">
 
@@ -132,7 +132,7 @@ function Events() {
         </div>
       </section>
 
-      {/* WHAT HAPPENS */}
+      
       <section className="event-activities-section">
         <div className="container">
 
@@ -195,7 +195,7 @@ function Events() {
         </div>
       </section>
 
-      {/* PAST EVENTS */}
+     
       <section className="past-events-section">
         <div className="container">
 
@@ -242,7 +242,6 @@ function Events() {
         </div>
       </section>
 
-      {/* HOW YOU CAN PARTICIPATE */}
       <section className="participate-section">
         <div className="container">
 
@@ -290,7 +289,7 @@ function Events() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      
       <section className="events-cta">
         <div className="container">
 

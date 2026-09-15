@@ -46,7 +46,6 @@
   box-shadow: 0 15px 45px rgba(20, 92, 56, 0.10);
 }
 
-/* GREEN SECTION */
 
 .register-info {
   position: relative;
@@ -123,7 +122,7 @@
   margin: 0;
 }
 
-/* FORM SECTION */
+
 
 .register-form-wrapper {
   padding: 55px 50px !important;
@@ -227,7 +226,7 @@ textarea.form-control {
   text-decoration: underline;
 }
 
-/* TABLET */
+
 
 @media (max-width: 991px) {
   .register-card {
@@ -243,7 +242,6 @@ textarea.form-control {
   }
 }
 
-/* MOBILE */
 
 @media (max-width: 576px) {
   .register-hero {

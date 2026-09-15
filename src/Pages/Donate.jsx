@@ -27,26 +27,26 @@ function Donate() {
   const handleDonate = (e) => {
     e.preventDefault();
 
-    // Amount validation
+
     if (!amount || amount <= 0) {
       alert("Please select or enter a donation amount.");
       return;
     }
 
-    // Phone validation
+   
     if (!phone || phone.length !== 10) {
       alert("Enter your mobile number");
       return;
     }
 
-    // All details are valid
+  
     setShowMessage(true);
   };
 
   return (
     <div className="donate-page">
 
-      {/* ================= HERO ================= */}
+     
       <section className="donate-hero">
         <div className="donate-hero-content">
           <span>SUPPORT OUR MISSION</span>
@@ -65,7 +65,7 @@ function Donate() {
       </section>
 
 
-      {/* ================= DONATION SECTION ================= */}
+      
       <section className="donation-section">
         <div className="container">
 
@@ -82,7 +82,7 @@ function Donate() {
 
           <div className="row g-4">
 
-            {/* ================= LEFT FORM ================= */}
+            
             <div className="col-lg-7">
 
               <div className="donation-form-card">
@@ -98,10 +98,10 @@ function Donate() {
                 </p>
 
 
-                {/* ================= FORM START ================= */}
+                
                 <form onSubmit={handleDonate}>
 
-                  {/* AMOUNT */}
+                 
                   <div className="form-group">
                     <label>Choose Donation Amount</label>
 
@@ -180,7 +180,6 @@ function Donate() {
                   </div>
 
 
-                  {/* PURPOSE */}
                   <div className="form-group">
                     <label>Choose Where Your Donation Goes</label>
 
@@ -257,13 +256,12 @@ function Donate() {
                   </div>
 
 
-                  {/* DONOR DETAILS */}
                   <div className="form-group">
                     <label>Your Details</label>
 
                     <div className="row g-3">
 
-                      {/* NAME */}
+                     
                       <div className="col-md-6">
                         <input
                           type="text"
@@ -275,7 +273,7 @@ function Donate() {
                       </div>
 
 
-                      {/* EMAIL */}
+                     
                       <div className="col-md-6">
                         <input
                           type="email"
@@ -287,7 +285,6 @@ function Donate() {
                       </div>
 
 
-                      {/* PHONE */}
                       <div className="col-12">
                         <input
                           type="tel"
@@ -314,7 +311,7 @@ function Donate() {
                   </div>
 
 
-                  {/* DONATE BUTTON */}
+                 
                   <button
                     type="submit"
                     className="main-donate-btn"
@@ -324,10 +321,9 @@ function Donate() {
                   </button>
 
                 </form>
-                {/* ================= FORM END ================= */}
+               
 
-
-                {/* THANK YOU MESSAGE */}
+               
                 {showMessage && (
                   <div className="success-message">
 
@@ -357,7 +353,7 @@ function Donate() {
             </div>
 
 
-            {/* ================= RIGHT SUMMARY ================= */}
+           
             <div className="col-lg-5">
 
               <div className="donation-summary">
@@ -413,7 +409,7 @@ function Donate() {
               </div>
 
 
-              {/* TRUST BOX */}
+            
               <div className="trust-box">
 
                 <h4>
@@ -449,7 +445,7 @@ function Donate() {
       </section>
 
 
-      {/* ================= IMPACT SECTION ================= */}
+      
       <section className="donation-impact">
 
         <div className="container">
@@ -528,7 +524,7 @@ function Donate() {
       </section>
 
 
-      {/* ================= FINAL CTA ================= */}
+     
       <section className="donation-final-cta">
 
         <div className="container">
