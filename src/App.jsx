@@ -1,38 +1,55 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { useEffect } from "react";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
-import OurWork from "./Pages/OurWork";
-import Footer from "./Components/Footer";
-import Campaigns from "./Pages/Campaigns";
 import About from "./Pages/About";
-import Donate from "./Pages/Donate";
 import Register from "./Pages/Register";
-import Contact from "./Pages/Contact";
-import Login from "./Pages/Login";
 import Gallery from "./Pages/Gallery";
+import Work from "./Pages/Work";
+import Campaigns from "./Pages/Campaigns";
+import CampaignDetails from "./Pages/CampaignDetails";
 import Events from "./Pages/Events";
+import Stories from "./Pages/Stories";
+import Contact from "./Pages/Contact";
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
-        <Route path="/" Component={Home} />
-        <Route path="/our-work" Component={OurWork} />
-      <Route path="/campaigns" Component={Campaigns} />
-      <Route path="/about" Component={About}/>
-      <Route path="/donate" Component={Donate}/>
-        <Route path="/register" Component={Register} />
-        <Route path="/contact" Component={Contact} />
-        <Route path="/login" Component={Login} />
-        <Route path="/gallery" Component={Gallery}/>
-        <Route path="/events" Component={Events} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/campaigns" element={<Campaigns />} />
+        <Route path="/campaign/:id" element={<CampaignDetails />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/stories" element={<Stories />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
 
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 }
 

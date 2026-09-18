@@ -1,433 +1,125 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getCampaigns } from "../Services/Api";
 import "./Campaigns.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 function Campaigns() {
-  const [campaigns, setCampaigns] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const sectionRefs = {
+    hero: useScrollAnimation(),
+    grid: useScrollAnimation(),
+  };
 
-  useEffect(() => {
-    const fetchCampaigns = async () => {
-      try {
-        const data = await getCampaigns();
-        setCampaigns(data.slice(0, 6));
-      } catch (error) {
-        setError("Unable to load campaigns");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCampaigns();
-  }, []);
-
-  const campaignImages = [
-    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
-  ];
-
-  const campaignGoals = [
-    50000,
-    75000,
-    100000,
-    60000,
-    80000,
-    120000
-  ];
-
-  const campaignRaised = [
-    32000,
-    51000,
-    68000,
-    42000,
-    59000,
-    76000
+  const campaignsList = [
+    {
+      img: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=800&q=80",
+      title: "Back to School Drive 2026",
+      desc: "Help us provide school kits, uniforms and learning materials for 200+ children across rural Mumbai before the new academic year begins.",
+      tag: "Education",
+      raised: "₹1.2L",
+      goal: "₹3L",
+      percent: 40,
+    },
+    {
+      img: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80",
+      title: "Community Health Camp",
+      desc: "Free health checkups, medicines and awareness sessions for underserved communities in Mumbai. Doctors needed too!",
+      tag: "Healthcare",
+      raised: "₹85K",
+      goal: "₹2L",
+      percent: 42,
+    },
+    {
+      img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80",
+      title: "Feed a Family This Diwali",
+      desc: "Provide festive meals and essential grocery kits to 500 families this Diwali. Because every family deserves to celebrate.",
+      tag: "Food Support",
+      raised: "₹2.5L",
+      goal: "₹5L",
+      percent: 50,
+    },
+    {
+      img: "https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=800&q=80",
+      title: "Women's Skill Training",
+      desc: "Funding tailoring machines and raw materials to train 50 women in sustainable tailoring, granting them financial independence.",
+      tag: "Community",
+      raised: "₹1.8L",
+      goal: "₹2.5L",
+      percent: 72,
+    },
+    {
+      img: "https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=800&q=80",
+      title: "Clean Drinking Water Initiative",
+      desc: "Installing water purifiers and building safe drinking water stations in 5 remote villages facing severe drought conditions.",
+      tag: "Health",
+      raised: "₹3.5L",
+      goal: "₹4L",
+      percent: 87,
+    },
+    {
+      img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80",
+      title: "Winter Blankets Distribution",
+      desc: "Providing heavy winter blankets and warm clothing to the homeless in urban centers before the temperature drops.",
+      tag: "Relief",
+      raised: "₹40K",
+      goal: "₹1L",
+      percent: 40,
+    },
   ];
 
   return (
-    <div className="campaigns-page">
-
-      
-      <section className="campaign-hero">
-        <div className="container">
-          <div className="campaign-hero-content">
-            <span>OUR CAMPAIGNS</span>
-
-            <h1>Together, We Can Make a Difference</h1>
-
-            <p>
-              Every campaign is an opportunity to bring people together,
-              support communities, and create meaningful change.
-            </p>
-          </div>
-        </div>
-      </section>
-
-
-      
-      <section className="campaign-intro py-5">
+    <main className="campaigns-page">
+      {/* Hero Section */}
+      <section className="campaigns-hero fade-in" ref={sectionRefs.hero}>
         <div className="container text-center">
-
-          <span className="section-label">MAKE AN IMPACT</span>
-
-          <h2>Support a Campaign</h2>
-
-          <p className="campaign-intro-text">
-            Our campaigns focus on education, food support, healthcare,
-            and community development. Your support helps us reach more
-            people and create a better future.
-          </p>
-
-        </div>
-      </section>
-
-
-      
-      <section className="campaign-list-section pb-5">
-        <div className="container">
-
-          {loading && (
-            <div className="campaign-message">
-              <div className="spinner-border text-success"></div>
-              <p>Loading campaigns...</p>
-            </div>
-          )}
-
-          {error && (
-            <div className="campaign-message">
-              <p>{error}</p>
-            </div>
-          )}
-
-          {!loading && !error && (
-            <div className="row g-4">
-
-              {campaigns.map((campaign, index) => {
-
-                const goal = campaignGoals[index];
-                const raised = campaignRaised[index];
-
-                const progress = Math.round((raised / goal) * 100);
-
-                return (
-                  <div className="col-lg-4 col-md-6" key={campaign.id}>
-
-                    <div className="campaign-card">
-
-                      <img
-                        src={campaignImages[index]}
-                        alt={campaign.title}
-                        className="campaign-image"
-                      />
-
-                      <div className="campaign-content">
-
-                        <span className="campaign-tag">
-                          CareBridge Campaign
-                        </span>
-
-                        <h3>
-                          {campaign.title}
-                        </h3>
-
-                        <p>
-                          {campaign.body}
-                        </p>
-
-                        
-                        <div className="campaign-money">
-
-                          <div>
-                            <small>Raised</small>
-                            <strong>₹{raised.toLocaleString()}</strong>
-                          </div>
-
-                          <div>
-                            <small>Goal</small>
-                            <strong>₹{goal.toLocaleString()}</strong>
-                          </div>
-
-                        </div>
-
-
-                        
-                        <div className="progress campaign-progress">
-
-                          <div
-                            className="progress-bar bg-success"
-                            style={{ width: `${progress}%` }}
-                          >
-                            {progress}%
-                          </div>
-
-                        </div>
-
-
-                       
-                        <Link
-                          to="/donate"
-                          className="campaign-btn"
-                        >
-                          Support Campaign
-                        </Link>
-
-                      </div>
-
-                    </div>
-
-                  </div>
-                );
-              })}
-
-            </div>
-          )}
-
-        </div>
-      </section>
-
-
-     
-      <section className="why-campaign-section py-5">
-
-        <div className="container">
-
-          <div className="text-center mb-5">
-
-            <span className="section-label">
-              WHY SUPPORT US?
-            </span>
-
-            <h2>Every Contribution Creates Impact</h2>
-
-            <p className="section-description">
-              When you support a CareBridge campaign, you become
-              part of a community working towards positive change.
-            </p>
-
-          </div>
-
-
-          <div className="row g-4">
-
-            <div className="col-lg-3 col-md-6">
-
-              <div className="campaign-feature-card">
-
-                <div className="feature-icon">
-                  <i className="bi bi-heart-fill"></i>
-                </div>
-
-                <h3>Real Impact</h3>
-
-                <p>
-                  Your contribution helps provide education,
-                  food, healthcare, and support to communities.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <div className="col-lg-3 col-md-6">
-
-              <div className="campaign-feature-card">
-
-                <div className="feature-icon">
-                  <i className="bi bi-shield-check"></i>
-                </div>
-
-                <h3>Transparent</h3>
-
-                <p>
-                  We believe in responsible and transparent
-                  community support.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <div className="col-lg-3 col-md-6">
-
-              <div className="campaign-feature-card">
-
-                <div className="feature-icon">
-                  <i className="bi bi-people-fill"></i>
-                </div>
-
-                <h3>Community Driven</h3>
-
-                <p>
-                  Our campaigns bring volunteers, supporters,
-                  and communities together.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            <div className="col-lg-3 col-md-6">
-
-              <div className="campaign-feature-card">
-
-                <div className="feature-icon">
-                  <i className="bi bi-stars"></i>
-                </div>
-
-                <h3>Every Contribution Matters</h3>
-
-                <p>
-                  Small contributions can create meaningful
-                  change when we work together.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      
-      <section className="how-help-section py-5">
-
-        <div className="container">
-
-          <div className="text-center mb-5">
-
-            <span className="section-label">
-              GET INVOLVED
-            </span>
-
-            <h2>How You Can Help</h2>
-
-            <p className="section-description">
-              There are many ways you can support our mission.
-            </p>
-
-          </div>
-
-
-          <div className="row g-4">
-
-            <div className="col-md-4">
-
-              <div className="help-card">
-
-                <i className="bi bi-cash-coin"></i>
-
-                <h3>Donate</h3>
-
-                <p>
-                  Your donation helps us continue our campaigns
-                  and reach people who need support.
-                </p>
-
-                <Link to="/donate">
-                  Donate Now
-                </Link>
-
-              </div>
-
-            </div>
-
-
-            <div className="col-md-4">
-
-              <div className="help-card">
-
-                <i className="bi bi-person-heart"></i>
-
-                <h3>Volunteer</h3>
-
-                <p>
-                  Join our volunteer community and contribute
-                  your time and skills to meaningful causes.
-                </p>
-
-                <a href="#register">
-                  Become a Volunteer
-                </a>
-
-              </div>
-
-            </div>
-
-
-            <div className="col-md-4">
-
-              <div className="help-card">
-
-                <i className="bi bi-megaphone-fill"></i>
-
-                <h3>Spread Awareness</h3>
-
-                <p>
-                  Share our campaigns with your friends and
-                  family and help us reach more people.
-                </p>
-<Link to="/contact" className="help-contact-btn">
-  Share Our Mission
-</Link>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-     
-      <section className="campaign-cta py-5">
-
-        <div className="container text-center">
-
-          <h2>Be Part of the Change</h2>
-
+          <span className="section-label">Active Causes</span>
+          <h1>Campaigns That Need Your Help</h1>
           <p>
-            Together, we can create stronger communities
-            and a better future for everyone.
+            Choose a cause close to your heart. Every contribution goes directly toward 
+            making a tangible difference in the lives of those who need it most.
           </p>
-<div className="cta-buttons">
-
-  <Link
-    to="/donate"
-    className="cta-donate-btn"
-  >
-    Donate Now
-  </Link>
-
-  <Link
-    to="/register"
-    className="cta-volunteer-btn"
-  >
-    Become a Volunteer
-  </Link>
-
-</div>
-
         </div>
-
       </section>
 
-    </div>
+      {/* Campaigns Grid */}
+      <section className="campaigns-grid-section bg-light" ref={sectionRefs.grid}>
+        <div className="container">
+          <div className="row">
+            {campaignsList.map((c, i) => (
+              <div className="col-md-6 col-lg-4 mb-5" key={i}>
+                <div className={`campaign-card fade-in stagger-${(i % 3) + 1}`}>
+                  <div className="campaign-card-img">
+                    <img src={c.img} alt={c.title} />
+                    <span className="campaign-tag">{c.tag}</span>
+                  </div>
+                  <div className="campaign-card-body">
+                    <h3>{c.title}</h3>
+                    <p>{c.desc}</p>
+                    <div className="campaign-progress">
+                      <div className="progress-info">
+                        <span>
+                          Raised: <strong>{c.raised}</strong>
+                        </span>
+                        <span>
+                          Goal: <strong>{c.goal}</strong>
+                        </span>
+                      </div>
+                      <div className="progress-bar-track">
+                        <div
+                          className="progress-bar-fill"
+                          style={{ width: `${c.percent}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                    <Link to={`/campaign/${i + 1}`} className="campaign-btn w-100 text-center justify-content-center">
+                      View Details & Donate
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 

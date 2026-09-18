@@ -1,551 +1,231 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Contact.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const sectionRef = useScrollAnimation();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: null });
+    }
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Mobile number is required";
+    } else if (!/^\d{10}$/.test(formData.phone.replace(/[-()\s]/g, ""))) {
+      newErrors.phone = "Please enter a valid 10-digit mobile number";
+    }
+
+    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (validate()) {
+      setIsSubmitting(true);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+      }, 1500);
+    }
   };
 
   return (
-    <div className="contact-page">
-
-      
-
-      <section className="contact-hero">
+    <main className="contact-page" ref={sectionRef}>
+      {/* Hero Section */}
+      <section className="contact-hero fade-in">
         <div className="container text-center">
-
-          <p className="contact-small-title">
-            GET IN TOUCH
-          </p>
-
+          <span className="section-label">Get In Touch</span>
           <h1>We'd Love to Hear From You</h1>
-
           <p>
-            Have a question, want to volunteer, or want to support our mission?
-            Get in touch with the CareBridge team.
+            Whether you have a question about our programs, want to partner with us, or simply
+            want to learn more about our impact, our team is here to help.
           </p>
-
         </div>
       </section>
 
-
-    
-
-      <section
-        className="contact-form-section"
-        id="contact-form"
-      >
+      {/* Contact Cards */}
+      <section className="contact-cards-section">
         <div className="container">
-
-          <div className="row align-items-center g-5">
-
-            
-
-            <div className="col-lg-5">
-
-              <p className="contact-form-title">
-                SEND US A MESSAGE
-              </p>
-
-              <h2>
-                Your Voice Can Make a Difference
-              </h2>
-
-              <p className="contact-form-text">
-                Whether you have a question, want to join us as a volunteer,
-                or would like to support our work, we are always happy to hear
-                from you.
-              </p>
-
-              <div className="contact-point">
-                <i className="bi bi-check-circle-fill"></i>
-                <span>Ask us about our programs</span>
+          <div className="row">
+            <div className="col-lg-4 mb-4">
+              <div className="contact-info-card fade-in stagger-1">
+                <div className="contact-icon">
+                  <i className="bi bi-geo-alt-fill"></i>
+                </div>
+                <h3>Visit Us</h3>
+                <p>
+                  CareBridge Headquarters<br />
+                  Andheri West, Link Road<br />
+                  Mumbai, Maharashtra 400053<br />
+                  India
+                </p>
               </div>
-
-              <div className="contact-point">
-                <i className="bi bi-check-circle-fill"></i>
-                <span>Learn about volunteering</span>
-              </div>
-
-              <div className="contact-point">
-                <i className="bi bi-check-circle-fill"></i>
-                <span>Support our community initiatives</span>
-              </div>
-
             </div>
 
+            <div className="col-lg-4 mb-4">
+              <div className="contact-info-card fade-in stagger-2">
+                <div className="contact-icon">
+                  <i className="bi bi-telephone-fill"></i>
+                </div>
+                <h3>Call Us</h3>
+                <p>
+                  <strong>General Inquiries:</strong><br />
+                  +91 98765 43210<br /><br />
+                  <strong>Donation Support:</strong><br />
+                  +91 98765 43211
+                </p>
+              </div>
+            </div>
 
-            
+            <div className="col-lg-4 mb-4">
+              <div className="contact-info-card fade-in stagger-3">
+                <div className="contact-icon">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <h3>Email Us</h3>
+                <p>
+                  <strong>Information:</strong><br />
+                  info@carebridge.org<br /><br />
+                  <strong>Volunteer:</strong><br />
+                  volunteer@carebridge.org
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="col-lg-7">
-
-              <div className="contact-form-card">
-
-                {submitted ? (
-
-                  <div className="contact-success">
-
+      {/* Contact Form (no map) */}
+      <section className="contact-form-section">
+        <div className="container">
+          <div className="contact-form-wrapper fade-in">
+            <div className="contact-form-box">
+              {isSuccess ? (
+                <div className="form-success text-center">
+                  <div className="success-icon-large">
                     <i className="bi bi-check-circle-fill"></i>
-
-                    <h3>Thank You!</h3>
-
-                    <p>
-                      Your message has been submitted successfully.
-                    </p>
-
-                    <p>
-                      Our team will get back to you soon.
-                    </p>
-
                   </div>
+                  <h3>Message Sent Successfully!</h3>
+                  <p>Thank you for reaching out. A member of our team will get back to you within 24 hours.</p>
+                  <button className="btn-contact-submit" onClick={() => setIsSuccess(false)}>
+                    Send Another Message
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <h2>Send us a Message</h2>
+                  <p className="form-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
 
-                ) : (
-
-                  <form onSubmit={handleSubmit}>
-
+                  <form onSubmit={handleSubmit} noValidate>
                     <div className="row">
-
-                      <div className="col-md-6 mb-3">
-
-                        <label>Full Name *</label>
-
+                      <div className="col-md-6 mb-4">
+                        <label className="contact-label">Your Name</label>
                         <input
                           type="text"
-                          className="form-control"
-                          placeholder="Enter your full name"
-                          required
+                          name="name"
+                          className={`contact-input ${errors.name ? "is-invalid" : ""}`}
+                          placeholder="Satyam Sharma"
+                          value={formData.name}
+                          onChange={handleChange}
                         />
-
+                        {errors.name && <div className="text-danger small mt-1">{errors.name}</div>}
                       </div>
-
-
-                      <div className="col-md-6 mb-3">
-
-                        <label>Email Address *</label>
-
+                      <div className="col-md-6 mb-4">
+                        <label className="contact-label">Email Address</label>
                         <input
                           type="email"
-                          className="form-control"
-                          placeholder="Enter your email"
-                          required
+                          name="email"
+                          className={`contact-input ${errors.email ? "is-invalid" : ""}`}
+                          placeholder="satyam@example.com"
+                          value={formData.email}
+                          onChange={handleChange}
                         />
-
+                        {errors.email && <div className="text-danger small mt-1">{errors.email}</div>}
                       </div>
-
-
-                      <div className="col-md-6 mb-3">
-
-                        <label>Phone Number</label>
-
-                        <input
-                          type="tel"
-                          className="form-control"
-                          placeholder="Enter phone number"
-                          maxLength="10"
-                          inputMode="numeric"
-                          onInput={(e) => {
-                            e.target.value = e.target.value
-                              .replace(/\D/g, "")
-                              .slice(0, 10);
-                          }}
-                        />
-
-                      </div>
-
-
-                      <div className="col-md-6 mb-3">
-
-                        <label>Subject *</label>
-
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Enter subject"
-                          required
-                        />
-
-                      </div>
-
-
-                      <div className="col-12 mb-4">
-
-                        <label>Message *</label>
-
-                        <textarea
-                          className="form-control"
-                          rows="5"
-                          placeholder="Write your message..."
-                          required
-                        ></textarea>
-
-                      </div>
-
                     </div>
 
+                    <div className="row">
+                      <div className="col-md-6 mb-4">
+                        <label className="contact-label">Mobile Number</label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          className={`contact-input ${errors.phone ? "is-invalid" : ""}`}
+                          placeholder="9876543210"
+                          value={formData.phone}
+                          onChange={handleChange}
+                        />
+                        {errors.phone && <div className="text-danger small mt-1">{errors.phone}</div>}
+                      </div>
+                      <div className="col-md-6 mb-4">
+                        <label className="contact-label">Subject</label>
+                        <input
+                          type="text"
+                          name="subject"
+                          className={`contact-input ${errors.subject ? "is-invalid" : ""}`}
+                          placeholder="How can we help you?"
+                          value={formData.subject}
+                          onChange={handleChange}
+                        />
+                        {errors.subject && <div className="text-danger small mt-1">{errors.subject}</div>}
+                      </div>
+                    </div>
 
-                    <button
-                      type="submit"
-                      className="contact-submit-btn"
-                    >
-                      Send Message
-                      <i className="bi bi-arrow-right"></i>
+                    <div className="mb-4">
+                      <label className="contact-label">Message</label>
+                      <textarea
+                        name="message"
+                        className={`contact-input ${errors.message ? "is-invalid" : ""}`}
+                        rows="5"
+                        placeholder="Write your message here..."
+                        value={formData.message}
+                        onChange={handleChange}
+                      ></textarea>
+                      {errors.message && <div className="text-danger small mt-1">{errors.message}</div>}
+                    </div>
+
+                    <button type="submit" className="btn-contact-submit" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {!isSubmitting && <i className="bi bi-send"></i>}
                     </button>
-
                   </form>
-
-                )}
-
-              </div>
-
+                </>
+              )}
             </div>
-
           </div>
-
         </div>
       </section>
-
-
-
-      <section className="why-contact-section">
-
-        <div className="container">
-
-          <div className="section-heading text-center">
-
-            <p>HOW WE CAN HELP</p>
-
-            <h2>Connect With Our Mission</h2>
-
-          </div>
-
-
-          <div className="row g-4">
-
-           
-
-            <div className="col-md-4">
-
-              <div className="why-contact-card">
-
-                <i className="bi bi-people-fill"></i>
-
-                <h3>Become a Volunteer</h3>
-
-                <p>
-                  Share your time and skills to support our community
-                  initiatives.
-                </p>
-
-                <Link to="/register">
-                  Become a Volunteer
-                </Link>
-
-              </div>
-
-            </div>
-
-
-            
-
-            <div className="col-md-4">
-
-              <div className="why-contact-card">
-
-                <i className="bi bi-heart-fill"></i>
-
-                <h3>Support Our Mission</h3>
-
-                <p>
-                  Your contribution can help us create meaningful change
-                  in people's lives.
-                </p>
-
-                <Link to="/donate">
-                  Donate Now
-                </Link>
-
-              </div>
-
-            </div>
-
-
-            
-
-
-
-<div className="col-md-4">
-
-  <div className="why-contact-card">
-
-    <i className="bi bi-chat-dots-fill"></i>
-
-    <h3>Ask a Question</h3>
-
-    <p>
-      Have questions about our programs, campaigns or
-      volunteering opportunities?
-    </p>
-
-    <form
-      className="question-form"
-      onSubmit={(e) => {
-        e.preventDefault();
-
-        const question = e.target.question.value.trim();
-
-        if (question === "") {
-          alert("Please enter your question.");
-          return;
-        }
-
-        localStorage.setItem(
-          "carebridgeQuestion",
-          question
-        );
-
-        alert("Your question has been sent successfully!");
-
-        e.target.reset();
-      }}
-    >
-
-      <textarea
-        name="question"
-        className="question-input"
-        placeholder="Type your question..."
-        rows="4"
-        required
-      ></textarea>
-
-      <button
-        type="submit"
-        className="question-send-btn"
-      >
-        Send Question
-        <i className="bi bi-send-fill"></i>
-      </button>
-
-    </form>
-
-  </div>
-
-</div>
-
-      </div>
-
-        </div>
-
-      </section>
-
-
-    
-
-      <section className="contact-faq-section">
-
-        <div className="container">
-
-          <div className="section-heading text-center">
-
-            <p>FAQ</p>
-
-            <h2>Frequently Asked Questions</h2>
-
-          </div>
-
-
-          <div
-            className="accordion contact-accordion"
-            id="contactFAQ"
-          >
-
-          
-
-            <div className="accordion-item">
-
-              <h2 className="accordion-header">
-
-                <button
-                  className="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqOne"
-                >
-                  How can I become a volunteer?
-                </button>
-
-              </h2>
-
-              <div
-                id="faqOne"
-                className="accordion-collapse collapse show"
-                data-bs-parent="#contactFAQ"
-              >
-
-                <div className="accordion-body">
-
-                  You can join us by completing our volunteer registration
-                  form and selecting the area where you would like to help.
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-           
-
-            <div className="accordion-item">
-
-              <h2 className="accordion-header">
-
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqTwo"
-                >
-                  How can I donate?
-                </button>
-
-              </h2>
-
-              <div
-                id="faqTwo"
-                className="accordion-collapse collapse"
-                data-bs-parent="#contactFAQ"
-              >
-
-                <div className="accordion-body">
-
-                  You can visit our Donate page and choose the amount and
-                  purpose of your contribution.
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-           
-
-            <div className="accordion-item">
-
-              <h2 className="accordion-header">
-
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqThree"
-                >
-                  Where does my donation go?
-                </button>
-
-              </h2>
-
-              <div
-                id="faqThree"
-                className="accordion-collapse collapse"
-                data-bs-parent="#contactFAQ"
-              >
-
-                <div className="accordion-body">
-
-                  Donations support areas such as child education,
-                  food support, healthcare and community initiatives.
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-       
-
-            <div className="accordion-item">
-
-              <h2 className="accordion-header">
-
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqFour"
-                >
-                  How can I participate in campaigns?
-                </button>
-
-              </h2>
-
-              <div
-                id="faqFour"
-                className="accordion-collapse collapse"
-                data-bs-parent="#contactFAQ"
-              >
-
-                <div className="accordion-body">
-
-                  Visit our Campaigns page to learn about our current
-                  initiatives and ways to support them.
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-     
-
-      <section className="contact-cta">
-
-        <div className="container text-center">
-
-          <p>TOGETHER WE CAN</p>
-
-          <h2>Make a Difference in Someone's Life</h2>
-
-          <p>
-            Your time, support and kindness can help us build stronger
-            communities.
-          </p>
-
-          <div className="contact-cta-buttons">
-
-            <Link
-              to="/register"
-              className="contact-volunteer-btn"
-            >
-              Become a Volunteer
-            </Link>
-
-            <Link
-              to="/donate"
-              className="contact-donate-btn"
-            >
-              Donate Now
-            </Link>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </div>
+    </main>
   );
 }
 

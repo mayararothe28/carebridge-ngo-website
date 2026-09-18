@@ -1,319 +1,257 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Register.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function Register() {
+  const sectionRef = useScrollAnimation();
+
   const [formData, setFormData] = useState({
-    fullName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
-    password: "",
-    confirmPassword: "",
-    city: "",
-    skills: "",
-    availability: "",
-    reason: "",
-    terms: false,
+    interest: "",
+    message: "",
   });
 
-  const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    // Clear error when typing
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: null });
+    }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
-      return;
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
+    if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email";
     }
-
-    if (!formData.terms) {
-      alert("Please accept the Terms and Conditions");
-      return;
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.phone.replace(/[-()\s]/g, ""))) {
+      newErrors.phone = "Please enter a valid 10-digit number";
     }
+    if (!formData.interest) newErrors.interest = "Please select an area of interest";
 
-   
-    localStorage.setItem(
-      "carebridgeUser",
-      JSON.stringify({
-        fullName: formData.fullName,
-        email: formData.email,
-        password: formData.password,
-      }),
-    );
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-    alert("Registration successful. You can now login.");
-
-   
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      password: "",
-      confirmPassword: "",
-      city: "",
-      skills: "",
-      availability: "",
-      reason: "",
-      terms: false,
-    });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      setIsSubmitting(true);
+      // Simulate API call
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          interest: "",
+          message: "",
+        });
+      }, 1500);
+    }
   };
 
   return (
-    <main className="register-page">
-      <section className="register-hero">
-        <div className="container">
-          <div className="text-center">
-            <p className="register-label">JOIN CAREBRIDGE</p>
-            <h1>Become a Volunteer</h1>
-            <p>
-              Join our community and help us create a better future for
-              children, families, and communities.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="register-section">
-        <div className="container">
-          <div className="register-card">
-            <div className="row g-0">
-              <div className="col-lg-5 register-info">
-                <h2>Make a Difference</h2>
-                <p>
-                  Your time, skills, and kindness can bring meaningful change to
-                  someone's life.
-                </p>
-
-                <div className="register-benefit">
-                  <h5>Support Communities</h5>
-                  <p>Help people who need care, education, and support.</p>
-                </div>
-
-                <div className="register-benefit">
-                  <h5>Develop Your Skills</h5>
-                  <p>Gain practical experience through social activities.</p>
-                </div>
-
-                <div className="register-benefit">
-                  <h5>Meet New People</h5>
-                  <p>Work with a team that believes in positive change.</p>
-                </div>
-              </div>
-
-              <div className="col-lg-7">
-                <div className="register-form-wrapper">
-                  <h2>Create Volunteer Account</h2>
-                  <p className="form-description">
-                    Fill in your details to join CareBridge.
+    <main className="register-page" ref={sectionRef}>
+      <div className="container">
+        <div className="register-wrapper fade-in">
+          <div className="row g-0">
+            {/* Left Info Panel */}
+            <div className="col-lg-5">
+              <div className="register-info">
+                <div className="register-info-content">
+                  <Link to="/" className="register-logo">
+                    <i className="bi bi-heart-pulse-fill"></i>
+                    CareBridge
+                  </Link>
+                  <h2>Join Our Community of Changemakers</h2>
+                  <p>
+                    Whether you can spare a few hours a week or want to be
+                    involved full-time, your skills and passion can make a real
+                    difference in someone's life.
                   </p>
+                  
+                  <div className="register-features">
+                    <div className="r-feature">
+                      <i className="bi bi-check2-circle"></i>
+                      <span>Make a tangible impact</span>
+                    </div>
+                    <div className="r-feature">
+                      <i className="bi bi-check2-circle"></i>
+                      <span>Gain valuable experience</span>
+                    </div>
+                    <div className="r-feature">
+                      <i className="bi bi-check2-circle"></i>
+                      <span>Join a supportive community</span>
+                    </div>
+                    <div className="r-feature">
+                      <i className="bi bi-check2-circle"></i>
+                      <span>Receive volunteer certification</span>
+                    </div>
+                  </div>
 
-                  <form onSubmit={handleSubmit}>
-                    <div className="row">
-                      <div className="col-md-6 mb-3">
-                        <label htmlFor="fullName" className="form-label">
-                          Full Name
-                        </label>
-                        <input
-                          type="text"
-                          id="fullName"
-                          name="fullName"
-                          className="form-control"
-                          placeholder="Enter your full name"
-                          value={formData.fullName}
-                          onChange={handleChange}
-                          required
-                        />
-                      </div>
+                  <div className="register-contact-info">
+                    <p><i className="bi bi-envelope"></i> volunteer@carebridge.org</p>
+                    <p><i className="bi bi-telephone"></i> +91 98765 43210</p>
+                  </div>
+                </div>
+                
+                {/* Decorative Elements */}
+                <div className="circle-shape shape-1"></div>
+                <div className="circle-shape shape-2"></div>
+              </div>
+            </div>
 
-                      <div className="col-md-6 mb-3">
-                        <label htmlFor="email" className="form-label">
-                          Email Address
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          className="form-control"
-                          placeholder="Enter your email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                        />
-                      </div>
+            {/* Right Form Panel */}
+            <div className="col-lg-7">
+              <div className="register-form-container">
+                {isSuccess ? (
+                  <div className="success-message text-center fade-in">
+                    <div className="success-icon">
+                      <i className="bi bi-check-lg"></i>
+                    </div>
+                    <h3>Thank You for Registering!</h3>
+                    <p>
+                      We've received your application. Our volunteer coordinator
+                      will contact you within 2-3 business days to discuss next steps.
+                    </p>
+                    <button 
+                      className="btn-return"
+                      onClick={() => setIsSuccess(false)}
+                    >
+                      Register Another Person
+                    </button>
+                  </div>
+                ) : (
+                  <>
+                    <div className="register-header">
+                      <h3>Volunteer Registration</h3>
+                      <p>Fill out the form below to get started.</p>
+                    </div>
 
-                      <div className="col-md-6 mb-3">
-                        <label htmlFor="phone" className="form-label">
-                          Mobile Number
-                        </label>
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          className="form-control"
-                          placeholder="Enter mobile number"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          required
-                        />
-                      </div>
-
-                      <div className="col-md-6 mb-3">
-                        <label htmlFor="city" className="form-label">
-                          City
-                        </label>
-                        <input
-                          type="text"
-                          id="city"
-                          name="city"
-                          className="form-control"
-                          placeholder="Enter your city"
-                          value={formData.city}
-                          onChange={handleChange}
-                          required
-                        />
-                      </div>
-
-                      <div className="col-md-6 mb-3">
-                        <label htmlFor="password" className="form-label">
-                          Password
-                        </label>
-                        <input
-                          type="password"
-                          id="password"
-                          name="password"
-                          className="form-control"
-                          placeholder="Create a password"
-                          value={formData.password}
-                          onChange={handleChange}
-                          minLength="6"
-                          required
-                        />
-                      </div>
-
-                      <div className="col-md-6 mb-3">
-                        <label htmlFor="confirmPassword" className="form-label">
-                          Confirm Password
-                        </label>
-                        <input
-                          type="password"
-                          id="confirmPassword"
-                          name="confirmPassword"
-                          className="form-control"
-                          placeholder="Confirm your password"
-                          value={formData.confirmPassword}
-                          onChange={handleChange}
-                          minLength="6"
-                          required
-                        />
-                      </div>
-
-                      <div className="col-12 mb-3">
-                        <label htmlFor="skills" className="form-label">
-                          Skills / Interests
-                        </label>
-                        <select
-                          id="skills"
-                          name="skills"
-                          className="form-select"
-                          value={formData.skills}
-                          onChange={handleChange}
-                          required
-                        >
-                          <option value="">Select your interest</option>
-                          <option value="Teaching">Teaching</option>
-                          <option value="Food Distribution">
-                            Food Distribution
-                          </option>
-                          <option value="Healthcare Support">
-                            Healthcare Support
-                          </option>
-                          <option value="Event Management">
-                            Event Management
-                          </option>
-                          <option value="Fundraising">Fundraising</option>
-                          <option value="Social Media">Social Media</option>
-                        </select>
-                      </div>
-
-                      <div className="col-12 mb-3">
-                        <label htmlFor="availability" className="form-label">
-                          Availability
-                        </label>
-                        <select
-                          id="availability"
-                          name="availability"
-                          className="form-select"
-                          value={formData.availability}
-                          onChange={handleChange}
-                          required
-                        >
-                          <option value="">Select availability</option>
-                          <option value="Weekdays">Weekdays</option>
-                          <option value="Weekends">Weekends</option>
-                          <option value="Both">Both</option>
-                        </select>
-                      </div>
-
-                      <div className="col-12 mb-3">
-                        <label htmlFor="reason" className="form-label">
-                          Why do you want to volunteer?
-                        </label>
-                        <textarea
-                          id="reason"
-                          name="reason"
-                          className="form-control"
-                          rows="4"
-                          placeholder="Tell us why you want to join CareBridge"
-                          value={formData.reason}
-                          onChange={handleChange}
-                          required
-                        ></textarea>
-                      </div>
-
-                      <div className="col-12 mb-4">
-                        <div className="form-check">
+                    <form onSubmit={handleSubmit} className="register-form" noValidate>
+                      <div className="row">
+                        <div className="col-md-6 mb-3">
+                          <label className="form-label">First Name *</label>
                           <input
-                            type="checkbox"
-                            id="terms"
-                            name="terms"
-                            className="form-check-input"
-                            checked={formData.terms}
+                            type="text"
+                            name="firstName"
+                            className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
+                            value={formData.firstName}
                             onChange={handleChange}
-                            required
+                            placeholder="Satyam"
                           />
-                          <label htmlFor="terms" className="form-check-label">
-                            I agree to the Terms and Conditions.
-                          </label>
+                          {errors.firstName && <div className="invalid-feedback">{errors.firstName}</div>}
+                        </div>
+
+                        <div className="col-md-6 mb-3">
+                          <label className="form-label">Last Name *</label>
+                          <input
+                            type="text"
+                            name="lastName"
+                            className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
+                            value={formData.lastName}
+                            onChange={handleChange}
+                            placeholder="Sharma"
+                          />
+                          {errors.lastName && <div className="invalid-feedback">{errors.lastName}</div>}
                         </div>
                       </div>
 
-                      <div className="col-12">
-                        <button
-                          type="submit"
-                          className="btn btn-success register-button"
-                        >
-                          Create Volunteer Account
-                        </button>
-                      </div>
-                    </div>
-                  </form>
+                      <div className="row">
+                        <div className="col-md-6 mb-3">
+                          <label className="form-label">Email Address *</label>
+                          <input
+                            type="email"
+                            name="email"
+                            className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="satyam@example.com"
+                          />
+                          {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                        </div>
 
-                  <p className="login-text">
-                    Already have an account? <Link to="/login">Login here</Link>
-                  </p>
-                </div>
+                        <div className="col-md-6 mb-3">
+                          <label className="form-label">Phone Number *</label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
+                            value={formData.phone}
+                            onChange={handleChange}
+                            placeholder="9876543210"
+                          />
+                          {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
+                        </div>
+                      </div>
+
+                      <div className="mb-3">
+                        <label className="form-label">Area of Interest *</label>
+                        <select
+                          name="interest"
+                          className={`form-select ${errors.interest ? 'is-invalid' : ''}`}
+                          value={formData.interest}
+                          onChange={handleChange}
+                        >
+                          <option value="">Select an area...</option>
+                          <option value="education">Child Education</option>
+                          <option value="food">Food Distribution</option>
+                          <option value="health">Healthcare Camps</option>
+                          <option value="events">Event Management</option>
+                          <option value="admin">Administrative Support</option>
+                        </select>
+                        {errors.interest && <div className="invalid-feedback">{errors.interest}</div>}
+                      </div>
+
+                      <div className="mb-4">
+                        <label className="form-label">Additional Message (Optional)</label>
+                        <textarea
+                          name="message"
+                          className="form-control"
+                          rows="3"
+                          value={formData.message}
+                          onChange={handleChange}
+                          placeholder="Tell us a bit about why you want to volunteer..."
+                        ></textarea>
+                      </div>
+
+                      <button 
+                        type="submit" 
+                        className="btn-submit w-100"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? (
+                          <><span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Submitting...</>
+                        ) : (
+                          "Submit Registration"
+                        )}
+                      </button>
+                    </form>
+                  </>
+                )}
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </main>
   );
 }
