@@ -388,7 +388,7 @@ function Home() {
                     <span style={{ fontSize: "12px", color: "var(--text-muted)", marginBottom: "10px" }}><i className="bi bi-calendar3"></i> {blog.date}</span>
                     <h4 style={{ fontSize: "18px", fontWeight: "700", marginBottom: "10px" }}>{blog.title}</h4>
                     <p style={{ fontSize: "14px", color: "var(--text-muted)", flexGrow: 1 }}>{blog.desc}</p>
-                    <Link to="/blogs" style={{ fontWeight: "bold", color: "var(--primary)", textDecoration: "none" }}>Read More <i className="bi bi-arrow-right"></i></Link>
+                    <Link to={`/blog/${i + 1}`} style={{ fontWeight: "bold", color: "var(--primary)", textDecoration: "none" }}>Read More <i className="bi bi-arrow-right"></i></Link>
                   </div>
                 </div>
               </div>

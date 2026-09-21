@@ -10,6 +10,7 @@ import Campaigns from "./Pages/Campaigns";
 import CampaignDetails from "./Pages/CampaignDetails";
 import Events from "./Pages/Events";
 import Blogs from "./Pages/Blogs";
+import BlogDetails from "./Pages/BlogDetails";
 import Contact from "./Pages/Contact";
 
 import {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/campaign/:id" element={<CampaignDetails />} />
         <Route path="/events" element={<Events />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
