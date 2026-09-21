@@ -9,7 +9,7 @@ import Work from "./Pages/Work";
 import Campaigns from "./Pages/Campaigns";
 import CampaignDetails from "./Pages/CampaignDetails";
 import Events from "./Pages/Events";
-import Stories from "./Pages/Stories";
+import Blogs from "./Pages/Blogs";
 import Contact from "./Pages/Contact";
 
 import {
@@ -42,7 +42,7 @@ function App() {
         <Route path="/campaigns" element={<Campaigns />} />
         <Route path="/campaign/:id" element={<CampaignDetails />} />
         <Route path="/events" element={<Events />} />
-        <Route path="/stories" element={<Stories />} />
+        <Route path="/stories" element={<Blogs />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />

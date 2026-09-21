@@ -351,55 +351,53 @@ function Home() {
       </section>
 
       
-      <section className="stories" ref={sectionRefs.stories}>
+      <section className="stories blogs-preview" ref={sectionRefs.stories}>
         <div className="container">
           <div className="section-header fade-in">
-            <span className="section-label">Success Stories</span>
+            <span className="section-label">Our Blog</span>
             <h2>
-              Real People. Real <span className="text-accent">Impact.</span>
+              Latest <span className="text-accent">Updates & Insights</span>
             </h2>
           </div>
 
           <div className="row">
             {[
               {
-                quote:
-                  "With CareBridge's educational support, I got the opportunity to continue my studies and dream of becoming a teacher. They didn't just give me books — they gave me hope.",
-                name: "Aisha Patel",
-                role: "Student, Mumbai",
-                img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&h=120&fit=crop",
+                img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=400&q=80",
+                title: "How Digital Learning is Changing Rural Mumbai",
+                desc: "Exploring the impact of smart classrooms and digital tablets in underprivileged schools.",
+                date: "Oct 12, 2026"
               },
               {
-                quote:
-                  "During a very difficult time, CareBridge provided our family with food and medical support. Their volunteers visited us every week and made sure we were okay.",
-                name: "Rahul's Family",
-                role: "Mumbai",
-                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop",
+                img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=400&q=80",
+                title: "5 Ways You Can Support Local NGOs",
+                desc: "You don't always need money to make a difference. Discover how you can help.",
+                date: "Sep 28, 2026"
               },
               {
-                quote:
-                  "Volunteering with CareBridge changed my perspective on life. I use my weekends to teach children and it's the most fulfilling thing I've ever done.",
-                name: "Priya Sharma",
-                role: "Volunteer, Mumbai",
-                img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop",
+                img: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=400&q=80",
+                title: "Highlights from Our Mega Medical Camp",
+                desc: "Last weekend, over 500 residents received free medical checkups and medicines.",
+                date: "Sep 15, 2026"
               },
-            ].map((s, i) => (
+            ].map((blog, i) => (
               <div className="col-lg-4 mb-4" key={i}>
-                <div className={`story-card fade-in stagger-${i + 1}`}>
-                  <div className="story-quote-icon">
-                    <i className="bi bi-quote"></i>
-                  </div>
-                  <p>{s.quote}</p>
-                  <div className="story-author">
-                    <img src={s.img} alt={s.name} />
-                    <div>
-                      <strong>{s.name}</strong>
-                      <span>{s.role}</span>
-                    </div>
+                <div className={`story-card fade-in stagger-${i + 1}`} style={{ padding: 0, overflow: "hidden", display: "flex", flexDirection: "column", height: "100%" }}>
+                  <img src={blog.img} alt={blog.title} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+                  <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                    <span style={{ fontSize: "12px", color: "var(--text-muted)", marginBottom: "10px" }}><i className="bi bi-calendar3"></i> {blog.date}</span>
+                    <h4 style={{ fontSize: "18px", fontWeight: "700", marginBottom: "10px" }}>{blog.title}</h4>
+                    <p style={{ fontSize: "14px", color: "var(--text-muted)", flexGrow: 1 }}>{blog.desc}</p>
+                    <Link to="/blogs" style={{ fontWeight: "bold", color: "var(--primary)", textDecoration: "none" }}>Read More <i className="bi bi-arrow-right"></i></Link>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-4">
+            <Link to="/blogs" className="btn-see-all" style={{ padding: "10px 25px", border: "2px solid var(--primary)", borderRadius: "30px", textDecoration: "none", color: "var(--primary)", fontWeight: "bold" }}>
+              View All Blogs <i className="bi bi-arrow-right"></i>
+            </Link>
           </div>
         </div>
       </section>

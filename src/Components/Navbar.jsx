@@ -65,8 +65,8 @@ function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/stories" className={isActive("/stories") ? "active" : ""}>
-                  Stories
+                <Link to="/blogs" className={isActive("/blogs") ? "active" : ""}>
+                  Blogs
                 </Link>
               </li>
               <li>
@@ -152,8 +152,8 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/stories" className={isActive("/stories") ? "active" : ""}>
-              Stories
+            <Link to="/blogs" className={isActive("/blogs") ? "active" : ""}>
+              Blogs
             </Link>
           </li>
           <li>
