@@ -42,7 +42,7 @@ function App() {
         <Route path="/campaigns" element={<Campaigns />} />
         <Route path="/campaign/:id" element={<CampaignDetails />} />
         <Route path="/events" element={<Events />} />
-        <Route path="/stories" element={<Blogs />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
