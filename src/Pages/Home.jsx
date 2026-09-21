@@ -158,9 +158,9 @@ function Home() {
                 <li><i className="bi bi-check2-circle"></i> Food & Nutrition Security</li>
                 <li><i className="bi bi-check2-circle"></i> Sustainable Livelihood Training</li>
               </ul>
-              <Link to="/work" className="btn-primary mt-3">
-                Explore Our Impact <i className="bi bi-arrow-right"></i>
-              </Link>
+              <Link to="/our-work" className="btn-cta-primary">
+  Explore Our Impact <i className="bi bi-arrow-right"></i>
+</Link>
             </div>
 
             <div className="col-lg-6 fade-in-right">
@@ -340,8 +340,9 @@ function Home() {
                       </div>
                     </div>
                     <Link to={`/campaign/${i + 1}`} className="campaign-btn">
-                      <i className="bi bi-heart"></i> Support Campaign
-                    </Link>
+  <i className="bi bi-heart"></i>
+  Support Campaign
+</Link>
                   </div>
                 </div>
               </div>
@@ -450,7 +451,7 @@ function Home() {
                     <div className="event-date">
                       <strong>{e.date}</strong>
                       <span>{e.month}</span>
-                    </div>
+                    </div>  
                   </div>
                   <div className="event-card-body">
                     <h3>{e.title}</h3>
@@ -550,7 +551,7 @@ function Home() {
       {/* ========== CTA / VOLUNTEER ========== */}
       <section className="cta" id="volunteer">
         <div className="container">
-          <div className="cta-box fade-in">
+        <div className="cta-box">
             <span>Be Part of the Change</span>
             <h2>
               Your Small Step Can Create
