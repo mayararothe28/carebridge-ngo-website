@@ -68,7 +68,7 @@ function Campaigns() {
   return (
     <main className="campaigns-page">
       {/* Hero Section */}
-      <section className="campaigns-hero fade-in" ref={sectionRefs.hero}>
+<section className="campaigns-hero" ref={sectionRefs.hero}>
         <div className="container text-center">
           <span className="section-label">Active Causes</span>
           <h1>Campaigns That Need Your Help</h1>
@@ -85,7 +85,7 @@ function Campaigns() {
           <div className="row">
             {campaignsList.map((c, i) => (
               <div className="col-md-6 col-lg-4 mb-5" key={i}>
-                <div className={`campaign-card fade-in stagger-${(i % 3) + 1}`}>
+                <div className="campaign-card">
                   <div className="campaign-card-img">
                     <img src={c.img} alt={c.title} />
                     <span className="campaign-tag">{c.tag}</span>
