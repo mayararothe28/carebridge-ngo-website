@@ -1,12 +1,10 @@
-/* ========================================
-   ABOUT PAGE STYLES
-======================================== */
+
 
 .about-page {
   background: white;
 }
 
-/* ===== ABOUT HERO ===== */
+
 
 .about-hero {
   padding: 80px 0 90px;
@@ -79,7 +77,7 @@
   font-weight: 500;
 }
 
-/* ===== MISSION & STORY ===== */
+
 
 .about-mission {
   background: white;
@@ -185,7 +183,7 @@
   font-size: 14px;
 }
 
-/* ===== VALUES ===== */
+
 
 .bg-light {
   background: var(--bg-section);
@@ -239,7 +237,7 @@
   margin: 0;
 }
 
-/* ===== TEAM ===== */
+
 
 .about-team {
   background: white;
@@ -328,7 +326,7 @@
   margin: 0;
 }
 
-/* ===== CTA ===== */
+
 
 .about-cta {
   background: linear-gradient(135deg, #173b2b 0%, #198754 100%);
@@ -361,7 +359,6 @@
   flex-wrap: wrap;
 }
 
-/* ===== RESPONSIVE ===== */
 
 @media (max-width: 991px) {
   .about-hero {

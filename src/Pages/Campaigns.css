@@ -1,12 +1,10 @@
-/* ========================================
-   CAMPAIGNS PAGE STYLES
-======================================== */
+
 
 .campaigns-page {
   background: white;
 }
 
-/* ===== Campaigns Hero ===== */
+
 .campaigns-hero {
   padding: 100px 20px 80px;
   background: white;
@@ -27,7 +25,7 @@
   line-height: 1.8;
 }
 
-/* ===== Campaigns Grid ===== */
+
 .campaigns-grid-section {
   padding: 80px 0;
   background: var(--bg-section);
@@ -130,7 +128,7 @@
   background: var(--accent);
   border-radius: 4px;
 }
-/* View Details & Donate button fix */
+
 .campaign-btn {
   display: flex !important;
   align-items: center;
@@ -159,7 +157,7 @@
   background-color: #198754 !important;
   -webkit-text-fill-color: #ffffff !important;
 }
-/* Force campaign cards and buttons to remain visible */
+
 .campaigns-page .campaign-card,
 .campaigns-page .campaign-card-body,
 .campaigns-page .campaign-btn {
@@ -180,7 +178,7 @@
 }
 
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
   .campaigns-hero h1 {
     font-size: 34px;

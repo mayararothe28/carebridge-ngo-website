@@ -1,6 +1,4 @@
-/* ========================================
-   CAMPAIGN DETAILS STYLES
-======================================== */
+
 
 .campaign-details-page {
   background: var(--bg-light);
@@ -88,7 +86,6 @@
   margin-bottom: 20px;
 }
 
-/* Sidebar Donation Card */
 .cd-donation-card {
   background: white;
   border-radius: var(--radius-lg);

@@ -33,7 +33,7 @@ export function useCountUp(end, duration = 2000) {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
 
-      // Ease-out cubic for natural deceleration
+      
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(eased * numericEnd));
 

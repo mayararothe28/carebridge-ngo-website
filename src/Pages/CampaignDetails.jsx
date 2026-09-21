@@ -32,7 +32,7 @@ function CampaignDetails() {
     }
   };
 
-  // Mock data for campaign details
+  
   const campaignData = {
     img: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=1200&q=80",
     title: "Education For Every Child",
@@ -52,7 +52,7 @@ function CampaignDetails() {
 
   return (
     <main className="campaign-details-page" ref={sectionRef}>
-      {/* Details Header */}
+      
       <section className="cd-header fade-in">
         <div className="container">
           <Link to="/campaigns" className="back-link">
@@ -65,7 +65,7 @@ function CampaignDetails() {
         </div>
       </section>
 
-      {/* Details Main Content */}
+      
       <section className="cd-main">
         <div className="container">
           <div className="row">

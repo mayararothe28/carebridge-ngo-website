@@ -67,7 +67,7 @@ function Campaigns() {
 
   return (
     <main className="campaigns-page">
-      {/* Hero Section */}
+      
 <section className="campaigns-hero" ref={sectionRefs.hero}>
         <div className="container text-center">
           <span className="section-label">Active Causes</span>
@@ -79,7 +79,7 @@ function Campaigns() {
         </div>
       </section>
 
-      {/* Campaigns Grid */}
+      
       <section className="campaigns-grid-section bg-light" ref={sectionRefs.grid}>
         <div className="container">
           <div className="row">

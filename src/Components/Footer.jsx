@@ -64,7 +64,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Main Footer */}
         <div className="footer-main">
           <div className="row">
             <div className="col-lg-4 col-md-6 mb-4">
@@ -140,7 +139,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* Footer Bottom */}
+        
         <div className="footer-bottom">
           <p>&copy; 2026 CareBridge NGO. All Rights Reserved.</p>
           <p>Together We Care. Together We Change.</p>

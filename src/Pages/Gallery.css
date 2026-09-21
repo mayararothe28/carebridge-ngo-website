@@ -1,12 +1,9 @@
-/* ========================================
-   GALLERY PAGE STYLES
-======================================== */
+
 
 .gallery-page {
   background: var(--bg-light);
 }
 
-/* ===== Gallery Hero ===== */
 
 .gallery-hero {
   padding: 80px 20px;
@@ -39,7 +36,7 @@
   line-height: 1.8;
 }
 
-/* ===== Gallery Grid Section ===== */
+
 
 .gallery-grid-section {
   padding: 70px 0;
@@ -61,7 +58,7 @@
   margin: 0;
 }
 
-/* Filter Buttons */
+
 .gallery-filters {
   display: flex;
   flex-wrap: wrap;
@@ -92,7 +89,6 @@
   color: white;
 }
 
-/* Gallery Items */
 .gallery-item {
   position: relative;
   height: 320px;
@@ -166,7 +162,7 @@
   opacity: 1;
 }
 
-/* ===== CTA Section ===== */
+
 
 .gallery-cta {
   padding: 0 0 80px;
@@ -219,7 +215,7 @@
   transform: translateY(-2px);
 }
 
-/* ===== Lightbox ===== */
+
 
 .lightbox {
   position: fixed;
@@ -292,7 +288,7 @@
   margin: 0;
 }
 
-/* ===== RESPONSIVE ===== */
+
 
 @media (max-width: 991px) {
   .gallery-hero h1 {

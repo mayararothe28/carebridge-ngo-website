@@ -80,7 +80,7 @@ function Gallery() {
 
   return (
     <main className="gallery-page" ref={sectionRef}>
-      {/* Hero */}
+    
       <section className="gallery-hero">
         <div className="container">
           <div className="fade-in">
@@ -94,10 +94,10 @@ function Gallery() {
         </div>
       </section>
 
-      {/* Gallery Grid */}
+     
       <section className="gallery-grid-section">
         <div className="container">
-          {/* Section Header with Filters */}
+          
           <div className="gallery-top fade-in">
             <div className="gallery-top-text">
               <span className="section-label">CareBridge in Action</span>
@@ -117,7 +117,7 @@ function Gallery() {
             </div>
           </div>
 
-          {/* Image Grid */}
+         
           <div className="row g-4">
             {filteredItems.map((item, index) => (
               <div className="col-lg-4 col-md-6" key={index}>
@@ -148,7 +148,7 @@ function Gallery() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+     
       <section className="gallery-cta">
         <div className="container">
           <div className="gallery-cta-box fade-in">
@@ -161,7 +161,7 @@ function Gallery() {
         </div>
       </section>
 
-      {/* Lightbox */}
+      
       {lightbox && (
         <div className="lightbox" onClick={() => setLightbox(null)}>
           <button

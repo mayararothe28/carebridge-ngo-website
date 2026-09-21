@@ -109,7 +109,7 @@ function Work() {
         </div>
       </section>
 
-      {/* CTA */}
+   
       <section className="work-cta" ref={sectionRefs.cta}>
         <div className="container text-center fade-in">
           <h2>Ready to Create an Impact?</h2>

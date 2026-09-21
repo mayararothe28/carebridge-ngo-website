@@ -15,12 +15,11 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
 
-  // Prevent body scroll when menu is open
+ 
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -104,13 +103,13 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      
       <div
         className={`mobile-overlay ${menuOpen ? "show" : ""}`}
         onClick={() => setMenuOpen(false)}
       />
 
-      {/* Mobile Menu */}
+      
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <div className="mobile-menu-header">
           <Link

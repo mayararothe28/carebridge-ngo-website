@@ -1,4 +1,4 @@
-/* ===== NAVBAR ===== */
+
 
 .site-navbar {
   position: fixed;
@@ -26,7 +26,7 @@
   height: 72px;
 }
 
-/* Brand */
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@
   color: var(--primary);
 }
 
-/* Nav Links */
+
 .site-nav-list {
   display: flex;
   flex-direction: row;
@@ -97,7 +97,7 @@
   width: 100%;
 }
 
-/* Action Buttons */
+
 .navbar-actions {
   display: flex;
   align-items: center;
@@ -181,7 +181,6 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile Overlay */
 .mobile-overlay {
   position: fixed;
   inset: 0;
@@ -197,7 +196,6 @@
   visibility: visible;
 }
 
-/* Mobile Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -279,12 +277,11 @@
   text-align: center;
 }
 
-/* Spacer for fixed navbar */
+
 body {
   padding-top: 72px;
 }
 
-/* ===== RESPONSIVE ===== */
 
 @media (max-width: 991px) {
   .site-nav-list,

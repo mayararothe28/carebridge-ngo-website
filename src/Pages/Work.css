@@ -1,12 +1,9 @@
-/* ========================================
-   OUR WORK PAGE STYLES
-======================================== */
+
 
 .work-page {
   background: white;
 }
 
-/* ===== Work Hero ===== */
 
 .work-hero {
   padding: 120px 0 80px;
@@ -28,7 +25,7 @@
   max-width: 650px;
 }
 
-/* ===== Impact Themes List ===== */
+
 
 .impact-themes-section {
   padding: 80px 0 40px;
@@ -146,7 +143,7 @@
   gap: 12px;
 }
 
-/* ===== Work CTA ===== */
+
 
 .work-cta {
   background: var(--bg-light);
@@ -172,7 +169,7 @@
   gap: 15px;
 }
 
-/* ===== RESPONSIVE ===== */
+
 
 @media (max-width: 991px) {
   .work-hero h1 {

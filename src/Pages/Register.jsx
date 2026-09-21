@@ -22,7 +22,7 @@ function Register() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    // Clear error when typing
+   
     if (errors[name]) {
       setErrors({ ...errors, [name]: null });
     }
@@ -52,7 +52,7 @@ function Register() {
     e.preventDefault();
     if (validate()) {
       setIsSubmitting(true);
-      // Simulate API call
+     
       setTimeout(() => {
         setIsSubmitting(false);
         setIsSuccess(true);
@@ -73,7 +73,7 @@ function Register() {
       <div className="container">
         <div className="register-wrapper fade-in">
           <div className="row g-0">
-            {/* Left Info Panel */}
+            
             <div className="col-lg-5">
               <div className="register-info">
                 <div className="register-info-content">
@@ -113,13 +113,13 @@ function Register() {
                   </div>
                 </div>
                 
-                {/* Decorative Elements */}
+                
                 <div className="circle-shape shape-1"></div>
                 <div className="circle-shape shape-2"></div>
               </div>
             </div>
 
-            {/* Right Form Panel */}
+            
             <div className="col-lg-7">
               <div className="register-form-container">
                 {isSuccess ? (

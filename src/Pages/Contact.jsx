@@ -73,7 +73,7 @@ function Contact() {
         </div>
       </section>
 
-      {/* Contact Cards */}
+     
       <section className="contact-cards-section">
         <div className="container">
           <div className="row">
@@ -125,7 +125,6 @@ function Contact() {
         </div>
       </section>
 
-      {/* Contact Form (no map) */}
       <section className="contact-form-section">
         <div className="container">
           <div className="contact-form-wrapper fade-in">

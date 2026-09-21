@@ -1,13 +1,11 @@
-/* ========================================
-   CONTACT PAGE STYLES
-======================================== */
+
 
 .contact-page {
   background: var(--bg-light);
   padding-bottom: 90px;
 }
 
-/* ===== Contact Hero ===== */
+
 
 .contact-hero {
   padding: 100px 20px 80px;
@@ -30,7 +28,7 @@
   line-height: 1.8;
 }
 
-/* ===== Contact Cards ===== */
+
 
 .contact-cards-section {
   margin-top: -40px;
@@ -86,7 +84,7 @@
   margin: 0;
 }
 
-/* ===== Contact Form Section ===== */
+
 
 .contact-form-section {
   padding: 60px 0 0;
@@ -177,7 +175,7 @@
   cursor: wait;
 }
 
-/* Success State */
+
 .form-success {
   padding: 40px 0;
 }
@@ -199,7 +197,7 @@
   font-size: 16px;
 }
 
-/* ===== RESPONSIVE ===== */
+
 
 @media (max-width: 991px) {
   .contact-hero h1 {

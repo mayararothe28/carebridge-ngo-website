@@ -7,7 +7,6 @@ function OurWork() {
   return (
     <div className="our-work-page">
 
-      {/* ================= HERO ================= */}
       <section className="our-work-hero">
         <div className="container">
           <div className="our-work-hero-content">
@@ -24,7 +23,7 @@ function OurWork() {
       </section>
 
 
-      {/* ================= INTRODUCTION ================= */}
+
       <section className="work-intro">
         <div className="container">
 
@@ -41,7 +40,7 @@ function OurWork() {
 
           <div className="row mt-5">
 
-            {/* Education */}
+         
             <div className="col-lg-6 mb-4">
               <div className="work-detail-card">
 
@@ -74,7 +73,7 @@ function OurWork() {
             </div>
 
 
-            {/* Food */}
+            
             <div className="col-lg-6 mb-4">
               <div className="work-detail-card">
 
@@ -106,7 +105,7 @@ function OurWork() {
             </div>
 
 
-            {/* Healthcare */}
+            
             <div className="col-lg-6 mb-4">
               <div className="work-detail-card">
 
@@ -138,7 +137,7 @@ function OurWork() {
             </div>
 
 
-            {/* Volunteer */}
+           
             <div className="col-lg-6 mb-4">
               <div className="work-detail-card">
 
@@ -174,7 +173,7 @@ function OurWork() {
       </section>
 
 
-      {/* ================= HOW WE WORK ================= */}
+      
       <section className="how-we-work">
         <div className="container">
 
@@ -260,7 +259,7 @@ function OurWork() {
       </section>
 
 
-      {/* ================= OUR VALUES ================= */}
+      
       <section className="our-values">
         <div className="container">
 
@@ -321,7 +320,7 @@ function OurWork() {
       </section>
 
 
-      {/* ================= IMPACT ================= */}
+      
       <section className="work-impact">
         <div className="container">
 
@@ -375,7 +374,7 @@ function OurWork() {
       </section>
 
 
-      {/* ================= CTA ================= */}
+     
       <section className="work-cta">
 
         <div className="container">

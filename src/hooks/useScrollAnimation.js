@@ -19,14 +19,13 @@ export function useScrollAnimation(threshold = 0.15) {
       { threshold, rootMargin: "0px 0px -50px 0px" }
     );
 
-    // Observe all children with animation classes
+    
     const animatedElements = element.querySelectorAll(
       ".fade-in, .fade-in-left, .fade-in-right, .scale-in"
     );
 
     animatedElements.forEach((el) => observer.observe(el));
 
-    // Also observe the element itself if it has animation classes
     if (
       element.classList.contains("fade-in") ||
       element.classList.contains("fade-in-left") ||

@@ -4,7 +4,7 @@ import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useCountUp } from "../hooks/useCountUp";
 import { Link } from "react-router-dom";
 
-/* ── Animated stat component ── */
+
 function StatCard({ end, suffix, label, icon }) {
   const { count, ref } = useCountUp(end);
   return (
@@ -60,7 +60,7 @@ function Home() {
 
   return (
     <div>
-      {/* ========== HERO ========== */}
+     
       <section className="hero" id="home" ref={sectionRefs.hero}>
         <div className="hero-bg-pattern"></div>
         <div className="container">
@@ -128,7 +128,6 @@ function Home() {
         </div>
       </section>
 
-      {/* ========== IMPACT STATS ========== */}
       <section className="impact" ref={sectionRefs.impact}>
         <div className="container">
           <div className="row">
@@ -140,7 +139,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ========== ABOUT / MISSION ========== */}
+      
       <section className="about-home" id="about" ref={sectionRefs.about}>
         <div className="container">
           <div className="row align-items-center">
@@ -215,7 +214,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ========== OUR WORK ========== */}
+      
       <section className="work" id="work" ref={sectionRefs.work}>
         <div className="container">
           <div className="section-header fade-in">
@@ -273,7 +272,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ========== CAMPAIGNS ========== */}
+      
       <section className="campaigns" id="campaigns" ref={sectionRefs.campaigns}>
         <div className="container">
           <div className="section-header fade-in">
@@ -351,7 +350,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ========== SUCCESS STORIES ========== */}
+      
       <section className="stories" ref={sectionRefs.stories}>
         <div className="container">
           <div className="section-header fade-in">
@@ -405,7 +404,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ========== EVENTS ========== */}
+      
       <section className="events" id="events" ref={sectionRefs.events}>
         <div className="container">
           <div className="row align-items-end mb-5">
@@ -467,7 +466,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ========== DONATE ========== */}
+   
       <section className="donate-section" id="donate" ref={sectionRefs.donate}>
         <div className="container">
           <div className="donate-wrapper">
@@ -548,7 +547,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ========== CTA / VOLUNTEER ========== */}
+      
       <section className="cta" id="volunteer">
         <div className="container">
         <div className="cta-box">

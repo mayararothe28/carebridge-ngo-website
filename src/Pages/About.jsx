@@ -12,7 +12,7 @@ function About() {
 
   return (
     <main className="about-page">
-      {/* ========== HERO ========== */}
+      
       <section className="about-hero" ref={sectionRefs.hero}>
         <div className="container">
           <div className="row align-items-center">
@@ -57,7 +57,6 @@ function About() {
         </div>
       </section>
 
-      {/* ========== MISSION & STORY ========== */}
       <section className="about-mission" id="mission" ref={sectionRefs.mission}>
         <div className="container">
           <div className="row align-items-center">
@@ -118,7 +117,7 @@ function About() {
         </div>
       </section>
 
-      {/* ========== VALUES ========== */}
+      
       <section className="about-values bg-light" ref={sectionRefs.values}>
         <div className="container">
           <div className="section-header fade-in">
@@ -167,7 +166,7 @@ function About() {
         </div>
       </section>
 
-      {/* ========== MEET THE TEAM ========== */}
+      
       <section className="about-team" id="team" ref={sectionRefs.team}>
         <div className="container">
           <div className="section-header fade-in">
@@ -222,7 +221,6 @@ function About() {
         </div>
       </section>
 
-      {/* ========== CTA ========== */}
       <section className="about-cta" ref={sectionRefs.cta}>
         <div className="container">
           <div className="about-cta-content fade-in">

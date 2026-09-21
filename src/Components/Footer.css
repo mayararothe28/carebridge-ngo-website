@@ -1,11 +1,10 @@
-/* ===== FOOTER ===== */
+
 
 .site-footer {
   background: linear-gradient(170deg, #173b2b 0%, #145c38 50%, #198754 100%);
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Newsletter */
 .footer-newsletter {
   padding: 50px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -248,7 +247,7 @@
   transform: translateY(calc(-50% - 2px));
 }
 
-/* ===== RESPONSIVE ===== */
+
 
 @media (max-width: 991px) {
   .newsletter-form {
