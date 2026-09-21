@@ -24,7 +24,13 @@ export function useScrollAnimation(threshold = 0.15) {
       ".fade-in, .fade-in-left, .fade-in-right, .scale-in"
     );
 
-    animatedElements.forEach((el) => observer.observe(el));
+    animatedElements.forEach((el) => {
+      observer.observe(el);
+      // Fallback timer to prevent permanent blank screens
+      setTimeout(() => {
+        el.classList.add("visible");
+      }, 500);
+    });
 
     if (
       element.classList.contains("fade-in") ||
@@ -33,6 +39,9 @@ export function useScrollAnimation(threshold = 0.15) {
       element.classList.contains("scale-in")
     ) {
       observer.observe(element);
+      setTimeout(() => {
+        element.classList.add("visible");
+      }, 500);
     }
 
     return () => observer.disconnect();

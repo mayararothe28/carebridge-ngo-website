@@ -74,7 +74,7 @@ function Blogs() {
   return (
     <main className="blogs-page">
       {/* Hero Section */}
-      <section className="blogs-hero fade-in" ref={sectionRefs.hero}>
+      <section className="blogs-hero" ref={sectionRefs.hero}>
         <div className="container text-center">
           <span className="section-label">Our Blog</span>
           <h1>Insights, Stories & Impact</h1>
@@ -91,7 +91,7 @@ function Blogs() {
           <div className="row">
             {blogPosts.map((blog, i) => (
               <div className="col-md-6 col-lg-4 mb-5" key={blog.id}>
-                <div className={`blog-card fade-in stagger-${(i % 3) + 1}`}>
+                <div className="blog-card">
                   <div className="blog-card-img">
                     <img src={blog.img} alt={blog.title} />
                     <span className="blog-category">{blog.category}</span>
