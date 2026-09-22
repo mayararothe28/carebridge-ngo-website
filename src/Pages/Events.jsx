@@ -15,7 +15,7 @@ function Events() {
       time: "10:00 AM - 4:00 PM",
       location: "Community Center, Mumbai",
       desc: "Join us in distributing nutritious food to families and children in need across Mumbai district.",
-      img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
+      img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ function Events() {
       time: "11:00 AM - 3:00 PM",
       location: "Zilla Parishad School, Mumbai",
       desc: "Help children learn through creative and engaging educational activities in local communities.",
-      img: "https://images.unsplash.com/photo-1524069290683-0457abfac42c?auto=format&fit=crop&w=800&q=80",
+      img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ function Events() {
       time: "09:00 AM - 5:00 PM",
       location: "CareBridge Main Hall, Mumbai",
       desc: "Free health checkups and awareness sessions for communities in partnership with local hospitals.",
-      img: "https://images.unsplash.com/photo-1576091160550-2173eca0237e?auto=format&fit=crop&w=800&q=80",
+      img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
     },
   ];
 

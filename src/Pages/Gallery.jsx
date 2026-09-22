@@ -30,7 +30,7 @@ function Gallery() {
       title: "Every Child Deserves a Chance",
     },
     {
-      image: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=85",
       category: "Food Support",
       title: "Sharing Food, Sharing Hope",
     },
@@ -60,7 +60,7 @@ function Gallery() {
       title: "People Who Care",
     },
     {
-      image: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=85",
       category: "Education",
       title: "Learning Without Limits",
     },

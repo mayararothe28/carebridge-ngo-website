@@ -7,7 +7,7 @@ function EventDetails() {
 
   const eventsList = {
     "1": {
-      img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+      img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=80",
       title: "Community Food Drive",
       date: "Oct 15, 2026",
       time: "10:00 AM - 4:00 PM",
@@ -20,7 +20,7 @@ function EventDetails() {
       ]
     },
     "2": {
-      img: "https://images.unsplash.com/photo-1524069290683-0457abfac42c?auto=format&fit=crop&w=1200&q=80",
+      img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
       title: "Education Workshop",
       date: "Oct 22, 2026",
       time: "11:00 AM - 3:00 PM",
@@ -33,7 +33,7 @@ function EventDetails() {
       ]
     },
     "3": {
-      img: "https://images.unsplash.com/photo-1576091160550-2173eca0237e?auto=format&fit=crop&w=1200&q=80",
+      img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
       title: "Health Awareness Camp",
       date: "Oct 30, 2026",
       time: "09:00 AM - 5:00 PM",
