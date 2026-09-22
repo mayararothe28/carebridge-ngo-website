@@ -104,7 +104,7 @@ function Footer() {
                 <li><Link to="/work">Education</Link></li>
                 <li><Link to="/work">Food Support</Link></li>
                 <li><Link to="/work">Healthcare</Link></li>
-                <li><Link to="/register">Volunteer</Link></li>
+                <li><Link to="/volunteer">Volunteer</Link></li>
               </ul>
             </div>
 
@@ -113,7 +113,7 @@ function Footer() {
               <ul>
                 <li><Link to="/campaigns">Campaigns</Link></li>
                 <li><Link to="/events">Events</Link></li>
-                <li><Link to="/register">Volunteer</Link></li>
+                <li><Link to="/volunteer">Volunteer</Link></li>
                 <li><Link to="/blogs">Blogs</Link></li>
                 <li><Link to="/gallery">Gallery</Link></li>
               </ul>

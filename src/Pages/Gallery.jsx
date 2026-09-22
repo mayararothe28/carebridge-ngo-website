@@ -154,7 +154,7 @@ function Gallery() {
           <div className="gallery-cta-box fade-in">
             <span>Be Part of the Journey</span>
             <h2>Every helping hand creates a better tomorrow.</h2>
-            <a href="/register" className="gallery-cta-btn">
+            <a href="/volunteer" className="gallery-cta-btn">
               <i className="bi bi-people-fill"></i> Become a Volunteer
             </a>
           </div>

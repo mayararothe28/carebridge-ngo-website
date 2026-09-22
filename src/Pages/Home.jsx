@@ -81,10 +81,10 @@ function Home() {
                   activities. Every small action creates a lasting impact.
                 </p>
                 <div className="hero-btns">
-                  <a href="#donate" className="btn-cta-primary">
+                  <Link to="/donate" className="btn-cta-primary">
                     <i className="bi bi-heart-fill"></i> Donate Now
-                  </a>
-                  <Link to="/register" className="btn-cta-outline">
+                  </Link>
+                  <Link to="/volunteer" className="btn-cta-outline">
                     Become a Volunteer
                     <i className="bi bi-arrow-right"></i>
                   </Link>
@@ -187,9 +187,9 @@ function Home() {
                     <span>Volunteer-Powered Impact</span>
                   </div>
                 </div>
-                <a href="/about" className="btn-learn-more">
+                <Link to="/about" className="btn-learn-more">
                   Learn More About Us <i className="bi bi-arrow-right"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

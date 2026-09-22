@@ -70,7 +70,7 @@ function Events() {
                       <span><i className="bi bi-geo-alt"></i> {event.location}</span>
                     </div>
                     <p>{event.desc}</p>
-                    <a href="/register" className="btn-event-join">
+                    <a href="/volunteer" className="btn-event-join">
                       Register as Volunteer <i className="bi bi-arrow-right"></i>
                     </a>
                   </div>

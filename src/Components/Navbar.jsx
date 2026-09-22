@@ -93,7 +93,7 @@ function Navbar() {
               <Link to="/volunteer" className="btn-register">
                 Volunteer
               </Link>
-              <Link to="/register" className="btn-donate px-4">
+              <Link to="/volunteer" className="btn-donate px-4">
                 <i className="bi bi-person-circle me-1"></i> Sign In
               </Link>
             </div>
@@ -183,7 +183,7 @@ function Navbar() {
           <Link to="/volunteer" className="btn-register w-100 text-center mb-3">
             Become a Volunteer
           </Link>
-          <Link to="/register" className="btn-donate w-100 text-center justify-content-center">
+          <Link to="/volunteer" className="btn-donate w-100 text-center justify-content-center">
             <i className="bi bi-person-circle me-1"></i> Sign In
           </Link>
         </div>

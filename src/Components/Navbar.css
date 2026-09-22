@@ -59,7 +59,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -70,7 +70,7 @@
   position: relative;
   text-decoration: none;
   color: var(--text-body);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
   transition: color 0.3s ease;
@@ -83,14 +83,14 @@
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: var(--primary);
+  background: var(--accent);
   transition: width 0.3s ease;
   border-radius: 2px;
 }
 
 .site-nav-list a:hover,
 .site-nav-list a.active {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .site-nav-list a:hover::after,
@@ -132,7 +132,7 @@
   align-items: center;
   text-decoration: none;
   background: transparent;
-  color: var(--primary);
+  color: var(--accent);
   padding: 10px 22px;
   border-radius: var(--radius-sm);
   font-size: 14px;
@@ -143,7 +143,7 @@
 }
 
 .btn-register:hover {
-  background: var(--primary);
+  background: var(--accent);
   color: white;
   transform: translateY(-1px);
 }
@@ -259,7 +259,7 @@
 
 .mobile-nav a:hover,
 .mobile-nav a.active {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .mobile-menu-actions {

@@ -115,7 +115,7 @@ function Work() {
             <Link to="/donate" className="btn-cta-primary">
               <i className="bi bi-heart-fill"></i> Donate Now
             </Link>
-            <Link to="/register" className="btn-cta-outline">
+            <Link to="/volunteer" className="btn-cta-outline">
               Join as Volunteer
             </Link>
           </div>

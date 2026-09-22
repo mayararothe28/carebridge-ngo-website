@@ -234,7 +234,7 @@ function About() {
               <a href="/donate" className="btn-cta-white">
                 <i className="bi bi-heart-fill"></i> Donate Now
               </a>
-              <a href="/register" className="btn-cta-outline-white">
+              <a href="/volunteer" className="btn-cta-outline-white">
                 Become a Volunteer
               </a>
             </div>
