@@ -101,7 +101,7 @@ function Blogs() {
     },
     {
       id: 9,
-      img: "https://images.unsplash.com/photo-1529156069898-49953eb1b5b6?auto=format&fit=crop&w=800&q=80",
+      img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80",
       category: "Awareness",
       date: "May 20, 2026",
       title: "Mental Health Awareness Workshop",

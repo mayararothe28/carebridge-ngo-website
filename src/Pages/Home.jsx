@@ -147,7 +147,7 @@ function Home() {
             <div className="col-lg-6 fade-in-left mb-4 mb-lg-0">
               <div className="about-img-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=900&q=80"
+                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80"
                   alt="CareBridge volunteers"
                   className="about-img"
                 />
@@ -402,21 +402,21 @@ function Home() {
           <div className="row horizontal-scroll-mobile">
             {[
               {
-                img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80",
+                img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
                 title: "Community Food Drive",
                 desc: "Join us in distributing nutritious food to families and children in need across Mumbai district.",
                 date: "15",
                 month: "Oct",
               },
               {
-                img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+                img: "https://images.unsplash.com/photo-1524069290683-0457abfac42c?auto=format&fit=crop&w=800&q=80",
                 title: "Education Workshop",
                 desc: "Help children learn through creative and engaging educational activities in local communities.",
                 date: "22",
                 month: "Oct",
               },
               {
-                img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+                img: "https://images.unsplash.com/photo-1576091160550-2173eca0237e?auto=format&fit=crop&w=800&q=80",
                 title: "Health Awareness Camp",
                 desc: "Free health checkups and awareness sessions for communities in partnership with local hospitals.",
                 date: "30",

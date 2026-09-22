@@ -14,7 +14,7 @@
 }
 
 .contact-details i.text-accent {
-  color: #ffc107 !important; /* Yellow for better contrast */
+  color: var(--accent) !important; /* Yellow for better contrast */
 }
 
 .social-links .social-icon {
