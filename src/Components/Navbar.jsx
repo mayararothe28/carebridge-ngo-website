@@ -45,6 +45,11 @@ function Navbar() {
 
             <ul className="site-nav-list">
               <li>
+                <Link to="/" className={isActive("/") ? "active" : ""}>
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link to="/about" className={isActive("/about") ? "active" : ""}>
                   About
                 </Link>

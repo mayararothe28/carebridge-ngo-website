@@ -215,28 +215,28 @@ function Home() {
                 title: "Child Education",
                 desc: "Books, learning materials, school supplies, and tutoring support for children who need it most.",
                 icon: "bi-book-half",
-                link: "/work#education"
+                link: "/work/education"
               },
               {
                 img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
                 title: "Food Support",
                 desc: "Nutritious meals and essential food packages for families facing difficult circumstances.",
                 icon: "bi-cup-hot",
-                link: "/work#food"
+                link: "/work/food"
               },
               {
                 img: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80",
                 title: "Healthcare",
                 desc: "Medical assistance, health awareness camps, and access to essential healthcare services.",
                 icon: "bi-hospital",
-                link: "/work#health"
+                link: "/work/health"
               },
               {
                 img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80",
                 title: "Volunteering",
                 desc: "Opportunities to contribute your time, skills and energy to create meaningful change.",
                 icon: "bi-people",
-                link: "/work#community"
+                link: "/work/community"
               },
             ].map((item, i) => (
               <div className="col-md-6 col-lg-3 mb-4" key={i}>
@@ -424,7 +424,7 @@ function Home() {
               },
             ].map((e, i) => (
               <div className="col-md-6 col-lg-4 mb-4" key={i}>
-                <Link to="/events" className={`event-card fade-in stagger-${i + 1} text-decoration-none d-block text-dark`}>
+                <Link to={`/event/${i + 1}`} className={`event-card fade-in stagger-${i + 1} text-decoration-none d-block text-dark`}>
                   <div className="event-card-img">
                     <img src={e.img} alt={e.title} />
                     <div className="event-date">

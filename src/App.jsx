@@ -10,10 +10,12 @@ import Work from "./Pages/Work";
 import Campaigns from "./Pages/Campaigns";
 import CampaignDetails from "./Pages/CampaignDetails";
 import Events from "./Pages/Events";
+import EventDetails from "./Pages/EventDetails";
 import Blogs from "./Pages/Blogs";
 import BlogDetails from "./Pages/BlogDetails";
 import Contact from "./Pages/Contact";
 import Donate from "./Pages/Donate";
+import WorkDetails from "./Pages/WorkDetails";
 
 import {
   BrowserRouter as Router,
@@ -42,9 +44,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/work" element={<Work />} />
+        <Route path="/work/:id" element={<WorkDetails />} />
         <Route path="/campaigns" element={<Campaigns />} />
         <Route path="/campaign/:id" element={<CampaignDetails />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/event/:id" element={<EventDetails />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/gallery" element={<Gallery />} />
