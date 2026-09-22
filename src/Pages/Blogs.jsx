@@ -1,11 +1,21 @@
+import { useRef } from "react";
+import "./Blogs.css";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
-import "./Blogs.css";
 
 function Blogs() {
   const sectionRefs = {
     hero: useScrollAnimation(),
     grid: useScrollAnimation(),
+  };
+
+  const trackRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (trackRef.current) {
+      const scrollAmount = trackRef.current.offsetWidth;
+      trackRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
   };
 
   const blogPosts = [
@@ -42,7 +52,7 @@ function Blogs() {
     {
       id: 4,
       img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80",
-      category: "Relief",
+      category: "Campaigns",
       date: "August 22, 2026",
       title: "Preparing for the Winter Drive 2026",
       desc: "As temperatures drop, our team is gearing up to distribute over 10,000 blankets. Here's how our logistics and volunteer teams are preparing.",
@@ -68,6 +78,36 @@ function Blogs() {
       desc: "We look back at the incredible milestones achieved this year. Thanks to our donors and volunteers, we reached over 50,000 families.",
       author: "CareBridge Admin",
       authorImg: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=50&q=80"
+    },
+    {
+      id: 7,
+      img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+      category: "Infrastructure",
+      date: "June 30, 2026",
+      title: "New Community Center Inauguration",
+      desc: "Our newest community center in Dharavi is now open. It features a library, computer lab, and a safe space for after-school programs.",
+      author: "Satyam Sharma",
+      authorImg: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=50&q=80"
+    },
+    {
+      id: 8,
+      img: "https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&w=800&q=80",
+      category: "Environment",
+      date: "June 05, 2026",
+      title: "World Environment Day Tree Plantation",
+      desc: "Over 500 volunteers joined us to plant 2,000 saplings across the city. Read about our ongoing commitment to a greener Mumbai.",
+      author: "Priya Patel",
+      authorImg: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=50&q=80"
+    },
+    {
+      id: 9,
+      img: "https://images.unsplash.com/photo-1529156069898-49953eb1b5b6?auto=format&fit=crop&w=800&q=80",
+      category: "Awareness",
+      date: "May 20, 2026",
+      title: "Mental Health Awareness Workshop",
+      desc: "Breaking the stigma around mental health in marginalized communities. Insights from our recent panel of expert psychologists.",
+      author: "Dr. Amit Kumar",
+      authorImg: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=50&q=80"
     }
   ];
 
@@ -87,42 +127,46 @@ function Blogs() {
 
       {/* Blogs Grid */}
       <section className="blogs-grid-section bg-light" ref={sectionRefs.grid}>
-        <div className="container">
-          <div className="row">
-            {blogPosts.map((blog, i) => (
-              <div className="col-md-6 col-lg-4 mb-5" key={blog.id}>
-                <div className="blog-card">
-                  <div className="blog-card-img">
-                    <img src={blog.img} alt={blog.title} />
-                    <span className="blog-category">{blog.category}</span>
-                  </div>
-                  <div className="blog-card-body">
-                    <span className="blog-date">
-                      <i className="bi bi-calendar3"></i> {blog.date}
-                    </span>
-                    <h3>{blog.title}</h3>
-                    <p>{blog.desc}</p>
-                    
-                    <div className="blog-footer">
-                      <div className="blog-author">
-                        <img src={blog.authorImg} alt={blog.author} />
-                        <span>{blog.author}</span>
-                      </div>
-                      <Link to="#" className="read-more-link">
-                        Read More <i className="bi bi-arrow-right"></i>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="container position-relative">
+          <button className="custom-carousel-arrow left" onClick={() => scroll('left')}>
+            <i className="bi bi-chevron-left"></i>
+          </button>
           
-          <div className="text-center mt-4">
-            <button className="btn btn-outline-success px-4 py-2 fw-bold">
-              Load More Articles
-            </button>
+          <div className="custom-carousel-wrapper">
+            <div className="custom-carousel-track" ref={trackRef}>
+              {blogPosts.map((blog) => (
+                <div className="custom-carousel-item" key={blog.id}>
+                  <Link to={`/blog/${blog.id}`} className="blog-card text-decoration-none text-dark d-block">
+                    <div className="blog-card-img">
+                      <img src={blog.img} alt={blog.title} />
+                      <span className="blog-category">{blog.category}</span>
+                    </div>
+                    <div className="blog-card-body">
+                      <span className="blog-date">
+                        <i className="bi bi-calendar3"></i> {blog.date}
+                      </span>
+                      <h3>{blog.title}</h3>
+                      <p className="text-muted">{blog.desc}</p>
+                      
+                      <div className="blog-footer">
+                        <div className="blog-author">
+                          <img src={blog.authorImg} alt={blog.author} />
+                          <span>{blog.author}</span>
+                        </div>
+                        <span className="read-more-link fw-bold" style={{ color: "var(--primary)" }}>
+                          Read More <i className="bi bi-arrow-right"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
+
+          <button className="custom-carousel-arrow right" onClick={() => scroll('right')}>
+            <i className="bi bi-chevron-right"></i>
+          </button>
         </div>
       </section>
     </main>

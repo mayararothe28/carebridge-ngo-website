@@ -130,7 +130,7 @@ function Home() {
 
       <section className="impact" ref={sectionRefs.impact}>
         <div className="container">
-          <div className="row">
+          <div className="row horizontal-scroll-mobile">
             <StatCard end={500} suffix="+" label="Children Educated" icon="bi-mortarboard-fill" />
             <StatCard end={10000} suffix="+" label="Meals Provided" icon="bi-cup-hot-fill" />
             <StatCard end={2000} suffix="+" label="Healthcare Support" icon="bi-hospital-fill" />
@@ -143,26 +143,8 @@ function Home() {
       <section className="about-home" id="about" ref={sectionRefs.about}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-6 mb-4 mb-lg-0 fade-in-left">
-              <span className="section-label">Our Work</span>
-              <h2>Empowering Communities Through Focused Action</h2>
-              <p>
-                Our initiatives are designed to address the root causes of poverty
-                and inequality. By focusing on education, health, and sustainable
-                livelihoods, we aim to create long-lasting, transformative change.
-              </p>
-              <ul className="work-list">
-                <li><i className="bi bi-check2-circle"></i> Access to Quality Education</li>
-                <li><i className="bi bi-check2-circle"></i> Primary Healthcare Services</li>
-                <li><i className="bi bi-check2-circle"></i> Food & Nutrition Security</li>
-                <li><i className="bi bi-check2-circle"></i> Sustainable Livelihood Training</li>
-              </ul>
-              <Link to="/our-work" className="btn-cta-primary">
-  Explore Our Impact <i className="bi bi-arrow-right"></i>
-</Link>
-            </div>
-
-            <div className="col-lg-6 fade-in-right">
+            
+            <div className="col-lg-6 fade-in-left mb-4 mb-lg-0">
               <div className="about-img-wrapper">
                 <img
                   src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=900&q=80"
@@ -226,46 +208,47 @@ function Home() {
             </p>
           </div>
 
-          <div className="row">
+          <div className="row horizontal-scroll-mobile">
             {[
               {
                 img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
                 title: "Child Education",
                 desc: "Books, learning materials, school supplies, and tutoring support for children who need it most.",
                 icon: "bi-book-half",
+                link: "/work#education"
               },
               {
                 img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
                 title: "Food Support",
                 desc: "Nutritious meals and essential food packages for families facing difficult circumstances.",
                 icon: "bi-cup-hot",
+                link: "/work#food"
               },
               {
                 img: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80",
                 title: "Healthcare",
                 desc: "Medical assistance, health awareness camps, and access to essential healthcare services.",
                 icon: "bi-hospital",
+                link: "/work#health"
               },
               {
                 img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80",
                 title: "Volunteering",
                 desc: "Opportunities to contribute your time, skills and energy to create meaningful change.",
                 icon: "bi-people",
+                link: "/work#community"
               },
             ].map((item, i) => (
               <div className="col-md-6 col-lg-3 mb-4" key={i}>
-                <div className={`work-card fade-in stagger-${i + 1}`}>
+                <Link to={item.link} className={`work-card fade-in stagger-${i + 1} text-decoration-none d-block`}>
                   <div className="work-card-img">
                     <img src={item.img} alt={item.title} />
-                    <div className="work-card-icon">
-                      <i className={`bi ${item.icon}`}></i>
-                    </div>
                   </div>
-                  <div className="work-card-body">
+                  <div className="work-card-body text-dark">
                     <h3>{item.title}</h3>
                     <p>{item.desc}</p>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -283,7 +266,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="row">
+          <div className="row horizontal-scroll-mobile">
             {[
               {
                 img: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=800&q=80",
@@ -314,14 +297,14 @@ function Home() {
               },
             ].map((c, i) => (
               <div className="col-md-6 col-lg-4 mb-4" key={i}>
-                <div className={`campaign-card fade-in stagger-${i + 1}`}>
+                <Link to={`/campaign/${i + 1}`} className={`campaign-card fade-in stagger-${i + 1} text-decoration-none d-block text-dark`}>
                   <div className="campaign-img">
                     <img src={c.img} alt={c.title} />
                     <span className="campaign-badge">{c.tag}</span>
                   </div>
-                  <div className="campaign-body">
+                  <div className="campaign-body text-dark">
                     <h3>{c.title}</h3>
-                    <p>{c.desc}</p>
+                    <p className="text-muted">{c.desc}</p>
                     <div className="campaign-progress">
                       <div className="progress-text">
                         <span>
@@ -338,12 +321,11 @@ function Home() {
                         ></div>
                       </div>
                     </div>
-                    <Link to={`/campaign/${i + 1}`} className="campaign-btn">
-  <i className="bi bi-heart"></i>
-  Support Campaign
-</Link>
+                    <div className="campaign-btn" style={{pointerEvents: 'none'}}>
+                      <i className="bi bi-heart"></i> Support Campaign
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -360,7 +342,7 @@ function Home() {
             </h2>
           </div>
 
-          <div className="row">
+          <div className="row horizontal-scroll-mobile">
             {[
               {
                 img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=400&q=80",
@@ -382,15 +364,15 @@ function Home() {
               },
             ].map((blog, i) => (
               <div className="col-lg-4 mb-4" key={i}>
-                <div className={`story-card fade-in stagger-${i + 1}`} style={{ padding: 0, overflow: "hidden", display: "flex", flexDirection: "column", height: "100%" }}>
+                <Link to={`/blog/${i + 1}`} className={`story-card fade-in stagger-${i + 1} text-decoration-none d-block text-dark`} style={{ padding: 0, overflow: "hidden", display: "flex", flexDirection: "column", height: "100%" }}>
                   <img src={blog.img} alt={blog.title} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
                   <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
                     <span style={{ fontSize: "12px", color: "var(--text-muted)", marginBottom: "10px" }}><i className="bi bi-calendar3"></i> {blog.date}</span>
                     <h4 style={{ fontSize: "18px", fontWeight: "700", marginBottom: "10px" }}>{blog.title}</h4>
                     <p style={{ fontSize: "14px", color: "var(--text-muted)", flexGrow: 1 }}>{blog.desc}</p>
-                    <Link to={`/blog/${i + 1}`} style={{ fontWeight: "bold", color: "var(--primary)", textDecoration: "none" }}>Read More <i className="bi bi-arrow-right"></i></Link>
+                    <span style={{ fontWeight: "bold", color: "var(--primary)" }}>Read More <i className="bi bi-arrow-right"></i></span>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -417,7 +399,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="row">
+          <div className="row horizontal-scroll-mobile">
             {[
               {
                 img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80",
@@ -442,7 +424,7 @@ function Home() {
               },
             ].map((e, i) => (
               <div className="col-md-6 col-lg-4 mb-4" key={i}>
-                <div className={`event-card fade-in stagger-${i + 1}`}>
+                <Link to="/events" className={`event-card fade-in stagger-${i + 1} text-decoration-none d-block text-dark`}>
                   <div className="event-card-img">
                     <img src={e.img} alt={e.title} />
                     <div className="event-date">
@@ -452,12 +434,12 @@ function Home() {
                   </div>
                   <div className="event-card-body">
                     <h3>{e.title}</h3>
-                    <p>{e.desc}</p>
-                    <Link to="/events" className="event-link">
+                    <p className="text-muted">{e.desc}</p>
+                    <span className="event-link" style={{ fontWeight: "bold", color: "var(--primary)" }}>
                       Learn More <i className="bi bi-arrow-right"></i>
-                    </Link>
+                    </span>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -465,85 +447,6 @@ function Home() {
       </section>
 
    
-      <section className="donate-section" id="donate" ref={sectionRefs.donate}>
-        <div className="container">
-          <div className="donate-wrapper">
-            <div className="row align-items-center">
-              <div className="col-lg-6 fade-in-left">
-                <div className="donate-text">
-                  <span className="section-label light">Make a Donation</span>
-                  <h2>Your Contribution Can Change Lives</h2>
-                  <p>
-                    Every rupee you donate goes directly to supporting children's
-                    education, providing meals, and healthcare for communities in
-                    need. Choose an amount and make a difference today.
-                  </p>
-                  <div className="donate-features">
-                    <div>
-                      <i className="bi bi-shield-check"></i>
-                      <span>100% Secure & Transparent</span>
-                    </div>
-                    <div>
-                      <i className="bi bi-receipt"></i>
-                      <span>Tax Deductible (80G)</span>
-                    </div>
-                    <div>
-                      <i className="bi bi-arrow-repeat"></i>
-                      <span>One-time or Monthly</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-6 fade-in-right">
-                <div className="donate-card">
-                  {donateSuccess ? (
-                    <div className="donate-success-msg text-center">
-                      <i className="bi bi-check-circle-fill"></i>
-                      <h3>Thank You!</h3>
-                      <p>Your generous donation of <strong>₹{donateAmount.toLocaleString()}</strong> has been recorded. Together we are making a difference!</p>
-                    </div>
-                  ) : (
-                    <>
-                      <h3>Choose an Amount</h3>
-                      <div className="donate-amounts">
-                        {[500, 1000, 2500, 5000].map((amt) => (
-                          <button
-                            key={amt}
-                            className={`amount-btn ${donateAmount === amt && !customAmount ? "active" : ""}`}
-                            onClick={() => handleAmountClick(amt)}
-                          >
-                            ₹{amt.toLocaleString()}
-                          </button>
-                        ))}
-                      </div>
-                      <div className="donate-custom">
-                        <label>Or enter custom amount</label>
-                        <div className="custom-input">
-                          <span>₹</span>
-                          <input
-                            type="number"
-                            placeholder="Enter amount"
-                            value={customAmount}
-                            onChange={handleCustomChange}
-                          />
-                        </div>
-                      </div>
-                      <button className="donate-submit" onClick={handleDonate}>
-                        <i className="bi bi-heart-fill"></i> Donate ₹{donateAmount.toLocaleString()}
-                      </button>
-                      <p className="donate-note">
-                        <i className="bi bi-lock-fill"></i> Your payment info is safe
-                        and secure.
-                      </p>
-                    </>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       
       <section className="cta" id="volunteer">
@@ -559,10 +462,10 @@ function Home() {
               word. Together, we can build a better future for everyone.
             </p>
             <div className="cta-btns">
-              <a href="#donate" className="btn-cta-white">
+              <Link to="/donate" className="btn-cta-white text-decoration-none">
                 <i className="bi bi-heart-fill"></i> Donate Now
-              </a>
-              <Link to="/register" className="btn-cta-outline-white">
+              </Link>
+              <Link to="/volunteer" className="btn-cta-outline-white text-decoration-none">
                 Become a Volunteer <i className="bi bi-arrow-right"></i>
               </Link>
             </div>

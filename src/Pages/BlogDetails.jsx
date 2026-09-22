@@ -157,7 +157,21 @@ function BlogDetails() {
             <div className="col-lg-8">
               <div className="blog-text-content" dangerouslySetInnerHTML={{ __html: blog.content }}></div>
               
-              <div className="blog-share">
+              {/* Premium Inline Donation CTA */}
+              <div className="blog-inline-donate mt-5">
+                <div className="donate-icon-wrapper">
+                  <i className="bi bi-heart-pulse-fill"></i>
+                </div>
+                <div className="donate-text">
+                  <h4>Inspired by our work?</h4>
+                  <p>Your contribution helps us write more success stories and bring hope to communities in need.</p>
+                </div>
+                <Link to="/donate" className="btn-inline-donate">
+                  Make a Donation <i className="bi bi-arrow-right"></i>
+                </Link>
+              </div>
+
+              <div className="blog-share mt-5">
                 <span>Share this article:</span>
                 <div className="share-buttons">
                   <button className="btn-share fb"><i className="bi bi-facebook"></i></button>

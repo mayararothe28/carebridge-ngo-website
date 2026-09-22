@@ -99,46 +99,10 @@ function CampaignDetails() {
                   </div>
                 </div>
 
-                <div className="cd-donate-form">
-                  {donateSuccess ? (
-                    <div className="donate-success-msg text-center mt-4">
-                      <i className="bi bi-check-circle-fill"></i>
-                      <h3 className="text-success mt-3 mb-2">Thank You!</h3>
-                      <p>Your donation of <strong>₹{donateAmount.toLocaleString()}</strong> towards this campaign has been recorded.</p>
-                    </div>
-                  ) : (
-                    <>
-                      <h4>Select Amount</h4>
-                      <div className="amount-options">
-                        {[500, 1000, 2000, 5000].map((amt) => (
-                          <button
-                            key={amt}
-                            className={`amount-btn ${donateAmount === amt && !customAmount ? "active" : ""}`}
-                            onClick={() => handleAmountClick(amt)}
-                          >
-                            ₹{amt.toLocaleString()}
-                          </button>
-                        ))}
-                      </div>
-                      
-                      <div className="cd-custom-amount mt-3">
-                        <label>Custom Amount</label>
-                        <div className="custom-input-group mt-1">
-                          <span className="currency-symbol">₹</span>
-                          <input 
-                            type="number" 
-                            placeholder="Enter amount"
-                            value={customAmount}
-                            onChange={handleCustomChange} 
-                          />
-                        </div>
-                      </div>
-
-                      <button className="btn-donate-large w-100 mt-4" onClick={handleDonate}>
-                        Donate ₹{donateAmount.toLocaleString()} <i className="bi bi-heart-fill ms-2"></i>
-                      </button>
-                    </>
-                  )}
+                <div className="cd-donate-form mt-4">
+                  <Link to="/donate" className="btn-donate-large w-100 d-flex justify-content-center align-items-center text-decoration-none">
+                    Donate to this Campaign <i className="bi bi-heart-fill ms-2"></i>
+                  </Link>
                 </div>
                 
                 <div className="secure-payment">

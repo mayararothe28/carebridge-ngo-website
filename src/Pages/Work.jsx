@@ -99,9 +99,6 @@ function Work() {
                     ))}
                   </div>
                   
-                  <Link to="/campaigns" className="btn-theme-link">
-                    View Related Campaigns <i className="bi bi-arrow-right"></i>
-                  </Link>
                 </div>
               </div>
             </div>
@@ -115,7 +112,7 @@ function Work() {
           <h2>Ready to Create an Impact?</h2>
           <p>Join us in our mission to uplift communities and transform lives.</p>
           <div className="work-cta-btns">
-            <Link to="/#donate" className="btn-cta-primary">
+            <Link to="/donate" className="btn-cta-primary">
               <i className="bi bi-heart-fill"></i> Donate Now
             </Link>
             <Link to="/register" className="btn-cta-outline">

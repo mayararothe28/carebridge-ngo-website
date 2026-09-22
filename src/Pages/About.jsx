@@ -231,7 +231,7 @@ function About() {
               Every contribution matters in building a better world.
             </p>
             <div className="about-cta-buttons">
-              <a href="/#donate" className="btn-cta-white">
+              <a href="/donate" className="btn-cta-white">
                 <i className="bi bi-heart-fill"></i> Donate Now
               </a>
               <a href="/register" className="btn-cta-outline-white">

@@ -81,12 +81,15 @@ function Navbar() {
               </li>
             </ul>
 
-            <div className="navbar-actions">
-              <Link to="/#donate" className="btn-donate">
+            <div className="navbar-actions d-none d-lg-flex align-items-center gap-3">
+              <Link to="/donate" className="btn-donate">
                 Donate Now
               </Link>
-              <Link to="/register" className="btn-register">
+              <Link to="/volunteer" className="btn-register">
                 Volunteer
+              </Link>
+              <Link to="/register" className="btn-donate px-4">
+                <i className="bi bi-person-circle me-1"></i> Sign In
               </Link>
             </div>
 
@@ -169,11 +172,14 @@ function Navbar() {
         </ul>
 
         <div className="mobile-menu-actions">
-          <Link to="/#donate" className="btn-donate">
+          <Link to="/donate" className="btn-donate w-100 mb-3 text-center justify-content-center">
             <i className="bi bi-heart-fill"></i> Donate Now
           </Link>
-          <Link to="/register" className="btn-register">
+          <Link to="/volunteer" className="btn-register w-100 text-center mb-3">
             Become a Volunteer
+          </Link>
+          <Link to="/register" className="btn-donate w-100 text-center justify-content-center">
+            <i className="bi bi-person-circle me-1"></i> Sign In
           </Link>
         </div>
       </div>

@@ -1,563 +1,168 @@
-
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Donate.css";
 
 function Donate() {
-  const [amount, setAmount] = useState(1000);
+  const [amount, setAmount] = useState("1000");
   const [customAmount, setCustomAmount] = useState("");
-  const [purpose, setPurpose] = useState("Child Education");
-  const [showMessage, setShowMessage] = useState(false);
-  const [phone, setPhone] = useState("");
+  const [donationType, setDonationType] = useState("monthly");
 
-  const handleAmount = (value) => {
-    setAmount(value);
+  const handleAmountClick = (val) => {
+    setAmount(val);
     setCustomAmount("");
-    setShowMessage(false);
   };
 
   const handleCustomAmount = (e) => {
-    const value = e.target.value.replace(/\D/g, "");
-
-    setCustomAmount(value);
-    setAmount(Number(value));
-    setShowMessage(false);
-  };
-
-  const handleDonate = (e) => {
-    e.preventDefault();
-
-
-    if (!amount || amount <= 0) {
-      alert("Please select or enter a donation amount.");
-      return;
-    }
-
-   
-    if (!phone || phone.length !== 10) {
-      alert("Enter your mobile number");
-      return;
-    }
-
-  
-    setShowMessage(true);
+    setCustomAmount(e.target.value);
+    setAmount("custom");
   };
 
   return (
-    <div className="donate-page">
-
-     
-      <section className="donate-hero">
-        <div className="donate-hero-content">
-          <span>SUPPORT OUR MISSION</span>
-
-          <h1>
-            Your Small Contribution
-            <br />
-            Can Create a Big Change
-          </h1>
-
-          <p>
-            Your support helps us provide education, food, healthcare
-            and opportunities to communities in need.
-          </p>
-        </div>
-      </section>
-
-
-      
-      <section className="donation-section">
-        <div className="container">
-
-          <div className="donation-heading">
-            <span>MAKE AN IMPACT</span>
-            <h2>Support Our Mission</h2>
-
-            <p>
-              Every contribution brings us one step closer to creating
-              stronger and healthier communities.
-            </p>
-          </div>
-
-
-          <div className="row g-4">
-
-            
-            <div className="col-lg-7">
-
-              <div className="donation-form-card">
-
-                <h3>
-                  <i className="bi bi-heart-fill"></i>
-                  Make a Donation
-                </h3>
-
-                <p className="form-description">
-                  Choose an amount and tell us how you would like
-                  your donation to make an impact.
-                </p>
-
-
+    <main className="donate-page bg-light py-5">
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-lg-10">
+            <div className="donate-wrapper shadow-lg">
+              <div className="row g-0">
                 
-                <form onSubmit={handleDonate}>
-
-                 
-                  <div className="form-group">
-                    <label>Choose Donation Amount</label>
-
-                    <div className="amount-buttons">
-
-                      <button
-                        type="button"
-                        className={
-                          amount === 500 && !customAmount
-                            ? "amount-btn active"
-                            : "amount-btn"
-                        }
-                        onClick={() => handleAmount(500)}
-                      >
-                        ₹500
-                      </button>
-
-                      <button
-                        type="button"
-                        className={
-                          amount === 1000 && !customAmount
-                            ? "amount-btn active"
-                            : "amount-btn"
-                        }
-                        onClick={() => handleAmount(1000)}
-                      >
-                        ₹1,000
-                      </button>
-
-                      <button
-                        type="button"
-                        className={
-                          amount === 2000 && !customAmount
-                            ? "amount-btn active"
-                            : "amount-btn"
-                        }
-                        onClick={() => handleAmount(2000)}
-                      >
-                        ₹2,000
-                      </button>
-
-                      <button
-                        type="button"
-                        className={
-                          amount === 5000 && !customAmount
-                            ? "amount-btn active"
-                            : "amount-btn"
-                        }
-                        onClick={() => handleAmount(5000)}
-                      >
-                        ₹5,000
-                      </button>
-
-                      <button
-                        type="button"
-                        className={
-                          amount === 10000 && !customAmount
-                            ? "amount-btn active"
-                            : "amount-btn"
-                        }
-                        onClick={() => handleAmount(10000)}
-                      >
-                        ₹10,000
-                      </button>
-
+                {/* Left Side: Impact Information */}
+                <div className="col-md-5 donate-info-panel text-white p-5 d-flex flex-column justify-content-between">
+                  <div>
+                    <span className="badge bg-white text-accent mb-3 px-3 py-2 rounded-pill fw-bold">Secure Donation</span>
+                    <h2 className="fw-bold mb-4">Your Contribution Changes Lives</h2>
+                    <p className="mb-4">Every rupee you donate goes directly towards providing education, meals, and healthcare to those who need it the most.</p>
+                    
+                    <ul className="impact-list list-unstyled mt-4">
+                      <li className="mb-3 d-flex align-items-center">
+                        <i className="bi bi-check-circle-fill text-accent me-3 fs-5"></i>
+                        <span><strong>₹500</strong> feeds a child for a week</span>
+                      </li>
+                      <li className="mb-3 d-flex align-items-center">
+                        <i className="bi bi-check-circle-fill text-accent me-3 fs-5"></i>
+                        <span><strong>₹1,000</strong> provides medical supplies</span>
+                      </li>
+                      <li className="mb-3 d-flex align-items-center">
+                        <i className="bi bi-check-circle-fill text-accent me-3 fs-5"></i>
+                        <span><strong>₹5,000</strong> sponsors a child's education</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="trust-badges mt-5">
+                    <p className="small mb-2 opacity-75">100% Secure & Tax Deductible (80G)</p>
+                    <div className="d-flex gap-3 fs-3">
+                      <i className="bi bi-shield-check"></i>
+                      <i className="bi bi-lock-fill"></i>
+                      <i className="bi bi-credit-card-2-front"></i>
                     </div>
+                  </div>
+                </div>
 
-                    <input
-                      type="text"
-                      className="custom-input"
-                      placeholder="Enter custom amount"
-                      value={customAmount}
-                      onChange={handleCustomAmount}
-                      inputMode="numeric"
-                    />
+                {/* Right Side: Donation Form */}
+                <div className="col-md-7 p-5 bg-white">
+                  <h3 className="fw-bold mb-4">Make a Donation</h3>
+                  
+                  {/* Donation Type */}
+                  <div className="donation-type-toggle mb-4">
+                    <button 
+                      className={`btn-toggle ${donationType === 'monthly' ? 'active' : ''}`}
+                      onClick={() => setDonationType('monthly')}
+                    >
+                      Give Monthly
+                    </button>
+                    <button 
+                      className={`btn-toggle ${donationType === 'once' ? 'active' : ''}`}
+                      onClick={() => setDonationType('once')}
+                    >
+                      Give Once
+                    </button>
                   </div>
 
-
-                  <div className="form-group">
-                    <label>Choose Where Your Donation Goes</label>
-
-                    <div className="purpose-grid">
-
+                  {/* Preset Amounts */}
+                  <div className="preset-amounts mb-4">
+                    {['500', '1000', '2500', '5000'].map((val) => (
                       <button
-                        type="button"
-                        className={
-                          purpose === "Child Education"
-                            ? "purpose-card active"
-                            : "purpose-card"
-                        }
-                        onClick={() => {
-                          setPurpose("Child Education");
-                          setShowMessage(false);
-                        }}
+                        key={val}
+                        className={`btn-amount ${amount === val ? 'active' : ''}`}
+                        onClick={() => handleAmountClick(val)}
                       >
-                        <i className="bi bi-mortarboard-fill"></i>
-                        <span>Child Education</span>
+                        ₹{val}
                       </button>
-
-
-                      <button
-                        type="button"
-                        className={
-                          purpose === "Food Support"
-                            ? "purpose-card active"
-                            : "purpose-card"
-                        }
-                        onClick={() => {
-                          setPurpose("Food Support");
-                          setShowMessage(false);
-                        }}
-                      >
-                        <i className="bi bi-egg-fried"></i>
-                        <span>Food Support</span>
-                      </button>
-
-
-                      <button
-                        type="button"
-                        className={
-                          purpose === "Healthcare"
-                            ? "purpose-card active"
-                            : "purpose-card"
-                        }
-                        onClick={() => {
-                          setPurpose("Healthcare");
-                          setShowMessage(false);
-                        }}
-                      >
-                        <i className="bi bi-heart-pulse-fill"></i>
-                        <span>Healthcare</span>
-                      </button>
-
-
-                      <button
-                        type="button"
-                        className={
-                          purpose === "General Support"
-                            ? "purpose-card active"
-                            : "purpose-card"
-                        }
-                        onClick={() => {
-                          setPurpose("General Support");
-                          setShowMessage(false);
-                        }}
-                      >
-                        <i className="bi bi-people-fill"></i>
-                        <span>General Support</span>
-                      </button>
-
+                    ))}
+                    <div className="custom-amount-wrapper mt-3">
+                      <span className="currency-symbol">₹</span>
+                      <input 
+                        type="number" 
+                        className={`form-control custom-amount-input ${amount === 'custom' ? 'active' : ''}`}
+                        placeholder="Custom Amount"
+                        value={customAmount}
+                        onChange={handleCustomAmount}
+                        onClick={() => setAmount('custom')}
+                      />
                     </div>
                   </div>
 
+                  {/* Donor Form */}
+                  <form className="donor-form mb-5">
+                    <div className="row g-3 mb-4">
+                      <div className="col-sm-6">
+                        <label className="form-label text-muted small fw-bold">First Name</label>
+                        <input type="text" className="form-control" placeholder="Satyam" required onInput={(e) => e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '')} />
+                      </div>
+                      <div className="col-sm-6">
+                        <label className="form-label text-muted small fw-bold">Last Name</label>
+                        <input type="text" className="form-control" placeholder="Sharma" required onInput={(e) => e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '')} />
+                      </div>
+                      <div className="col-sm-12">
+                        <label className="form-label text-muted small fw-bold">Email Address</label>
+                        <input type="email" className="form-control" placeholder="satyam@example.com" required />
+                      </div>
+                      <div className="col-sm-12">
+                        <label className="form-label text-muted small fw-bold">PAN Number (For Tax Receipt)</label>
+                        <input type="text" className="form-control text-uppercase" placeholder="ABCDE1234F" />
+                      </div>
+                    </div>
 
-                  <div className="form-group">
-                    <label>Your Details</label>
+                    <button type="submit" className="btn btn-accent w-100 py-3 fw-bold fs-5 shadow-sm btn-donate-submit">
+                      Proceed to Pay ₹{amount === 'custom' ? (customAmount || '0') : amount}
+                    </button>
+                  </form>
 
-                    <div className="row g-3">
-
-                     
+                  {/* Offline / Direct Donation Methods */}
+                  <div className="offline-donations pt-4 border-top">
+                    <h4 className="fw-bold mb-4 text-center">Other Ways to Donate</h4>
+                    
+                    <div className="row g-4">
                       <div className="col-md-6">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Enter your full name"
-                          required
-                          onChange={() => setShowMessage(false)}
-                        />
+                        <div className="p-3 bg-light rounded text-center h-100 border">
+                          <h6 className="fw-bold text-accent mb-3"><i className="bi bi-qr-code-scan me-2"></i>Scan & Pay (UPI)</h6>
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="UPI QR Code" className="img-fluid mb-2" style={{width: "120px", height: "120px", opacity: "0.8"}} />
+                          <p className="small text-muted mb-0 fw-bold">UPI ID: carebridge@sbi</p>
+                          <p className="small text-muted" style={{fontSize: "11px"}}>GPay / PhonePe / Paytm</p>
+                        </div>
                       </div>
-
-
-                     
+                      
                       <div className="col-md-6">
-                        <input
-                          type="email"
-                          className="form-control"
-                          placeholder="Enter your email"
-                          required
-                          onChange={() => setShowMessage(false)}
-                        />
+                        <div className="p-3 bg-light rounded h-100 border">
+                          <h6 className="fw-bold text-accent mb-3 text-center"><i className="bi bi-bank me-2"></i>Bank Transfer (NEFT/RTGS)</h6>
+                          <div className="small text-muted">
+                            <p className="mb-1"><strong>Acct Name:</strong> CareBridge Foundation</p>
+                            <p className="mb-1"><strong>Acct No:</strong> 39284719203</p>
+                            <p className="mb-1"><strong>IFSC Code:</strong> SBIN0001234</p>
+                            <p className="mb-0"><strong>Bank/Branch:</strong> SBI, Andheri West</p>
+                          </div>
+                        </div>
                       </div>
-
-
-                      <div className="col-12">
-                        <input
-                          type="tel"
-                          className="form-control"
-                          placeholder="Enter your phone number"
-                          value={phone}
-                          onChange={(e) => {
-                            const value = e.target.value
-                              .replace(/\D/g, "")
-                              .slice(0, 10);
-
-                            setPhone(value);
-                            setShowMessage(false);
-                          }}
-                          maxLength={10}
-                          inputMode="numeric"
-                          pattern="[0-9]{10}"
-                          title="Please enter exactly 10 digits"
-                          required
-                        />
-                      </div>
-
                     </div>
                   </div>
-
-
-                 
-                  <button
-                    type="submit"
-                    className="main-donate-btn"
-                  >
-                    <i className="bi bi-heart-fill"></i>
-                    Donate Now
-                  </button>
-
-                </form>
-               
-
-               
-                {showMessage && (
-                  <div className="success-message">
-
-                    <div className="success-icon">
-                      <i className="bi bi-check-circle-fill"></i>
-                    </div>
-
-                    <div>
-                      <h4>Thank You!</h4>
-
-                      <p>
-                        Your contribution of ₹
-                        {amount.toLocaleString("en-IN")}
-                        {" "}will help us create a positive impact.
-                      </p>
-
-                      <strong>
-                        Together We Care. Together We Change.
-                      </strong>
-                    </div>
-
-                  </div>
-                )}
-
+                  
+                </div>
               </div>
-
             </div>
-
-
-           
-            <div className="col-lg-5">
-
-              <div className="donation-summary">
-
-                <div className="summary-icon">
-                  <i className="bi bi-heart-fill"></i>
-                </div>
-
-                <h3>Donation Summary</h3>
-
-                <p>
-                  Your support can make a real difference in someone's life.
-                </p>
-
-
-                <div className="summary-row">
-                  <span>Donation Amount</span>
-
-                  <strong>
-                    ₹{(amount || 0).toLocaleString("en-IN")}
-                  </strong>
-                </div>
-
-
-                <div className="summary-row">
-                  <span>Purpose</span>
-
-                  <strong>{purpose}</strong>
-                </div>
-
-
-                <div className="summary-line"></div>
-
-
-                <div className="summary-total">
-                  <span>Total</span>
-
-                  <strong>
-                    ₹{(amount || 0).toLocaleString("en-IN")}
-                  </strong>
-                </div>
-
-
-                <div className="summary-note">
-                  <i className="bi bi-info-circle-fill"></i>
-
-                  <span>
-                    This is a donation form.
-                   
-                  </span>
-                </div>
-
-              </div>
-
-
-            
-              <div className="trust-box">
-
-                <h4>
-                  <i className="bi bi-shield-check"></i>
-                  Why Support CareBridge?
-                </h4>
-
-
-                <div className="trust-item">
-                  <i className="bi bi-check-circle-fill"></i>
-                  <span>Transparent & Responsible</span>
-                </div>
-
-
-                <div className="trust-item">
-                  <i className="bi bi-heart-fill"></i>
-                  <span>Every Contribution Matters</span>
-                </div>
-
-
-                <div className="trust-item">
-                  <i className="bi bi-people-fill"></i>
-                  <span>Community Driven</span>
-                </div>
-
-              </div>
-
-            </div>
-
           </div>
-
         </div>
-      </section>
-
-
-      
-      <section className="donation-impact">
-
-        <div className="container">
-
-          <div className="donation-heading">
-            <span>YOUR SUPPORT MATTERS</span>
-
-            <h2>Every Contribution Creates Impact</h2>
-
-            <p>
-              Your donation helps us support people and communities
-              through meaningful programs.
-            </p>
-          </div>
-
-
-          <div className="row g-4">
-
-            <div className="col-md-4">
-              <div className="impact-card">
-
-                <div className="impact-icon">
-                  <i className="bi bi-mortarboard-fill"></i>
-                </div>
-
-                <h3>Education</h3>
-
-                <p>
-                  Help children get access to education and
-                  learning opportunities.
-                </p>
-
-              </div>
-            </div>
-
-
-            <div className="col-md-4">
-              <div className="impact-card">
-
-                <div className="impact-icon">
-                  <i className="bi bi-egg-fried"></i>
-                </div>
-
-                <h3>Food Support</h3>
-
-                <p>
-                  Help provide nutritious meals to families
-                  and communities in need.
-                </p>
-
-              </div>
-            </div>
-
-
-            <div className="col-md-4">
-              <div className="impact-card">
-
-                <div className="impact-icon">
-                  <i className="bi bi-heart-pulse-fill"></i>
-                </div>
-
-                <h3>Healthcare</h3>
-
-                <p>
-                  Support healthcare initiatives and health
-                  awareness programs.
-                </p>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-     
-      <section className="donation-final-cta">
-
-        <div className="container">
-
-          <h2>Want to Make a Difference in Another Way?</h2>
-
-          <p>
-            Your time and support can also help us create lasting change.
-          </p>
-
-
-          <div className="final-buttons">
-
-            <a href="#register" className="volunteer-btn">
-              <i className="bi bi-people-fill"></i>
-              Become a Volunteer
-            </a>
-
-
-            <Link to="/campaigns" className="campaign-btn">
-              <i className="bi bi-megaphone-fill"></i>
-              Explore Our Campaigns
-            </Link>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </div>
+      </div>
+    </main>
   );
 }
 
 export default Donate;
-

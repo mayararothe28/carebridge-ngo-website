@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Register from "./Pages/Register";
+import Volunteer from "./Pages/Volunteer";
 import Gallery from "./Pages/Gallery";
 import Work from "./Pages/Work";
 import Campaigns from "./Pages/Campaigns";
@@ -12,6 +13,7 @@ import Events from "./Pages/Events";
 import Blogs from "./Pages/Blogs";
 import BlogDetails from "./Pages/BlogDetails";
 import Contact from "./Pages/Contact";
+import Donate from "./Pages/Donate";
 
 import {
   BrowserRouter as Router,
@@ -47,7 +49,9 @@ function App() {
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/donate" element={<Donate />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/volunteer" element={<Volunteer />} />
       </Routes>
 
       <Footer />
