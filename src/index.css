@@ -203,3 +203,9 @@ section {
 .custom-carousel-arrow.right {
   right: -25px;
 }
+
+/* Background Accent */
+.bg-accent {
+  background-color: var(--accent) !important;
+  color: white !important;
+}
