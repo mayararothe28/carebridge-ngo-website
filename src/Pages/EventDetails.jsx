@@ -13,6 +13,7 @@ function EventDetails() {
       time: "10:00 AM - 4:00 PM",
       location: "Community Center, Mumbai",
       desc: "Join us in distributing nutritious food to families and children in need across Mumbai district.",
+      interestKey: "food",
       fullDescription: [
         "This event is a great opportunity to get involved and contribute to our ongoing efforts in Mumbai.",
         "We will be organizing various activities including distribution drives, interactive sessions, and awareness campaigns.",
@@ -26,6 +27,7 @@ function EventDetails() {
       time: "11:00 AM - 3:00 PM",
       location: "Community Center, Mumbai",
       desc: "Help children learn through creative and engaging educational activities in local communities.",
+      interestKey: "education",
       fullDescription: [
         "Education is the key to a better future. Join our workshop to teach basic skills to underprivileged children.",
         "We have planned interactive learning games and art sessions to make learning fun.",
@@ -39,6 +41,7 @@ function EventDetails() {
       time: "09:00 AM - 5:00 PM",
       location: "Community Center, Mumbai",
       desc: "Free health checkups and awareness sessions for communities in partnership with local hospitals.",
+      interestKey: "health",
       fullDescription: [
         "Health is wealth. Our camp aims to provide basic health screening for those who cannot afford it.",
         "Doctors and nurses will be volunteering their time to check for common illnesses.",
@@ -88,7 +91,7 @@ function EventDetails() {
               <div className="bg-white p-4 rounded-4 shadow-sm sticky-top" style={{ top: '100px' }}>
                 <h3 className="fw-bold mb-4">Join This Event</h3>
                 <p className="text-muted mb-4">We need enthusiastic volunteers to make this event a success. Sign up today!</p>
-                <Link to="/volunteer" className="btn btn-accent w-100 py-3 fw-bold fs-5 shadow-sm rounded-pill d-block text-center text-decoration-none">
+                <Link to="/volunteer" state={{ interest: eventData.interestKey }} className="btn btn-accent w-100 py-3 fw-bold fs-5 shadow-sm rounded-pill d-block text-center text-decoration-none">
                   Register as Volunteer <i className="bi bi-person-plus-fill ms-2"></i>
                 </Link>
                 <hr className="my-4" />

@@ -1,5 +1,6 @@
 import "./Events.css";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 function Events() {
   const sectionRefs = {
@@ -16,6 +17,7 @@ function Events() {
       location: "Community Center, Mumbai",
       desc: "Join us in distributing nutritious food to families and children in need across Mumbai district.",
       img: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80",
+      interestKey: "food",
     },
     {
       id: 2,
@@ -25,6 +27,7 @@ function Events() {
       location: "Zilla Parishad School, Mumbai",
       desc: "Help children learn through creative and engaging educational activities in local communities.",
       img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+      interestKey: "education",
     },
     {
       id: 3,
@@ -34,6 +37,7 @@ function Events() {
       location: "CareBridge Main Hall, Mumbai",
       desc: "Free health checkups and awareness sessions for communities in partnership with local hospitals.",
       img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+      interestKey: "health",
     },
   ];
 
@@ -70,9 +74,9 @@ function Events() {
                       <span><i className="bi bi-geo-alt"></i> {event.location}</span>
                     </div>
                     <p>{event.desc}</p>
-                    <a href="/volunteer" className="btn-event-join">
+                    <Link to="/volunteer" state={{ interest: event.interestKey }} className="btn-event-join text-decoration-none">
                       Register as Volunteer <i className="bi bi-arrow-right"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

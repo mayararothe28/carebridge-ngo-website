@@ -11,10 +11,24 @@
 .contact-info-panel {
   background: var(--primary);
   background-image: linear-gradient(135deg, var(--primary) 0%, #146c43 100%);
+  color: #ffffff !important;
+}
+
+.contact-info-panel h3,
+.contact-info-panel h5,
+.contact-info-panel h6,
+.contact-info-panel p,
+.contact-info-panel span,
+.contact-info-panel div {
+  color: #ffffff !important;
+}
+
+.contact-info-panel p {
+  opacity: 0.9 !important;
 }
 
 .contact-details i.text-accent {
-  color: var(--accent) !important; /* Yellow for better contrast */
+  color: var(--accent) !important; /* Accent for better contrast */
 }
 
 .social-links .social-icon {

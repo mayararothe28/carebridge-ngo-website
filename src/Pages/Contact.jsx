@@ -68,8 +68,8 @@ function Contact() {
   };
 
   return (
-    <main className="contact-page bg-light py-5">
-      <div className="container mt-4">
+    <main className="contact-page bg-light py-4">
+      <div className="container mt-1">
         
         <div className="text-center mb-5 fade-in">
           <span className="section-label">Contact Us</span>

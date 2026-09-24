@@ -9,12 +9,9 @@ function Blogs() {
     grid: useScrollAnimation(),
   };
 
-  const trackRef = useRef(null);
-
-  const scroll = (direction) => {
-    if (trackRef.current) {
-      const scrollAmount = trackRef.current.offsetWidth;
-      trackRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+  const scrollToGrid = () => {
+    if (sectionRefs.grid.current) {
+      sectionRefs.grid.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -118,55 +115,48 @@ function Blogs() {
         <div className="container text-center">
           <span className="section-label">Our Blog</span>
           <h1>Insights, Stories & Impact</h1>
-          <p>
+          <p className="mb-4">
             Stay updated with our latest initiatives, read inspiring stories from the ground, 
             and learn how together we are changing lives across Mumbai.
           </p>
+          <button className="btn-scroll-down" onClick={scrollToGrid} aria-label="Scroll down to blogs">
+            <i className="bi bi-chevron-down"></i>
+          </button>
         </div>
       </section>
 
       {/* Blogs Grid */}
       <section className="blogs-grid-section bg-light" ref={sectionRefs.grid}>
-        <div className="container position-relative">
-          <button className="custom-carousel-arrow left" onClick={() => scroll('left')}>
-            <i className="bi bi-chevron-left"></i>
-          </button>
-          
-          <div className="custom-carousel-wrapper">
-            <div className="custom-carousel-track" ref={trackRef}>
-              {blogPosts.map((blog) => (
-                <div className="custom-carousel-item" key={blog.id}>
-                  <Link to={`/blog/${blog.id}`} className="blog-card text-decoration-none text-dark d-block">
-                    <div className="blog-card-img">
-                      <img src={blog.img} alt={blog.title} />
-                      <span className="blog-category">{blog.category}</span>
-                    </div>
-                    <div className="blog-card-body">
-                      <span className="blog-date">
-                        <i className="bi bi-calendar3"></i> {blog.date}
-                      </span>
-                      <h3>{blog.title}</h3>
-                      <p className="text-muted">{blog.desc}</p>
-                      
-                      <div className="blog-footer">
-                        <div className="blog-author">
-                          <img src={blog.authorImg} alt={blog.author} />
-                          <span>{blog.author}</span>
-                        </div>
-                        <span className="read-more-link fw-bold" style={{ color: "var(--primary)" }}>
-                          Read More <i className="bi bi-arrow-right"></i>
-                        </span>
+        <div className="container">
+          <div className="row g-4">
+            {blogPosts.map((blog) => (
+              <div className="col-lg-4 col-md-6" key={blog.id}>
+                <Link to={`/blog/${blog.id}`} className="blog-card text-decoration-none text-dark d-block">
+                  <div className="blog-card-img">
+                    <img src={blog.img} alt={blog.title} />
+                    <span className="blog-category">{blog.category}</span>
+                  </div>
+                  <div className="blog-card-body">
+                    <span className="blog-date">
+                      <i className="bi bi-calendar3"></i> {blog.date}
+                    </span>
+                    <h3>{blog.title}</h3>
+                    <p className="text-muted">{blog.desc}</p>
+                    
+                    <div className="blog-footer">
+                      <div className="blog-author">
+                        <img src={blog.authorImg} alt={blog.author} />
+                        <span>{blog.author}</span>
                       </div>
+                      <span className="read-more-link fw-bold" style={{ color: "var(--primary)" }}>
+                        Read More <i className="bi bi-arrow-right"></i>
+                      </span>
                     </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
-
-          <button className="custom-carousel-arrow right" onClick={() => scroll('right')}>
-            <i className="bi bi-chevron-right"></i>
-          </button>
         </div>
       </section>
     </main>

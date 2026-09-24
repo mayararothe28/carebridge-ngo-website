@@ -210,9 +210,10 @@
 }
 
 .gallery-cta-btn:hover {
-  background: var(--accent);
-  color: white;
+  background: var(--primary);
+  color: white !important;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 135, 84, 0.3);
 }
 
 

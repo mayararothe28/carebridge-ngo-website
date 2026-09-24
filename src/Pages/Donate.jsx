@@ -17,42 +17,66 @@ function Donate() {
   };
 
   return (
-    <main className="donate-page bg-light py-5">
-      <div className="container mt-5">
+    <main className="donate-page bg-light py-4">
+      <div className="container mt-2">
         <div className="row justify-content-center">
           <div className="col-lg-10">
             <div className="donate-wrapper shadow-lg">
               <div className="row g-0">
                 
                 {/* Left Side: Impact Information */}
-                <div className="col-md-5 donate-info-panel text-white p-5 d-flex flex-column justify-content-between">
+                <div className="col-md-5 donate-info-panel text-white p-4 p-lg-5 d-flex flex-column justify-content-between">
                   <div>
-                    <span className="badge bg-white text-accent mb-3 px-3 py-2 rounded-pill fw-bold">Secure Donation</span>
-                    <h2 className="fw-bold mb-4">Your Contribution Changes Lives</h2>
-                    <p className="mb-4">Every rupee you donate goes directly towards providing education, meals, and healthcare to those who need it the most.</p>
+                    <h2 className="fw-bold mb-3 text-white">Your Contribution Changes Lives</h2>
+                    <p className="mb-4 text-white opacity-90">Every rupee you donate goes directly towards providing education, meals, and healthcare to children and families in need.</p>
                     
-                    <ul className="impact-list list-unstyled mt-4">
-                      <li className="mb-3 d-flex align-items-center">
-                        <i className="bi bi-check-circle-fill text-accent me-3 fs-5"></i>
-                        <span><strong>₹500</strong> feeds a child for a week</span>
+                    <ul className="impact-list list-unstyled mt-3 mb-4">
+                      <li className="mb-3 d-flex align-items-center text-white">
+                        <i className="bi bi-check-circle-fill icon-orange me-3 fs-5"></i>
+                        <span className="text-white"><strong className="text-white">₹500</strong> feeds a child for a full week</span>
                       </li>
-                      <li className="mb-3 d-flex align-items-center">
-                        <i className="bi bi-check-circle-fill text-accent me-3 fs-5"></i>
-                        <span><strong>₹1,000</strong> provides medical supplies</span>
+                      <li className="mb-3 d-flex align-items-center text-white">
+                        <i className="bi bi-check-circle-fill icon-orange me-3 fs-5"></i>
+                        <span className="text-white"><strong className="text-white">₹1,000</strong> provides essential medical supplies</span>
                       </li>
-                      <li className="mb-3 d-flex align-items-center">
-                        <i className="bi bi-check-circle-fill text-accent me-3 fs-5"></i>
-                        <span><strong>₹5,000</strong> sponsors a child's education</span>
+                      <li className="mb-3 d-flex align-items-center text-white">
+                        <i className="bi bi-check-circle-fill icon-orange me-3 fs-5"></i>
+                        <span className="text-white"><strong className="text-white">₹2,500</strong> distributes learning kits & tablets</span>
+                      </li>
+                      <li className="mb-3 d-flex align-items-center text-white">
+                        <i className="bi bi-check-circle-fill icon-orange me-3 fs-5"></i>
+                        <span className="text-white"><strong className="text-white">₹5,000</strong> sponsors a child's complete schooling</span>
                       </li>
                     </ul>
+
+                    <div className="why-donate-box mt-4 pt-4 border-top border-light border-opacity-25">
+                      <h5 className="fw-bold text-white mb-3"><i className="bi bi-shield-heart-fill me-2 icon-orange"></i>Why Support CareBridge?</h5>
+                      <ul className="list-unstyled text-white small opacity-90 mb-3">
+                        <li className="mb-2 d-flex align-items-center"><i className="bi bi-check2-square me-2 icon-orange"></i> 100% Transparent & Accountable Fund Usage</li>
+                        <li className="mb-2 d-flex align-items-center"><i className="bi bi-file-earmark-pdf-fill me-2 icon-orange"></i> Instant 80G Tax Exemption Certificate</li>
+                        <li className="mb-2 d-flex align-items-center"><i className="bi bi-envelope-check-fill me-2 icon-orange"></i> Regular Monthly Impact Reports</li>
+                        <li className="mb-2 d-flex align-items-center"><i className="bi bi-award-fill me-2 icon-orange"></i> Govt Registered & FCRA Compliant NGO</li>
+                      </ul>
+                    </div>
+
+                    <div className="tax-benefit-box p-3 rounded-3 my-3" style={{ background: "rgba(255, 255, 255, 0.1)", border: "1px solid rgba(255,255,255,0.2)" }}>
+                      <h6 className="fw-bold text-white mb-2 d-flex align-items-center"><i className="bi bi-file-earmark-text-fill icon-orange me-2 fs-5"></i>Tax Benefit under Section 80G</h6>
+                      <p className="small text-white opacity-90 mb-0" style={{ lineHeight: "1.6" }}>Donations to CareBridge are 50% tax exempt under Section 80G of the Indian Income Tax Act. You will receive an official tax receipt immediately via email.</p>
+                    </div>
+
+                    <div className="donor-quote-box my-3 p-3 rounded-3" style={{ background: "rgba(255, 255, 255, 0.08)", borderLeft: "4px solid #e8734a" }}>
+                      <p className="small text-white fst-italic mb-1">"CareBridge ensures every single donation reaches the ground. Your support creates real, lasting change for thousands of families."</p>
+                      <span className="small text-white opacity-75 fw-bold">— CareBridge Foundation</span>
+                    </div>
                   </div>
                   
-                  <div className="trust-badges mt-5">
-                    <p className="small mb-2 opacity-75">100% Secure & Tax Deductible (80G)</p>
-                    <div className="d-flex gap-3 fs-3">
-                      <i className="bi bi-shield-check"></i>
-                      <i className="bi bi-lock-fill"></i>
-                      <i className="bi bi-credit-card-2-front"></i>
+                  <div className="trust-badges mt-4 pt-3 border-top border-light border-opacity-25 text-white">
+                    <p className="small mb-2 text-white opacity-90"><i className="bi bi-lock-fill me-1 icon-orange"></i> 256-bit SSL Encrypted & Tax Deductible (80G)</p>
+                    <div className="d-flex gap-3 fs-3 text-white align-items-center">
+                      <i className="bi bi-shield-check icon-orange"></i>
+                      <i className="bi bi-credit-card-2-front icon-orange"></i>
+                      <i className="bi bi-bank icon-orange"></i>
+                      <span className="fs-6 text-white ms-auto opacity-75">Reg: NGO-80G/2026</span>
                     </div>
                   </div>
                 </div>

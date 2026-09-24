@@ -125,16 +125,14 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="impact" ref={sectionRefs.impact}>
-        <div className="container">
-          <div className="row horizontal-scroll-mobile">
-            <StatCard end={500} suffix="+" label="Children Educated" icon="bi-mortarboard-fill" />
-            <StatCard end={10000} suffix="+" label="Meals Provided" icon="bi-cup-hot-fill" />
-            <StatCard end={2000} suffix="+" label="Healthcare Support" icon="bi-hospital-fill" />
-            <StatCard end={300} suffix="+" label="Active Volunteers" icon="bi-people-fill" />
+          <div className="hero-stats-wrapper mt-2">
+            <div className="row">
+              <StatCard end={500} suffix="+" label="Children Educated" icon="bi-mortarboard-fill" />
+              <StatCard end={10000} suffix="+" label="Meals Provided" icon="bi-cup-hot-fill" />
+              <StatCard end={2000} suffix="+" label="Healthcare Support" icon="bi-hospital-fill" />
+              <StatCard end={300} suffix="+" label="Active Volunteers" icon="bi-people-fill" />
+            </div>
           </div>
         </div>
       </section>
@@ -247,6 +245,11 @@ function Home() {
                   <div className="work-card-body text-dark">
                     <h3>{item.title}</h3>
                     <p>{item.desc}</p>
+                    <div className="work-card-footer">
+                      <span className="work-card-link">
+                        Learn More <i className="bi bi-arrow-right ms-1"></i>
+                      </span>
+                    </div>
                   </div>
                 </Link>
               </div>

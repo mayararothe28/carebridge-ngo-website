@@ -8,18 +8,49 @@
   background: white;
 }
 
+@media (min-width: 768px) {
+  .donate-wrapper {
+    background: linear-gradient(to right, #146c43 0%, #146c43 41.66667%, #ffffff 41.66667%, #ffffff 100%);
+  }
+}
+
+.donate-wrapper > .row {
+  display: flex;
+  align-items: stretch;
+}
+
 .donate-info-panel {
-  background: var(--primary);
-  background-image: linear-gradient(135deg, var(--primary) 0%, #146c43 100%);
+  background: #146c43 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  height: 100%;
+  min-height: 100%;
+}
+
+.donate-info-panel h2,
+.donate-info-panel h3,
+.donate-info-panel h4,
+.donate-info-panel h5,
+.donate-info-panel h6,
+.donate-info-panel p,
+.donate-info-panel span,
+.donate-info-panel li,
+.donate-info-panel strong,
+.donate-info-panel div {
+  color: #ffffff !important;
 }
 
 .impact-list li {
-  font-size: 16px;
+  font-size: 15px;
   opacity: 0.95;
 }
 
-.impact-list .text-accent {
-  color: #ffc107 !important; /* Yellow for contrast on green */
+/* Orange icons inside green panel */
+.donate-info-panel .icon-orange,
+.donate-info-panel i.icon-orange,
+.impact-list i,
+.why-donate-box i {
+  color: #e8734a !important;
 }
 
 /* Donation Type Toggle */

@@ -1,5 +1,6 @@
 import "./About.css";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 function About() {
   const sectionRefs = {
@@ -231,12 +232,12 @@ function About() {
               Every contribution matters in building a better world.
             </p>
             <div className="about-cta-buttons">
-              <a href="/donate" className="btn-cta-white">
+              <Link to="/donate" className="btn-cta-white text-decoration-none">
                 <i className="bi bi-heart-fill"></i> Donate Now
-              </a>
-              <a href="/volunteer" className="btn-cta-outline-white">
+              </Link>
+              <Link to="/volunteer" className="btn-cta-outline-white text-decoration-none">
                 Become a Volunteer
-              </a>
+              </Link>
             </div>
           </div>
         </div>

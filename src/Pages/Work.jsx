@@ -99,6 +99,11 @@ function Work() {
                     ))}
                   </div>
                   
+                  <div className="mt-4">
+                    <Link to={`/work/${theme.id}`} className="btn-learn-more text-decoration-none">
+                      Learn More <i className="bi bi-arrow-right ms-1"></i>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

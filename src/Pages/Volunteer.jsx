@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import "./Volunteer.css";
 
 function Volunteer() {
+  const location = useLocation();
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     phone: "",
-    interest: "",
+    interest: location.state?.interest || "",
     message: "",
   });
+
+  useEffect(() => {
+    if (location.state?.interest) {
+      setFormData((prev) => ({ ...prev, interest: location.state.interest }));
+    }
+  }, [location.state]);
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,7 +32,7 @@ function Volunteer() {
       return;
     }
 
-    if (name === "firstName" || name === "lastName") {
+    if (name === "fullName") {
       const textOnly = value.replace(/[^a-zA-Z\s]/g, "");
       setFormData({ ...formData, [name]: textOnly });
       if (errors[name]) setErrors({ ...errors, [name]: "" });
@@ -38,8 +45,7 @@ function Volunteer() {
 
   const validate = () => {
     let newErrors = {};
-    if (!formData.firstName.trim()) newErrors.firstName = "First name required";
-    if (!formData.lastName.trim()) newErrors.lastName = "Last name required";
+    if (!formData.fullName.trim()) newErrors.fullName = "Full name required";
     if (!formData.email.trim()) {
       newErrors.email = "Email required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
@@ -63,7 +69,7 @@ function Volunteer() {
       setTimeout(() => {
         setIsSubmitting(false);
         setIsSuccess(true);
-        setFormData({ firstName: "", lastName: "", email: "", phone: "", interest: "", message: "" });
+        setFormData({ fullName: "", email: "", phone: "", interest: "", message: "" });
       }, 1500);
     }
   };
@@ -83,9 +89,9 @@ function Volunteer() {
                     <i className="bi bi-patch-check-fill text-success" style={{fontSize: "5rem"}}></i>
                     <h2 className="fw-bold mt-4">Application Received!</h2>
                     <p className="text-muted mb-4 fs-5">Thank you for stepping forward. Our coordinator will contact you within 48 hours.</p>
-                    <button className="btn btn-outline-primary px-4 py-2 rounded-pill fw-bold" onClick={() => setIsSuccess(false)}>
-                      Register Another Volunteer
-                    </button>
+                    <Link to="/events" className="btn btn-accent px-4 py-2 rounded-pill fw-bold text-white text-decoration-none shadow-sm">
+                      Events <i className="bi bi-arrow-right ms-2"></i>
+                    </Link>
                   </div>
                 ) : (
                   <>
@@ -96,30 +102,17 @@ function Volunteer() {
 
                     <form onSubmit={handleSubmit} noValidate>
                       <div className="row g-4">
-                        <div className="col-md-6">
-                          <label className="form-label text-muted small fw-bold">First Name</label>
+                        <div className="col-12">
+                          <label className="form-label text-muted small fw-bold">Full Name</label>
                           <input
                             type="text"
-                            name="firstName"
-                            className={`form-control p-3 bg-light ${errors.firstName ? 'is-invalid' : ''}`}
-                            value={formData.firstName}
+                            name="fullName"
+                            className={`form-control p-3 bg-light ${errors.fullName ? 'is-invalid' : ''}`}
+                            value={formData.fullName}
                             onChange={handleChange}
-                            placeholder="Satyam"
+                            placeholder="Satyam Sharma"
                           />
-                          {errors.firstName && <div className="text-danger small mt-1">{errors.firstName}</div>}
-                        </div>
-
-                        <div className="col-md-6">
-                          <label className="form-label text-muted small fw-bold">Last Name</label>
-                          <input
-                            type="text"
-                            name="lastName"
-                            className={`form-control p-3 bg-light ${errors.lastName ? 'is-invalid' : ''}`}
-                            value={formData.lastName}
-                            onChange={handleChange}
-                            placeholder="Sharma"
-                          />
-                          {errors.lastName && <div className="text-danger small mt-1">{errors.lastName}</div>}
+                          {errors.fullName && <div className="text-danger small mt-1">{errors.fullName}</div>}
                         </div>
 
                         <div className="col-md-6">

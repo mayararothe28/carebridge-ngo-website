@@ -130,6 +130,43 @@ function BlogDetails() {
     window.scrollTo(0, 0);
   }, [blogId]);
 
+  const handleShare = (platform) => {
+    const pageUrl = window.location.href;
+    const shareText = `Check out this article on CareBridge: "${blog.title}"`;
+    const encodedUrl = encodeURIComponent(pageUrl);
+    const encodedText = encodeURIComponent(shareText);
+
+    let shareUrl = "";
+
+    switch (platform) {
+      case "wa":
+        shareUrl = `https://api.whatsapp.com/send?text=${encodedText}%20${encodedUrl}`;
+        window.open(shareUrl, "_blank", "noopener,noreferrer");
+        break;
+      case "fb":
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+        window.open(shareUrl, "_blank", "noopener,noreferrer");
+        break;
+      case "tw":
+        shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+        window.open(shareUrl, "_blank", "noopener,noreferrer");
+        break;
+      case "linkedin":
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+        window.open(shareUrl, "_blank", "noopener,noreferrer");
+        break;
+      case "copy":
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(pageUrl).then(() => {
+            alert("Article link copied to clipboard!");
+          });
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <main className="blog-details-page">
       {/* Blog Hero Image */}
@@ -174,9 +211,21 @@ function BlogDetails() {
               <div className="blog-share mt-5">
                 <span>Share this article:</span>
                 <div className="share-buttons">
-                  <button className="btn-share fb"><i className="bi bi-facebook"></i></button>
-                  <button className="btn-share tw"><i className="bi bi-twitter-x"></i></button>
-                  <button className="btn-share wa"><i className="bi bi-whatsapp"></i></button>
+                  <button className="btn-share wa" onClick={() => handleShare("wa")} title="Share on WhatsApp">
+                    <i className="bi bi-whatsapp"></i>
+                  </button>
+                  <button className="btn-share fb" onClick={() => handleShare("fb")} title="Share on Facebook">
+                    <i className="bi bi-facebook"></i>
+                  </button>
+                  <button className="btn-share tw" onClick={() => handleShare("tw")} title="Share on X (Twitter)">
+                    <i className="bi bi-twitter-x"></i>
+                  </button>
+                  <button className="btn-share linkedin" onClick={() => handleShare("linkedin")} title="Share on LinkedIn">
+                    <i className="bi bi-linkedin"></i>
+                  </button>
+                  <button className="btn-share copy" onClick={() => handleShare("copy")} title="Copy Link">
+                    <i className="bi bi-link-45deg"></i>
+                  </button>
                 </div>
               </div>
 

@@ -31,7 +31,14 @@ function Navbar() {
     };
   }, [menuOpen]);
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => {
+    if (path === "/") return location.pathname === "/";
+    if (path === "/blogs") return location.pathname.startsWith("/blog");
+    if (path === "/events") return location.pathname.startsWith("/event");
+    if (path === "/campaigns") return location.pathname.startsWith("/campaign");
+    if (path === "/work") return location.pathname.startsWith("/work");
+    return location.pathname === path;
+  };
 
   return (
     <>

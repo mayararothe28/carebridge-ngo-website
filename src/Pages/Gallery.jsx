@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Gallery.css";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 function Gallery() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -10,52 +11,52 @@ function Gallery() {
 
   const galleryItems = [
     {
-      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=85",
       category: "Education",
       title: "Building Brighter Futures",
     },
     {
-      image: "https://images.unsplash.com/photo-1542810634-71277d95dc8c?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=85",
       category: "Volunteers",
       title: "Together We Can Make a Difference",
     },
     {
-      image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&q=85",
       category: "Community",
       title: "Serving Our Community",
     },
     {
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=85",
       category: "Children",
       title: "Every Child Deserves a Chance",
     },
     {
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=85",
       category: "Food Support",
       title: "Sharing Food, Sharing Hope",
     },
     {
-      image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=85",
       category: "Healthcare",
       title: "Care For Every Community",
     },
     {
-      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=85",
       category: "Community",
       title: "Empowering Women",
     },
     {
-      image: "https://images.unsplash.com/photo-1542810634-71277d95dc8c?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85",
       category: "Children",
       title: "Nurturing Young Minds",
     },
     {
-      image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=85",
       category: "Volunteers",
       title: "Small Actions, Big Impact",
     },
     {
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1542810634-71277d95dc8c?auto=format&fit=crop&w=1200&q=85",
       category: "Volunteers",
       title: "People Who Care",
     },
@@ -65,7 +66,7 @@ function Gallery() {
       title: "Learning Without Limits",
     },
     {
-      image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1200&q=85",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85",
       category: "Healthcare",
       title: "Growing a Greener Future",
     },
@@ -154,9 +155,9 @@ function Gallery() {
           <div className="gallery-cta-box fade-in">
             <span>Be Part of the Journey</span>
             <h2>Every helping hand creates a better tomorrow.</h2>
-            <a href="/volunteer" className="gallery-cta-btn">
+            <Link to="/volunteer" className="gallery-cta-btn text-decoration-none">
               <i className="bi bi-people-fill"></i> Become a Volunteer
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -359,6 +359,28 @@
   flex-wrap: wrap;
 }
 
+.about-cta .btn-cta-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: white !important;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(232, 115, 74, 0.25);
+}
+
+.about-cta .btn-cta-white:hover {
+  background: var(--accent-dark);
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 115, 74, 0.35);
+}
+
 
 @media (max-width: 991px) {
   .about-hero {
