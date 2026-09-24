@@ -3,7 +3,6 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import Register from "./Pages/Register";
 import Volunteer from "./Pages/Volunteer";
 import Gallery from "./Pages/Gallery";
 import Work from "./Pages/Work";
@@ -54,7 +53,6 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/donate" element={<Donate />} />
-        <Route path="/register" element={<Register />} />
         <Route path="/volunteer" element={<Volunteer />} />
       </Routes>
 

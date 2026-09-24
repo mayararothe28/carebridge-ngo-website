@@ -11,7 +11,7 @@ function EventDetails() {
       title: "Community Food Drive",
       date: "Oct 15, 2026",
       time: "10:00 AM - 4:00 PM",
-      location: "Mumbai, India",
+      location: "Community Center, Mumbai",
       desc: "Join us in distributing nutritious food to families and children in need across Mumbai district.",
       fullDescription: [
         "This event is a great opportunity to get involved and contribute to our ongoing efforts in Mumbai.",
@@ -24,7 +24,7 @@ function EventDetails() {
       title: "Education Workshop",
       date: "Oct 22, 2026",
       time: "11:00 AM - 3:00 PM",
-      location: "Mumbai, India",
+      location: "Community Center, Mumbai",
       desc: "Help children learn through creative and engaging educational activities in local communities.",
       fullDescription: [
         "Education is the key to a better future. Join our workshop to teach basic skills to underprivileged children.",
@@ -37,7 +37,7 @@ function EventDetails() {
       title: "Health Awareness Camp",
       date: "Oct 30, 2026",
       time: "09:00 AM - 5:00 PM",
-      location: "Mumbai, India",
+      location: "Community Center, Mumbai",
       desc: "Free health checkups and awareness sessions for communities in partnership with local hospitals.",
       fullDescription: [
         "Health is wealth. Our camp aims to provide basic health screening for those who cannot afford it.",

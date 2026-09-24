@@ -90,11 +90,8 @@ function Navbar() {
               <Link to="/donate" className="btn-donate">
                 Donate Now
               </Link>
-              <Link to="/volunteer" className="btn-register">
+              <Link to="/volunteer" className="btn-outline-accent">
                 Volunteer
-              </Link>
-              <Link to="/volunteer" className="btn-donate px-4">
-                <i className="bi bi-person-circle me-1"></i> Sign In
               </Link>
             </div>
 
@@ -180,11 +177,8 @@ function Navbar() {
           <Link to="/donate" className="btn-donate w-100 mb-3 text-center justify-content-center">
             <i className="bi bi-heart-fill"></i> Donate Now
           </Link>
-          <Link to="/volunteer" className="btn-register w-100 text-center mb-3">
+          <Link to="/volunteer" className="btn-outline-accent w-100 text-center mb-3">
             Become a Volunteer
-          </Link>
-          <Link to="/volunteer" className="btn-donate w-100 text-center justify-content-center">
-            <i className="bi bi-person-circle me-1"></i> Sign In
           </Link>
         </div>
       </div>
