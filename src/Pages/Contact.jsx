@@ -71,7 +71,7 @@ function Contact() {
     <main className="contact-page bg-light py-4">
       <div className="container mt-1">
         
-        <div className="text-center mb-5 fade-in">
+       <div className="text-center mb-3">
           <span className="section-label">Contact Us</span>
           <h1 className="fw-bold mb-3">We're Here to Help</h1>
           <p className="text-muted mx-auto" style={{maxWidth: "600px"}}>

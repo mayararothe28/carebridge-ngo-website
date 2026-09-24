@@ -6,6 +6,7 @@
   border-radius: 20px;
   overflow: hidden;
   background: white;
+ 
 }
 
 .contact-info-panel {
@@ -76,4 +77,15 @@ textarea.contact-input {
   .col-lg-7.p-5 {
     padding: 40px 20px !important;
   }
+}
+/* Move contact content upward */
+.contact-page {
+  padding-top: 5px !important;
+  padding-bottom: 40px !important;
+  min-height: auto !important;
+  display: block !important;
+}
+
+.contact-page .container {
+  margin-top: 0 !important;
 }

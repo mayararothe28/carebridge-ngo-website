@@ -113,7 +113,7 @@ function Donate() {
                       </button>
                     ))}
                     <div className="custom-amount-wrapper mt-3">
-                      <span className="currency-symbol">₹</span>
+                      <span className="currency-symbol"></span>
                       <input 
                         type="number" 
                         className={`form-control custom-amount-input ${amount === 'custom' ? 'active' : ''}`}
