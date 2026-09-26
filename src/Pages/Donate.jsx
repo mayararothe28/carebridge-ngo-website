@@ -561,74 +561,67 @@ function Donate() {
                     {/* DONOR FORM */}
 
                     <form
-                      className="donor-form mb-5"
-                      onSubmit={handleProceedToPay}
-                    >
+  className="donor-form mb-5"
+  onSubmit={handleProceedToPay}
+>
+  <div className="row g-3 mb-4">
 
-                      <div className="col-sm-12">
+    {/* FULL NAME */}
+    <div className="col-sm-12">
+      <label className="form-label text-muted small fw-bold">
+        Full Name
+      </label>
 
-  <label className="form-label text-muted small fw-bold">
-    Full Name
-  </label>
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Enter your full name"
+        required
+        onInput={(e) =>
+          (e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, ""))
+        }
+      />
+    </div>
 
-  <input
-    type="text"
-    className="form-control"
-    placeholder="Enter your full name"
-    required
-    onInput={(e) =>
-      (e.target.value =
-        e.target.value.replace(
-          /[^a-zA-Z\s]/g,
-          ""
-        ))
-    }
-  />
+    {/* EMAIL */}
+    <div className="col-sm-12">
+      <label className="form-label text-muted small fw-bold">
+        Email Address
+      </label>
 
-</div>
+      <input
+        type="email"
+        className="form-control"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
 
-                        <div className="col-sm-12">
+    {/* PAN */}
+    <div className="col-sm-12">
+      <label className="form-label text-muted small fw-bold">
+        PAN Number
+      </label>
 
-                          <label className="form-label text-muted small fw-bold">
-                            Email Address
-                          </label>
+      <input
+        type="text"
+        className="form-control text-uppercase"
+        placeholder="ABCDE1234F"
+        maxLength="10"
+      />
+    </div>
 
-                          <input
-                            type="email"
-                            className="form-control"
-                            placeholder="Enter your email"
-                            required
-                          />
+  </div>
 
-                        </div>
-
-                        <div className="col-sm-12">
-
-                          <label className="form-label text-muted small fw-bold">
-                            PAN Number
-                          </label>
-
-                          <input
-                            type="text"
-                            className="form-control text-uppercase"
-                            placeholder="ABCDE1234F"
-                            maxLength="10"
-                          />
-
-                        </div>
-
-                      </div>
-
-                      <button
-                        type="submit"
-                        className="btn btn-accent w-100 py-3 fw-bold fs-5 shadow-sm btn-donate-submit"
-                      >
-                        <i className="bi bi-lock-fill me-2"></i>
-                        Proceed to Pay ₹
-                        {getFinalAmount().toLocaleString("en-IN")}
-                      </button>
-
-                    </form>
+  <button
+    type="submit"
+    className="btn btn-accent w-100 py-3 fw-bold fs-5 shadow-sm btn-donate-submit"
+  >
+    <i className="bi bi-lock-fill me-2"></i>
+    Proceed to Pay ₹
+    {getFinalAmount().toLocaleString("en-IN")}
+  </button>
+</form>
 
                     {/* OTHER WAYS */}
 
