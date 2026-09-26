@@ -565,51 +565,27 @@ function Donate() {
                       onSubmit={handleProceedToPay}
                     >
 
-                      <div className="row g-3 mb-4">
+                      <div className="col-sm-12">
 
-                        <div className="col-sm-6">
+  <label className="form-label text-muted small fw-bold">
+    Full Name
+  </label>
 
-                          <label className="form-label text-muted small fw-bold">
-                            First Name
-                          </label>
+  <input
+    type="text"
+    className="form-control"
+    placeholder="Enter your full name"
+    required
+    onInput={(e) =>
+      (e.target.value =
+        e.target.value.replace(
+          /[^a-zA-Z\s]/g,
+          ""
+        ))
+    }
+  />
 
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Enter first name"
-                            required
-                            onInput={(e) =>
-                              (e.target.value =
-                                e.target.value.replace(
-                                  /[^a-zA-Z\s]/g,
-                                  ""
-                                ))
-                            }
-                          />
-
-                        </div>
-
-                        <div className="col-sm-6">
-
-                          <label className="form-label text-muted small fw-bold">
-                            Last Name
-                          </label>
-
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Enter last name"
-                            required
-                            onInput={(e) =>
-                              (e.target.value =
-                                e.target.value.replace(
-                                  /[^a-zA-Z\s]/g,
-                                  ""
-                                ))
-                            }
-                          />
-
-                        </div>
+</div>
 
                         <div className="col-sm-12">
 
