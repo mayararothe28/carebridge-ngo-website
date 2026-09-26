@@ -14,49 +14,23 @@ function About() {
   return (
     <main className="about-page">
       
-      <section className="about-hero" ref={sectionRefs.hero}>
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 fade-in-left">
-              <div className="about-hero-content">
-                <span className="section-label">About CareBridge</span>
-                <h1>
-                  Building Hope.
-                  <br />
-                  Creating <span className="text-accent">Change.</span>
-                </h1>
-                <p className="about-hero-description">
-                  CareBridge is a community-focused NGO working to support children,
-                  families and communities through education, food support, healthcare,
-                  and meaningful volunteer opportunities.
-                </p>
-                <div className="about-hero-buttons">
-                  <a href="#mission" className="btn-cta-primary">
-                    Our Mission
-                  </a>
-                  <a href="#team" className="btn-cta-outline">
-                    Meet the Team
-                  </a>
-                </div>
-              </div>
-            </div>
+      <section className="about-hero">
+  <div className="container">
+    <div className="about-hero-content">
 
-            <div className="col-lg-6 fade-in-right">
-              <div className="about-hero-image-wrapper">
-                <img
-                  src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1000&q=80"
-                  alt="CareBridge volunteers supporting the community"
-                  className="about-hero-image"
-                />
-                <div className="about-hero-badge">
-                  <strong>Together</strong>
-                  <span>We Make a Difference</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <p className="hero-small-title">ABOUT CAREBRIDGE</p>
+
+      <h1>Building a Better Future, Together</h1>
+
+      <p className="hero-description">
+        CareBridge works with communities to create better opportunities,
+        support children and families, and build a healthier and more
+        inclusive future for everyone.
+      </p>
+
+    </div>
+  </div>
+</section>
 
       <section className="about-mission" id="mission" ref={sectionRefs.mission}>
         <div className="container">
