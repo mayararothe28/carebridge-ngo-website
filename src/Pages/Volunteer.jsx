@@ -77,8 +77,20 @@ function Volunteer() {
   return (
     <main className="volunteer-page bg-light">
       
+      <section className="volunteer-hero">
+        <div className="container">
+          <div className="fade-in">
+            <span className="section-label">Join Our Team</span>
+            <h1>Become a Volunteer</h1>
+            <p>
+              Make a real difference in lives across Mumbai. Fill out the form below and our coordinator will get back to you within 48 hours.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Volunteer Application Form */}
-      <section className="py-5 mt-4">
+      <section className="py-5">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">

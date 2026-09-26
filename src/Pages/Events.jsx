@@ -43,14 +43,16 @@ function Events() {
 
   return (
     <main className="events-page">
-      <section className="events-hero fade-in" ref={sectionRefs.hero}>
-        <div className="container text-center">
-          <span className="section-label">Join Our Initiatives</span>
-          <h1>Upcoming Events</h1>
-          <p>
+      <section className="events-hero" ref={sectionRefs.hero}>
+        <div className="container">
+          <div className="fade-in">
+            <span className="section-label">Join Our Initiatives</span>
+            <h1>Upcoming Events</h1>
+            <p>
             Participate in our events to make a direct impact. From free education camps 
             to community food drives, your presence makes a difference.
           </p>
+          </div>
         </div>
       </section>
 

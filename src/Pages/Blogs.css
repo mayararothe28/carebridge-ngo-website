@@ -6,37 +6,38 @@
   background: white;
 }
 
-/* ===== Blogs Hero ===== */
+
 .blogs-hero {
-  padding: 120px 20px 80px;
-  background: white;
+  padding: 80px 20px;
   text-align: center;
+  background: linear-gradient(135deg, #eaf7ef, #f6fbf8);
 }
 
 .blogs-hero .section-label {
+  display: inline-block;
   color: var(--primary);
-  letter-spacing: 0.15em;
   font-size: 13px;
   font-weight: 700;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 15px;
-  display: inline-block;
+  margin-bottom: 14px;
 }
 
 .blogs-hero h1 {
-  font-size: 44px;
+  font-size: 46px;
   font-weight: 800;
   color: var(--text-dark);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.blogs-hero p {
-  max-width: 650px;
-  margin: 0 auto;
-  font-size: 17px;
+.blogs-hero p:last-child {
+  max-width: 600px;
+  margin: auto;
   color: var(--text-muted);
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.8;
 }
+
 
 .btn-scroll-down {
   width: 48px;

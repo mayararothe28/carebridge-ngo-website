@@ -77,9 +77,20 @@ function Donate() {
   };
 
   return (
-    <main className="donate-page bg-light py-4">
+    <main className="donate-page bg-light">
+      <section className="donate-hero">
+        <div className="container">
+          <div className="fade-in">
+            <span className="section-label">Support Our Cause</span>
+            <h1>Make a Donation</h1>
+            <p>
+              Your generous contribution helps us continue our work in education, healthcare, and community support across Mumbai.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <div className="container mt-2">
+      <div className="container py-4 mt-2">
 
         {/* ================= PAYMENT SUCCESS ================= */}
 

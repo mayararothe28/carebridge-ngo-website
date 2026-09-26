@@ -68,14 +68,16 @@ function Campaigns() {
   return (
     <main className="campaigns-page">
       
-<section className="campaigns-hero" ref={sectionRefs.hero}>
-        <div className="container text-center">
-          <span className="section-label">Active Causes</span>
-          <h1>Campaigns That Need Your Help</h1>
-          <p>
-            Choose a cause close to your heart. Every contribution goes directly toward 
-            making a tangible difference in the lives of those who need it most.
-          </p>
+      <section className="campaigns-hero" ref={sectionRefs.hero}>
+        <div className="container">
+          <div className="fade-in">
+            <span className="section-label">Active Causes</span>
+            <h1>Campaigns That Need Your Help</h1>
+            <p>
+              Choose a cause close to your heart. Every contribution goes directly toward 
+              making a tangible difference in the lives of those who need it most.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -68,16 +68,20 @@ function Contact() {
   };
 
   return (
-    <main className="contact-page bg-light py-4">
-      <div className="container mt-1">
-        
-       <div className="text-center mb-3">
-          <span className="section-label">Contact Us</span>
-          <h1 className="fw-bold mb-3">We're Here to Help</h1>
-          <p className="text-muted mx-auto" style={{maxWidth: "600px"}}>
-            Have a question, want to volunteer, or need help with a donation? Reach out to us and our team will get back to you shortly.
-          </p>
+    <main className="contact-page bg-light">
+      <section className="contact-hero">
+        <div className="container">
+          <div className="fade-in">
+            <span className="section-label">Contact Us</span>
+            <h1>We're Here to Help</h1>
+            <p>
+              Have a question, want to volunteer, or need help with a donation? Reach out to us and our team will get back to you shortly.
+            </p>
+          </div>
         </div>
+      </section>
+
+      <div className="container py-5">
 
         <div className="contact-wrapper bg-white shadow-lg rounded-4 overflow-hidden">
           <div className="row g-0">

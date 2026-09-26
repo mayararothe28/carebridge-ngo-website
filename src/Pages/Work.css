@@ -6,23 +6,34 @@
 
 
 .work-hero {
-  padding: 120px 0 80px;
-  background: linear-gradient(135deg, #f8fdfb 0%, #eef7f1 100%);
-  border-bottom: 1px solid var(--border-light);
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #eaf7ef, #f6fbf8);
+}
+
+.work-hero .section-label {
+  display: inline-block;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
 }
 
 .work-hero h1 {
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 800;
   color: var(--text-dark);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .work-hero-desc {
-  color: var(--text-body);
-  font-size: 18px;
+  max-width: 600px;
+  margin: auto;
+  color: var(--text-muted);
+  font-size: 16px;
   line-height: 1.8;
-  max-width: 650px;
 }
 
 

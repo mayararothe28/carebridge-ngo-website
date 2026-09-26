@@ -53,15 +53,13 @@ function Work() {
       {/* Hero Section */}
       <section className="work-hero" ref={sectionRefs.hero}>
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-8 fade-in-left">
-              <span className="section-label">Our Impact Themes</span>
-              <h1>Driving Sustainable Social Impact</h1>
-              <p className="work-hero-desc">
-                Discover how CareBridge ensures meaningful social impact through focused 
-                programs in education, healthcare, nutrition, and sustainable community development.
-              </p>
-            </div>
+          <div className="fade-in">
+            <span className="section-label">Our Impact Themes</span>
+            <h1>Driving Sustainable Social Impact</h1>
+            <p className="work-hero-desc">
+              Discover how CareBridge ensures meaningful social impact through focused 
+              programs in education, healthcare, nutrition, and sustainable community development.
+            </p>
           </div>
         </div>
       </section>

@@ -112,16 +112,18 @@ function Blogs() {
     <main className="blogs-page">
       {/* Hero Section */}
       <section className="blogs-hero" ref={sectionRefs.hero}>
-        <div className="container text-center">
-          <span className="section-label">Our Blog</span>
-          <h1>Insights, Stories & Impact</h1>
-          <p className="mb-4">
-            Stay updated with our latest initiatives, read inspiring stories from the ground, 
-            and learn how together we are changing lives across Mumbai.
-          </p>
-          <button className="btn-scroll-down" onClick={scrollToGrid} aria-label="Scroll down to blogs">
-            <i className="bi bi-chevron-down"></i>
-          </button>
+        <div className="container">
+          <div className="fade-in">
+            <span className="section-label">Our Blog</span>
+            <h1>Insights, Stories &amp; Impact</h1>
+            <p>
+              Stay updated with our latest initiatives, read inspiring stories from the ground, 
+              and learn how together we are changing lives across Mumbai.
+            </p>
+            <button className="btn-scroll-down" onClick={scrollToGrid} aria-label="Scroll down to blogs">
+              <i className="bi bi-chevron-down"></i>
+            </button>
+          </div>
         </div>
       </section>
 
