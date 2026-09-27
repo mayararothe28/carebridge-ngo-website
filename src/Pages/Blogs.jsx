@@ -120,9 +120,6 @@ function Blogs() {
               Stay updated with our latest initiatives, read inspiring stories from the ground, 
               and learn how together we are changing lives across Mumbai.
             </p>
-            <button className="btn-scroll-down" onClick={scrollToGrid} aria-label="Scroll down to blogs">
-              <i className="bi bi-chevron-down"></i>
-            </button>
           </div>
         </div>
       </section>

@@ -68,20 +68,16 @@ function Contact() {
   };
 
   return (
-    <main className="contact-page bg-light">
-      <section className="contact-hero">
-        <div className="container">
-          <div className="fade-in">
-            <span className="section-label">Contact Us</span>
-            <h1>We're Here to Help</h1>
-            <p>
-              Have a question, want to volunteer, or need help with a donation? Reach out to us and our team will get back to you shortly.
-            </p>
-          </div>
+    <main className="contact-page bg-light py-4">
+      <div className="container mt-1">
+        
+       <div className="text-center mb-3">
+          <span className="section-label">Contact Us</span>
+          <h1 className="fw-bold mb-3">We're Here to Help</h1>
+          <p className="text-muted mx-auto" style={{maxWidth: "600px"}}>
+            Have a question, want to volunteer, or need help with a donation? Reach out to us and our team will get back to you shortly.
+          </p>
         </div>
-      </section>
-
-      <div className="container py-5">
 
         <div className="contact-wrapper bg-white shadow-lg rounded-4 overflow-hidden">
           <div className="row g-0">
@@ -149,7 +145,7 @@ function Contact() {
                   
                   <div className="row g-3">
                     <div className="col-md-6">
-                      <label className="form-label text-muted small fw-bold">Full Name</label>
+                      <label className="form-label text-muted small fw-bold">Your Name</label>
                       <input
                         type="text"
                         name="name"
@@ -233,77 +229,6 @@ function Contact() {
         
 
       </div>
-
-      {/* ================= FAQ ================= */}
-      <section className="contact-faq-section py-5">
-        <div className="container">
-          <div className="text-center mb-5 fade-in">
-            <span className="section-label">FAQ</span>
-            <h2>Frequently Asked Questions</h2>
-          </div>
-
-          <div className="row justify-content-center">
-            <div className="col-lg-8">
-              <div className="accordion contact-accordion shadow-sm" id="contactFAQ">
-                
-                <div className="accordion-item fade-in stagger-1">
-                  <h2 className="accordion-header">
-                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
-                      How can I become a volunteer?
-                    </button>
-                  </h2>
-                  <div id="faqOne" className="accordion-collapse collapse show" data-bs-parent="#contactFAQ">
-                    <div className="accordion-body">
-                      You can join us by completing our volunteer registration form on the Volunteer page and selecting the area where you would like to help.
-                    </div>
-                  </div>
-                </div>
-
-                <div className="accordion-item fade-in stagger-2">
-                  <h2 className="accordion-header">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
-                      How can I donate?
-                    </button>
-                  </h2>
-                  <div id="faqTwo" className="accordion-collapse collapse" data-bs-parent="#contactFAQ">
-                    <div className="accordion-body">
-                      You can visit our Donate page and choose the amount and purpose of your contribution. We accept multiple payment methods.
-                    </div>
-                  </div>
-                </div>
-
-                <div className="accordion-item fade-in stagger-3">
-                  <h2 className="accordion-header">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
-                      Where does my donation go?
-                    </button>
-                  </h2>
-                  <div id="faqThree" className="accordion-collapse collapse" data-bs-parent="#contactFAQ">
-                    <div className="accordion-body">
-                      Donations support areas such as child education, food support, healthcare and community initiatives across Mumbai.
-                    </div>
-                  </div>
-                </div>
-
-                <div className="accordion-item fade-in stagger-4">
-                  <h2 className="accordion-header">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
-                      How can I participate in campaigns?
-                    </button>
-                  </h2>
-                  <div id="faqFour" className="accordion-collapse collapse" data-bs-parent="#contactFAQ">
-                    <div className="accordion-body">
-                      Visit our Campaigns page to learn about our current initiatives and ways to support them. You can sign up directly there.
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </main>
   );
 }
