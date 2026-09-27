@@ -100,22 +100,22 @@ function Footer() {
             <div className="col-lg-2 col-md-3 col-6 mb-4">
               <h4>Our Work</h4>
               <ul>
-                <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/work">Education</Link></li>
-                <li><Link to="/work">Food Support</Link></li>
-                <li><Link to="/work">Healthcare</Link></li>
-                <li><Link to="/volunteer">Volunteer</Link></li>
+                <li><Link to="/about"><i className="bi bi-chevron-right"></i> About Us</Link></li>
+                <li><Link to="/work"><i className="bi bi-chevron-right"></i> Education</Link></li>
+                <li><Link to="/work"><i className="bi bi-chevron-right"></i> Food Support</Link></li>
+                <li><Link to="/work"><i className="bi bi-chevron-right"></i> Healthcare</Link></li>
+                <li><Link to="/volunteer"><i className="bi bi-chevron-right"></i> Volunteer</Link></li>
               </ul>
             </div>
 
             <div className="col-lg-2 col-md-3 col-6 mb-4">
               <h4>Get Involved</h4>
               <ul>
-                <li><Link to="/campaigns">Campaigns</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/volunteer">Volunteer</Link></li>
-                <li><Link to="/blogs">Blogs</Link></li>
-                <li><Link to="/gallery">Gallery</Link></li>
+                <li><Link to="/campaigns"><i className="bi bi-chevron-right"></i> Campaigns</Link></li>
+                <li><Link to="/events"><i className="bi bi-chevron-right"></i> Events</Link></li>
+                <li><Link to="/volunteer"><i className="bi bi-chevron-right"></i> Volunteer</Link></li>
+                <li><Link to="/blogs"><i className="bi bi-chevron-right"></i> Blogs</Link></li>
+                <li><Link to="/gallery"><i className="bi bi-chevron-right"></i> Gallery</Link></li>
               </ul>
             </div>
 

@@ -180,15 +180,30 @@
 }
 
 .site-footer ul a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 14px;
-  transition: var(--transition);
+  transition: all 0.25s ease;
+}
+
+.site-footer ul a i {
+  font-size: 11px;
+  color: var(--accent);
+  transition: transform 0.25s ease, color 0.25s ease;
+  line-height: 1;
 }
 
 .site-footer ul a:hover {
   color: white;
   padding-left: 4px;
+}
+
+.site-footer ul a:hover i {
+  transform: translateX(3px);
+  color: var(--accent);
 }
 
 .footer-contact p {
