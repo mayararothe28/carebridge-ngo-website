@@ -9,11 +9,6 @@ function WorkDetails() {
 
   const currentWork = getWorkById(id);
 
-  // Get 3 other initiatives as related
-  const relatedWorks = workData
-    .filter((item) => item.id !== currentWork.id)
-    .slice(0, 3);
-
   return (
     <main className="work-details-page" ref={sectionRef}>
       {/* Header Section */}
@@ -132,40 +127,6 @@ function WorkDetails() {
                   </ul>
                 </div>
               </aside>
-            </div>
-          </div>
-
-          {/* Related Initiatives Section */}
-          <div className="wd-related-section fade-in">
-            <h2>Explore More Initiatives</h2>
-            <div className="row g-4">
-              {relatedWorks.map((item, i) => (
-                <div className="col-md-4" key={item.id}>
-                  <Link
-                    to={`/work/${item.id}`}
-                    className={`work-card fade-in stagger-${
-                      i + 1
-                    } text-decoration-none d-block`}
-                  >
-                    <div className="work-card-img">
-                      <img src={item.img} alt={item.title} />
-                      <span className="work-card-badge">{item.tag}</span>
-                      <div className="work-card-icon">
-                        <i className={`bi ${item.icon}`}></i>
-                      </div>
-                    </div>
-                    <div className="work-card-body text-dark">
-                      <h3>{item.title}</h3>
-                      <p>{item.desc}</p>
-                      <div className="work-card-footer">
-                        <span className="work-card-link">
-                          Learn More <i className="bi bi-arrow-right ms-1"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
             </div>
           </div>
         </div>
