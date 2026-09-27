@@ -85,7 +85,7 @@ function Gallery() {
       <section className="gallery-hero">
         <div className="container">
           <div className="fade-in">
-            <span className="gallery-label">Our Gallery</span>
+            <span className="section-label">Our Gallery</span>
             <h1>Moments That Matter</h1>
             <p>
               Every picture tells a story of compassion, teamwork and positive

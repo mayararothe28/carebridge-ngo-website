@@ -14,23 +14,19 @@ function About() {
   return (
     <main className="about-page">
       
-      <section className="about-hero">
-  <div className="container">
-    <div className="about-hero-content">
-
-      <p className="hero-small-title">ABOUT CAREBRIDGE</p>
-
-      <h1>Building a Better Future, Together</h1>
-
-      <p className="hero-description">
-        CareBridge works with communities to create better opportunities,
-        support children and families, and build a healthier and more
-        inclusive future for everyone.
-      </p>
-
-    </div>
-  </div>
-</section>
+      <section className="about-hero" ref={sectionRefs.hero}>
+        <div className="container">
+          <div className="fade-in">
+            <span className="section-label">About CareBridge</span>
+            <h1>Building a Better Future, Together</h1>
+            <p>
+              CareBridge works with communities to create better opportunities,
+              support children and families, and build a healthier and more
+              inclusive future for everyone.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="about-mission" id="mission" ref={sectionRefs.mission}>
         <div className="container">

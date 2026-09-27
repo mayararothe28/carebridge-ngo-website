@@ -11,6 +11,7 @@
   background: linear-gradient(135deg, #eaf7ef, #f6fbf8);
 }
 
+.gallery-hero .section-label,
 .gallery-label {
   display: inline-block;
   color: var(--primary);
@@ -303,12 +304,8 @@
 }
 
 @media (max-width: 768px) {
-  .gallery-hero {
-    padding: 60px 20px;
-  }
-
   .gallery-hero h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .gallery-grid-section {

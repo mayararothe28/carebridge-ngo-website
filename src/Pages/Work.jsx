@@ -28,7 +28,7 @@ function Work() {
           <div className="fade-in">
             <span className="section-label">Our Work & Initiatives</span>
             <h1>Where Your Support Goes</h1>
-            <p className="work-hero-desc">
+            <p>
               Discover how CareBridge transforms lives across communities through
               focused, high-impact programs in education, healthcare, nutrition,
               and sustainable community empowerment.

@@ -209,3 +209,100 @@ section {
   background-color: var(--accent) !important;
   color: white !important;
 }
+
+/* ========================================================
+   UNIFIED PAGE HERO STYLES (MATCHING CAMPAIGNS PAGE HERO)
+   ======================================================== */
+.campaigns-hero,
+.about-hero,
+.work-hero,
+.events-hero,
+.blogs-hero,
+.gallery-hero,
+.contact-hero,
+.donate-hero,
+.volunteer-hero {
+  padding: 80px 20px !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #eaf7ef, #f6fbf8) !important;
+  width: 100% !important;
+  border-bottom: none !important;
+}
+
+.campaigns-hero .section-label,
+.about-hero .section-label,
+.work-hero .section-label,
+.events-hero .section-label,
+.blogs-hero .section-label,
+.gallery-hero .section-label,
+.gallery-hero .gallery-label,
+.contact-hero .section-label,
+.donate-hero .section-label,
+.volunteer-hero .section-label {
+  display: inline-block !important;
+  color: var(--primary) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.5px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 14px !important;
+}
+
+.campaigns-hero h1,
+.about-hero h1,
+.work-hero h1,
+.events-hero h1,
+.blogs-hero h1,
+.gallery-hero h1,
+.contact-hero h1,
+.donate-hero h1,
+.volunteer-hero h1 {
+  font-size: 46px !important;
+  font-weight: 800 !important;
+  color: var(--text-dark) !important;
+  margin-bottom: 16px !important;
+  line-height: 1.2 !important;
+}
+
+.campaigns-hero p:last-child,
+.about-hero p:last-child,
+.work-hero p:last-child,
+.events-hero p:last-child,
+.blogs-hero p:last-child,
+.gallery-hero p:last-child,
+.contact-hero p:last-child,
+.donate-hero p:last-child,
+.volunteer-hero p:last-child {
+  max-width: 600px !important;
+  margin: auto !important;
+  color: var(--text-muted) !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+}
+
+@media (max-width: 768px) {
+  .campaigns-hero,
+  .about-hero,
+  .work-hero,
+  .events-hero,
+  .blogs-hero,
+  .gallery-hero,
+  .contact-hero,
+  .donate-hero,
+  .volunteer-hero {
+    padding: 60px 15px !important;
+  }
+
+  .campaigns-hero h1,
+  .about-hero h1,
+  .work-hero h1,
+  .events-hero h1,
+  .blogs-hero h1,
+  .gallery-hero h1,
+  .contact-hero h1,
+  .donate-hero h1,
+  .volunteer-hero h1 {
+    font-size: 34px !important;
+  }
+}
+

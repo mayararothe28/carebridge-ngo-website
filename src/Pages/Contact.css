@@ -160,3 +160,9 @@ textarea.contact-input {
   line-height: 1.7;
   background-color: white;
 }
+
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: 34px;
+  }
+}

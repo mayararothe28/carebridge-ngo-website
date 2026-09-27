@@ -7,12 +7,11 @@
   padding: 80px 20px;
   text-align: center;
   background: linear-gradient(135deg, #eaf7ef, #f6fbf8);
-  border-bottom: 1px solid var(--border-light, #e2e8e5);
 }
 
 .work-hero .section-label {
   display: inline-block;
-  color: var(--primary, #198754);
+  color: var(--primary);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2.5px;
@@ -23,14 +22,14 @@
 .work-hero h1 {
   font-size: 46px;
   font-weight: 800;
-  color: var(--text-dark, #1a2e25);
+  color: var(--text-dark);
   margin-bottom: 16px;
 }
 
-.work-hero-desc {
-  max-width: 650px;
+.work-hero p:last-child {
+  max-width: 600px;
   margin: auto;
-  color: var(--text-muted, #7a8d82);
+  color: var(--text-muted);
   font-size: 16px;
   line-height: 1.8;
 }
@@ -268,18 +267,9 @@
 }
 
 /* Responsive Media Queries */
-@media (max-width: 991px) {
-  .work-hero h1 {
-    font-size: 38px;
-  }
-}
-
 @media (max-width: 768px) {
-  .work-hero {
-    padding: 70px 20px 50px;
-  }
   .work-hero h1 {
-    font-size: 30px;
+    font-size: 34px;
   }
   .work-cta-btns {
     flex-direction: column;

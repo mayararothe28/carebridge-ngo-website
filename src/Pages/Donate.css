@@ -598,3 +598,9 @@
   font-size: 16px;
   line-height: 1.8;
 }
+
+@media (max-width: 768px) {
+  .donate-hero h1 {
+    font-size: 34px;
+  }
+}
