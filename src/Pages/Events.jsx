@@ -43,7 +43,7 @@ function Events() {
 
   return (
     <main className="events-page">
-      <section className="events-hero" ref={sectionRefs.hero}>
+      <section className="events-hero page-hero" ref={sectionRefs.hero}>
         <div className="container">
           <div className="fade-in">
             <span className="section-label">Join Our Initiatives</span>

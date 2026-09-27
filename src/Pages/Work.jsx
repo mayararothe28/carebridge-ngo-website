@@ -23,7 +23,7 @@ function Work() {
   return (
     <main className="work-page">
       {/* Hero Section */}
-      <section className="work-hero" ref={sectionRefs.hero}>
+      <section className="work-hero page-hero" ref={sectionRefs.hero}>
         <div className="container">
           <div className="fade-in">
             <span className="section-label">Our Work & Initiatives</span>

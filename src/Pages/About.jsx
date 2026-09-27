@@ -14,7 +14,7 @@ function About() {
   return (
     <main className="about-page">
       
-      <section className="about-hero" ref={sectionRefs.hero}>
+      <section className="about-hero page-hero" ref={sectionRefs.hero}>
         <div className="container">
           <div className="fade-in">
             <span className="section-label">About CareBridge</span>

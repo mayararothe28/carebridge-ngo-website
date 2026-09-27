@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./Contact.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function Contact() {
+  const heroRef = useScrollAnimation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -69,7 +71,7 @@ function Contact() {
 
   return (
     <main className="contact-page bg-light">
-      <section className="contact-hero">
+      <section className="contact-hero page-hero" ref={heroRef}>
         <div className="container">
           <div className="fade-in">
             <span className="section-label">Contact Us</span>

@@ -211,11 +211,12 @@ section {
 }
 
 /* ========================================================
-   UNIFIED PAGE HERO STYLES (MATCHING CAMPAIGNS PAGE HERO)
+   UNIFIED PAGE HERO STYLES (EXACT REPLICA OF OUR WORK HERO)
    ======================================================== */
-.campaigns-hero,
-.about-hero,
+.page-hero,
 .work-hero,
+.about-hero,
+.campaigns-hero,
 .events-hero,
 .blogs-hero,
 .gallery-hero,
@@ -226,12 +227,55 @@ section {
   text-align: center !important;
   background: linear-gradient(135deg, #eaf7ef, #f6fbf8) !important;
   width: 100% !important;
+  min-height: 290px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
   border-bottom: none !important;
+  box-sizing: border-box !important;
 }
 
-.campaigns-hero .section-label,
-.about-hero .section-label,
+.page-hero .container,
+.work-hero .container,
+.about-hero .container,
+.campaigns-hero .container,
+.events-hero .container,
+.blogs-hero .container,
+.gallery-hero .container,
+.contact-hero .container,
+.donate-hero .container,
+.volunteer-hero .container {
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+  text-align: center !important;
+}
+
+/* Ensure hero text content is ALWAYS 100% visible immediately */
+.page-hero .fade-in,
+.work-hero .fade-in,
+.about-hero .fade-in,
+.campaigns-hero .fade-in,
+.events-hero .fade-in,
+.blogs-hero .fade-in,
+.gallery-hero .fade-in,
+.contact-hero .fade-in,
+.donate-hero .fade-in,
+.volunteer-hero .fade-in {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.page-hero .section-label,
 .work-hero .section-label,
+.about-hero .section-label,
+.campaigns-hero .section-label,
 .events-hero .section-label,
 .blogs-hero .section-label,
 .gallery-hero .section-label,
@@ -240,17 +284,19 @@ section {
 .donate-hero .section-label,
 .volunteer-hero .section-label {
   display: inline-block !important;
-  color: var(--primary) !important;
+  color: #198754 !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   letter-spacing: 2.5px !important;
   text-transform: uppercase !important;
   margin-bottom: 14px !important;
+  line-height: 1 !important;
 }
 
-.campaigns-hero h1,
-.about-hero h1,
+.page-hero h1,
 .work-hero h1,
+.about-hero h1,
+.campaigns-hero h1,
 .events-hero h1,
 .blogs-hero h1,
 .gallery-hero h1,
@@ -259,31 +305,35 @@ section {
 .volunteer-hero h1 {
   font-size: 46px !important;
   font-weight: 800 !important;
-  color: var(--text-dark) !important;
+  color: #1a2e25 !important;
   margin-bottom: 16px !important;
-  line-height: 1.2 !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
 }
 
-.campaigns-hero p:last-child,
-.about-hero p:last-child,
-.work-hero p:last-child,
-.events-hero p:last-child,
-.blogs-hero p:last-child,
-.gallery-hero p:last-child,
-.contact-hero p:last-child,
-.donate-hero p:last-child,
-.volunteer-hero p:last-child {
+.page-hero p,
+.work-hero p,
+.about-hero p,
+.campaigns-hero p,
+.events-hero p,
+.blogs-hero p,
+.gallery-hero p,
+.contact-hero p,
+.donate-hero p,
+.volunteer-hero p {
   max-width: 600px !important;
-  margin: auto !important;
-  color: var(--text-muted) !important;
+  margin: 0 auto !important;
+  color: #7a8d82 !important;
   font-size: 16px !important;
   line-height: 1.8 !important;
+  text-align: center !important;
 }
 
 @media (max-width: 768px) {
-  .campaigns-hero,
-  .about-hero,
+  .page-hero,
   .work-hero,
+  .about-hero,
+  .campaigns-hero,
   .events-hero,
   .blogs-hero,
   .gallery-hero,
@@ -291,11 +341,13 @@ section {
   .donate-hero,
   .volunteer-hero {
     padding: 60px 15px !important;
+    min-height: 240px !important;
   }
 
-  .campaigns-hero h1,
-  .about-hero h1,
+  .page-hero h1,
   .work-hero h1,
+  .about-hero h1,
+  .campaigns-hero h1,
   .events-hero h1,
   .blogs-hero h1,
   .gallery-hero h1,

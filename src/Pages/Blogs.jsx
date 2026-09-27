@@ -111,7 +111,7 @@ function Blogs() {
   return (
     <main className="blogs-page">
       {/* Hero Section */}
-      <section className="blogs-hero" ref={sectionRefs.hero}>
+      <section className="blogs-hero page-hero" ref={sectionRefs.hero}>
         <div className="container">
           <div className="fade-in">
             <span className="section-label">Our Blog</span>

@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "./Volunteer.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function Volunteer() {
+  const heroRef = useScrollAnimation();
   const location = useLocation();
   const isFromEvents = location.state?.from === "events" || Boolean(location.state?.interest);
 
@@ -79,7 +81,7 @@ function Volunteer() {
   return (
     <main className="volunteer-page bg-light">
       
-      <section className="volunteer-hero">
+      <section className="volunteer-hero page-hero" ref={heroRef}>
         <div className="container">
           <div className="fade-in">
             <span className="section-label">Join Our Team</span>

@@ -68,7 +68,7 @@ function Campaigns() {
   return (
     <main className="campaigns-page">
       
-      <section className="campaigns-hero" ref={sectionRefs.hero}>
+      <section className="campaigns-hero page-hero" ref={sectionRefs.hero}>
         <div className="container">
           <div className="fade-in">
             <span className="section-label">Active Causes</span>

@@ -82,7 +82,7 @@ function Gallery() {
   return (
     <main className="gallery-page" ref={sectionRef}>
     
-      <section className="gallery-hero">
+      <section className="gallery-hero page-hero">
         <div className="container">
           <div className="fade-in">
             <span className="section-label">Our Gallery</span>

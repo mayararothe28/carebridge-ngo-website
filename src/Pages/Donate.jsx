@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./Donate.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function Donate() {
+  const heroRef = useScrollAnimation();
   const [amount, setAmount] = useState("1000");
   const [customAmount, setCustomAmount] = useState("");
   const [donationType, setDonationType] = useState("monthly");
@@ -78,7 +80,7 @@ function Donate() {
 
   return (
     <main className="donate-page bg-light">
-      <section className="donate-hero">
+      <section className="donate-hero page-hero" ref={heroRef}>
         <div className="container">
           <div className="fade-in">
             <span className="section-label">Support Our Cause</span>
