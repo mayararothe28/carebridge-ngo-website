@@ -6,7 +6,6 @@
 
 
 
-
 .about-hero {
   padding: 80px 20px;
   text-align: center;
@@ -37,6 +36,8 @@
   font-size: 16px;
   line-height: 1.8;
 }
+
+
 
 
 
@@ -358,6 +359,7 @@
   .about-hero h1 {
     font-size: 34px;
   }
+
   .about-hero-image {
     height: 380px;
   }

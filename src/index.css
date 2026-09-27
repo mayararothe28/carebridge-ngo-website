@@ -211,7 +211,7 @@ section {
 }
 
 /* ========================================================
-   UNIFIED PAGE HERO STYLES (EXACT REPLICA OF OUR WORK HERO)
+   UNIFIED PAGE HERO STYLES (EXACT SAME HEIGHT ACROSS ALL NAVBAR PAGES)
    ======================================================== */
 .page-hero,
 .work-hero,
@@ -222,18 +222,23 @@ section {
 .gallery-hero,
 .contact-hero,
 .donate-hero,
-.volunteer-hero {
-  padding: 80px 20px !important;
+.volunteer-hero,
+.our-work-hero {
+  height: 340px !important;
+  min-height: 340px !important;
+  max-height: 340px !important;
+  padding: 0 20px !important;
   text-align: center !important;
   background: linear-gradient(135deg, #eaf7ef, #f6fbf8) !important;
   width: 100% !important;
-  min-height: 290px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
   border-bottom: none !important;
   box-sizing: border-box !important;
+  margin: 0 !important;
+  overflow: hidden !important;
 }
 
 .page-hero .container,
@@ -245,12 +250,17 @@ section {
 .gallery-hero .container,
 .contact-hero .container,
 .donate-hero .container,
-.volunteer-hero .container {
+.volunteer-hero .container,
+.our-work-hero .container {
   width: 100% !important;
   max-width: 1140px !important;
   margin: 0 auto !important;
   padding: 0 15px !important;
   text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 /* Ensure hero text content is ALWAYS 100% visible immediately */
@@ -263,11 +273,13 @@ section {
 .gallery-hero .fade-in,
 .contact-hero .fade-in,
 .donate-hero .fade-in,
-.volunteer-hero .fade-in {
+.volunteer-hero .fade-in,
+.our-work-hero-content {
   opacity: 1 !important;
   transform: none !important;
   visibility: visible !important;
-  max-width: 700px !important;
+  max-width: 760px !important;
+  width: 100% !important;
   margin: 0 auto !important;
   text-align: center !important;
 }
@@ -282,14 +294,15 @@ section {
 .gallery-hero .gallery-label,
 .contact-hero .section-label,
 .donate-hero .section-label,
-.volunteer-hero .section-label {
+.volunteer-hero .section-label,
+.our-work-hero .hero-small-title {
   display: inline-block !important;
   color: #198754 !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   letter-spacing: 2.5px !important;
   text-transform: uppercase !important;
-  margin-bottom: 14px !important;
+  margin-bottom: 12px !important;
   line-height: 1 !important;
 }
 
@@ -302,11 +315,12 @@ section {
 .gallery-hero h1,
 .contact-hero h1,
 .donate-hero h1,
-.volunteer-hero h1 {
-  font-size: 46px !important;
+.volunteer-hero h1,
+.our-work-hero h1 {
+  font-size: 42px !important;
   font-weight: 800 !important;
   color: #1a2e25 !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 14px !important;
   line-height: 1.25 !important;
   text-align: center !important;
 }
@@ -320,12 +334,13 @@ section {
 .gallery-hero p,
 .contact-hero p,
 .donate-hero p,
-.volunteer-hero p {
-  max-width: 600px !important;
+.volunteer-hero p,
+.our-work-hero .hero-description {
+  max-width: 640px !important;
   margin: 0 auto !important;
   color: #7a8d82 !important;
   font-size: 16px !important;
-  line-height: 1.8 !important;
+  line-height: 1.7 !important;
   text-align: center !important;
 }
 
@@ -339,9 +354,12 @@ section {
   .gallery-hero,
   .contact-hero,
   .donate-hero,
-  .volunteer-hero {
-    padding: 60px 15px !important;
-    min-height: 240px !important;
+  .volunteer-hero,
+  .our-work-hero {
+    height: auto !important;
+    min-height: 270px !important;
+    max-height: none !important;
+    padding: 40px 15px !important;
   }
 
   .page-hero h1,
@@ -353,8 +371,26 @@ section {
   .gallery-hero h1,
   .contact-hero h1,
   .donate-hero h1,
-  .volunteer-hero h1 {
-    font-size: 34px !important;
+  .volunteer-hero h1,
+  .our-work-hero h1 {
+    font-size: 32px !important;
+    margin-bottom: 10px !important;
+    line-height: 1.25 !important;
+  }
+
+  .page-hero p,
+  .work-hero p,
+  .about-hero p,
+  .campaigns-hero p,
+  .events-hero p,
+  .blogs-hero p,
+  .gallery-hero p,
+  .contact-hero p,
+  .donate-hero p,
+  .volunteer-hero p,
+  .our-work-hero .hero-description {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
   }
 }
 
