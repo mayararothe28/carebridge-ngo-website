@@ -1,89 +1,165 @@
 import { useParams, Link } from "react-router-dom";
+import { workData, getWorkById } from "../data/workData";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import "./WorkDetails.css";
 
 function WorkDetails() {
   const { id } = useParams();
   const sectionRef = useScrollAnimation();
 
-  const workList = {
-    "education": {
-      img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
-      title: "Child Education",
-      desc: "Books, learning materials, school supplies, and tutoring support for children who need it most.",
-      fullDescription: [
-        "Education is the most powerful weapon which you can use to change the world.",
-        "Our Child Education initiative focuses on providing quality learning materials, books, and uniforms to students in rural and underserved areas.",
-        "We also partner with local teachers to provide after-school tutoring for struggling students."
-      ]
-    },
-    "food": {
-      img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
-      title: "Food Support",
-      desc: "Nutritious meals and essential food packages for families facing difficult circumstances.",
-      fullDescription: [
-        "No one should go to bed hungry. Our food support program distributes weekly grocery kits to vulnerable families.",
-        "We also run community kitchens in urban slums to provide hot, nutritious meals to daily wage workers and children.",
-        "During festivals, we organize special meal drives to ensure everyone can celebrate without worry."
-      ]
-    },
-    "health": {
-      img: "https://images.unsplash.com/photo-1576091160550-2173eca0237e?auto=format&fit=crop&w=1200&q=80",
-      title: "Healthcare",
-      desc: "Medical assistance, health awareness camps, and access to essential healthcare services.",
-      fullDescription: [
-        "Access to healthcare is a basic human right. We organize monthly free medical camps in remote villages.",
-        "Our camps provide general check-ups, eye exams, and distribute basic medicines.",
-        "We also fund critical surgeries and medical treatments for children from low-income families."
-      ]
-    },
-    "community": {
-      img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80",
-      title: "Volunteering",
-      desc: "Opportunities to contribute your time, skills and energy to create meaningful change.",
-      fullDescription: [
-        "Volunteers are the heart and soul of CareBridge. We offer various volunteering programs tailored to your skills.",
-        "Whether it's teaching on weekends, helping with social media, or participating in food drives, your time matters.",
-        "Join our community of over 500 active volunteers and make a real difference in Mumbai."
-      ]
-    }
-  };
+  const currentWork = getWorkById(id);
 
-  const workData = workList[id] || workList["education"];
+  // Get 3 other initiatives as related
+  const relatedWorks = workData
+    .filter((item) => item.id !== currentWork.id)
+    .slice(0, 3);
 
   return (
-    <main className="campaign-details-page bg-light" ref={sectionRef} style={{ paddingBottom: '80px' }}>
-      <section className="cd-header fade-in bg-white shadow-sm pb-5 pt-5 mb-5">
-        <div className="container text-center">
-          <Link to="/work" className="text-decoration-none text-muted mb-4 d-inline-block">
-            <i className="bi bi-arrow-left"></i> Back to Our Work
+    <main className="work-details-page" ref={sectionRef}>
+      {/* Header Section */}
+      <section className="wd-header fade-in">
+        <div className="container">
+          <Link to="/work" className="wd-back-link">
+            <i className="bi bi-arrow-left"></i> Back to All Initiatives
           </Link>
-          <div className="cd-header-content">
-            <span className="badge bg-accent px-3 py-2 rounded-pill mb-3">Initiative</span>
-            <h1 className="display-4 fw-bold text-dark">{workData.title}</h1>
+          <div className="wd-header-content">
+            <span className="wd-badge">{currentWork.tag}</span>
+            <h1>{currentWork.title}</h1>
+            <p className="wd-subtitle">{currentWork.subtitle}</p>
           </div>
         </div>
       </section>
 
-      <section className="cd-main">
+      {/* Main Details Section */}
+      <section className="wd-main">
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-10 mb-5 fade-in">
-              <div className="cd-image mb-5 rounded-4 overflow-hidden shadow-sm">
-                <img src={workData.img} alt={workData.title} className="img-fluid w-100" style={{maxHeight: '500px', objectFit: 'cover'}} />
-              </div>
-              <div className="cd-description bg-white p-5 rounded-4 shadow-sm">
-                <h2 className="fw-bold mb-4">About this Initiative</h2>
-                <p className="lead text-muted mb-4">{workData.desc}</p>
-                {workData.fullDescription.map((p, i) => (
-                  <p key={i} className="text-muted" style={{lineHeight: '1.8', fontSize: '1.1rem'}}>{p}</p>
-                ))}
-                
-                <div className="text-center mt-5">
-                  <Link to="/donate" className="btn btn-accent px-5 py-3 fw-bold fs-5 shadow-sm rounded-pill text-decoration-none d-inline-block me-3">
-                    Support this Cause <i className="bi bi-heart-fill ms-2"></i>
-                  </Link>
+          <div className="row">
+            {/* Left Content Column */}
+            <div className="col-lg-8 fade-in">
+              <div className="wd-featured-img-wrapper">
+                <img
+                  src={currentWork.img}
+                  alt={currentWork.title}
+                  className="wd-featured-img"
+                />
+                <div className="wd-featured-icon">
+                  <i className={`bi ${currentWork.icon}`}></i>
                 </div>
               </div>
+
+              {/* Stats Grid */}
+              <div className="wd-stats-grid">
+                {currentWork.stats.map((stat, idx) => (
+                  <div className="wd-stat-card" key={idx}>
+                    <div className="wd-stat-val">{stat.value}</div>
+                    <div className="wd-stat-lbl">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Description Content Box */}
+              <div className="wd-content-box">
+                <h2>About This Initiative</h2>
+                <div className="wd-lead">
+                  <i className="bi bi-quote me-2 fs-5"></i>
+                  {currentWork.desc}
+                </div>
+
+                {currentWork.fullDescription.map((paragraph, index) => (
+                  <p key={index} className="wd-paragraph">
+                    {paragraph}
+                  </p>
+                ))}
+
+                {/* Highlights List */}
+                <div className="wd-highlights-box">
+                  <h3>Key Program Highlights</h3>
+                  {currentWork.highlights.map((highlight, index) => (
+                    <div className="wd-highlight-item" key={index}>
+                      <i className="bi bi-check-circle-fill"></i>
+                      <span>{highlight}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Sidebar Column */}
+            <div className="col-lg-4">
+              <aside className="wd-sidebar fade-in stagger-2">
+                {/* Take Action Card */}
+                <div className="wd-action-card">
+                  <h3>Make a Difference</h3>
+                  <p>
+                    Your generosity enables us to expand the{" "}
+                    <strong>{currentWork.title}</strong> initiative to more
+                    underprivileged communities.
+                  </p>
+                  <Link to="/donate" className="wd-btn-donate">
+                    <i className="bi bi-heart-fill"></i> Donate to this Cause
+                  </Link>
+                  <Link to="/volunteer" className="wd-btn-volunteer">
+                    <i className="bi bi-person-heart"></i> Join as Volunteer
+                  </Link>
+                </div>
+
+                {/* All Initiatives List */}
+                <div className="wd-nav-card">
+                  <h4>All Initiatives</h4>
+                  <ul className="wd-nav-list">
+                    {workData.map((item) => (
+                      <li key={item.id} className="wd-nav-item">
+                        <Link
+                          to={`/work/${item.id}`}
+                          className={`wd-nav-link ${
+                            item.id === currentWork.id ? "active" : ""
+                          }`}
+                        >
+                          <span>
+                            <i className={`bi ${item.icon} me-2`}></i>
+                            {item.title}
+                          </span>
+                          <i className="bi bi-chevron-right"></i>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          {/* Related Initiatives Section */}
+          <div className="wd-related-section fade-in">
+            <h2>Explore More Initiatives</h2>
+            <div className="row g-4">
+              {relatedWorks.map((item, i) => (
+                <div className="col-md-4" key={item.id}>
+                  <Link
+                    to={`/work/${item.id}`}
+                    className={`work-card fade-in stagger-${
+                      i + 1
+                    } text-decoration-none d-block`}
+                  >
+                    <div className="work-card-img">
+                      <img src={item.img} alt={item.title} />
+                      <span className="work-card-badge">{item.tag}</span>
+                      <div className="work-card-icon">
+                        <i className={`bi ${item.icon}`}></i>
+                      </div>
+                    </div>
+                    <div className="work-card-body text-dark">
+                      <h3>{item.title}</h3>
+                      <p>{item.desc}</p>
+                      <div className="work-card-footer">
+                        <span className="work-card-link">
+                          Learn More <i className="bi bi-arrow-right ms-1"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -255,6 +255,12 @@ function Home() {
               </div>
             ))}
           </div>
+
+          <div className="text-center mt-3 fade-in">
+            <Link to="/work" className="btn-see-all fs-6">
+              View All 12 Initiatives <i className="bi bi-arrow-right"></i>
+            </Link>
+          </div>
         </div>
       </section>
 
