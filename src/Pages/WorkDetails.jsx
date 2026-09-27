@@ -19,9 +19,15 @@ function WorkDetails() {
       {/* Header Section */}
       <section className="wd-header fade-in">
         <div className="container">
-          <Link to="/work" className="wd-back-link">
-            <i className="bi bi-arrow-left"></i> Back to All Initiatives
-          </Link>
+          <div className="wd-top-nav d-flex align-items-center gap-3 mb-3">
+            <Link to="/" className="wd-back-link mb-0">
+              <i className="bi bi-arrow-left"></i> Back to Home
+            </Link>
+            <span className="text-muted opacity-50">/</span>
+            <Link to="/work" className="wd-back-link mb-0">
+              Our Work
+            </Link>
+          </div>
           <div className="wd-header-content">
             <span className="wd-badge">{currentWork.tag}</span>
             <h1>{currentWork.title}</h1>

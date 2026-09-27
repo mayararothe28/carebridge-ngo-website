@@ -4,6 +4,8 @@ import "./Volunteer.css";
 
 function Volunteer() {
   const location = useLocation();
+  const isFromEvents = location.state?.from === "events" || Boolean(location.state?.interest);
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -101,12 +103,29 @@ function Volunteer() {
                     <i className="bi bi-patch-check-fill text-success" style={{fontSize: "5rem"}}></i>
                     <h2 className="fw-bold mt-4">Application Received!</h2>
                     <p className="text-muted mb-4 fs-5">Thank you for stepping forward. Our coordinator will contact you within 48 hours.</p>
-                    <Link to="/events" className="btn btn-accent px-4 py-2 rounded-pill fw-bold text-white text-decoration-none shadow-sm">
-                      Events <i className="bi bi-arrow-right ms-2"></i>
-                    </Link>
+                    {isFromEvents ? (
+                      <Link to="/events" className="btn btn-accent px-4 py-2 rounded-pill fw-bold text-white text-decoration-none shadow-sm">
+                        <i className="bi bi-arrow-left me-2"></i> Back to Events
+                      </Link>
+                    ) : (
+                      <Link to="/" className="btn btn-accent px-4 py-2 rounded-pill fw-bold text-white text-decoration-none shadow-sm">
+                        <i className="bi bi-arrow-left me-2"></i> Back to Home
+                      </Link>
+                    )}
                   </div>
                 ) : (
                   <>
+                    <div className="mb-4">
+                      {isFromEvents ? (
+                        <Link to="/events" className="text-muted text-decoration-none small fw-semibold">
+                          <i className="bi bi-arrow-left me-1"></i> Back to Events
+                        </Link>
+                      ) : (
+                        <Link to="/" className="text-muted text-decoration-none small fw-semibold">
+                          <i className="bi bi-arrow-left me-1"></i> Back to Home
+                        </Link>
+                      )}
+                    </div>
                     <div className="text-center mb-5">
                       <h3 className="fw-bold">Application Form</h3>
                       <p className="text-muted">Fill out the details below to register.</p>

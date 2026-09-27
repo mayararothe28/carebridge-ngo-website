@@ -91,7 +91,7 @@ function EventDetails() {
               <div className="bg-white p-4 rounded-4 shadow-sm sticky-top" style={{ top: '100px' }}>
                 <h3 className="fw-bold mb-4">Join This Event</h3>
                 <p className="text-muted mb-4">We need enthusiastic volunteers to make this event a success. Sign up today!</p>
-                <Link to="/volunteer" state={{ interest: eventData.interestKey }} className="btn btn-accent w-100 py-3 fw-bold fs-5 shadow-sm rounded-pill d-block text-center text-decoration-none">
+                <Link to="/volunteer" state={{ interest: eventData.interestKey, from: "events" }} className="btn btn-accent w-100 py-3 fw-bold fs-5 shadow-sm rounded-pill d-block text-center text-decoration-none">
                   Register as Volunteer <i className="bi bi-person-plus-fill ms-2"></i>
                 </Link>
                 <hr className="my-4" />

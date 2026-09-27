@@ -76,7 +76,7 @@ function Events() {
                       <span><i className="bi bi-geo-alt"></i> {event.location}</span>
                     </div>
                     <p>{event.desc}</p>
-                    <Link to="/volunteer" state={{ interest: event.interestKey }} className="btn-event-join text-decoration-none">
+                    <Link to="/volunteer" state={{ interest: event.interestKey, from: "events" }} className="btn-event-join text-decoration-none">
                       Register as Volunteer <i className="bi bi-arrow-right"></i>
                     </Link>
                   </div>
