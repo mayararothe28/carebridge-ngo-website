@@ -143,6 +143,7 @@
 }
 
 .campaign-btn {
+  transition: all 0.3s ease !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -196,4 +197,12 @@
   .campaigns-hero h1 {
     font-size: 34px;
   }
+}
+
+.campaign-btn i {
+  transition: all 0.3s ease !important;
+}
+.campaign-btn:hover i {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
 }

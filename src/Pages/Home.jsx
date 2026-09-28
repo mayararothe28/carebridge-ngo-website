@@ -8,16 +8,18 @@ import { Link } from "react-router-dom";
 function StatCard({ end, suffix, label, icon }) {
   const { count, ref } = useCountUp(end);
   return (
-    <div className="col-6 col-lg-3 mb-4" ref={ref}>
-      <div className="stat-card">
-        <div className="stat-icon-wrapper">
+    <div className="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0" ref={ref}>
+      <div className="stat-card d-flex align-items-center justify-content-center justify-content-lg-center gap-3">
+        <div className="stat-icon-wrapper m-0 flex-shrink-0">
           <i className={`bi ${icon}`}></i>
         </div>
-        <h3>
-          {count.toLocaleString()}
-          {suffix}
-        </h3>
-        <p>{label}</p>
+        <div className="stat-text-wrapper text-start">
+          <h3 className="mb-0">
+            {count.toLocaleString()}
+            {suffix}
+          </h3>
+          <p className="mb-0">{label}</p>
+        </div>
       </div>
     </div>
   );
@@ -39,60 +41,8 @@ function Home() {
   const [customAmount, setCustomAmount] = useState("");
   const [donateSuccess, setDonateSuccess] = useState(false);
 
-  const [typedLine1, setTypedLine1] = useState("");
-  const [typedLine2, setTypedLine2] = useState("");
-  const [typedDesc, setTypedDesc] = useState("");
-
-  useEffect(() => {
-    const fullLine1 = "Together We Care.";
-    const fullLine2 = "Together We Change.";
-    const fullDesc =
-      "We support children, families and communities through education, food, healthcare and meaningful volunteer activities. Every small action creates a lasting impact.";
-
-    let idx1 = 0;
-    let idx2 = 0;
-    let idxDesc = 0;
-    let timer1 = null;
-    let timer2 = null;
-    let timerDesc = null;
-    let pause1 = null;
-    let pause2 = null;
-
-    timer1 = setInterval(() => {
-      idx1++;
-      setTypedLine1(fullLine1.slice(0, idx1));
-      if (idx1 >= fullLine1.length) {
-        clearInterval(timer1);
-        pause1 = setTimeout(() => {
-          timer2 = setInterval(() => {
-            idx2++;
-            setTypedLine2(fullLine2.slice(0, idx2));
-            if (idx2 >= fullLine2.length) {
-              clearInterval(timer2);
-              pause2 = setTimeout(() => {
-                timerDesc = setInterval(() => {
-                  idxDesc++;
-                  setTypedDesc(fullDesc.slice(0, idxDesc));
-                  if (idxDesc >= fullDesc.length) {
-                    clearInterval(timerDesc);
-                  }
-                }, 22);
-              }, 220);
-            }
-          }, 55);
-        }, 180);
-      }
-    }, 55);
-
-    return () => {
-      if (timer1) clearInterval(timer1);
-      if (timer2) clearInterval(timer2);
-      if (timerDesc) clearInterval(timerDesc);
-      if (pause1) clearTimeout(pause1);
-      if (pause2) clearTimeout(pause2);
-    };
-  }, []);
-
+      
+  
   const handleAmountClick = (amount) => {
     setDonateAmount(amount);
     setCustomAmount("");
@@ -122,17 +72,17 @@ function Home() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
-              <div className="fade-in">
+              <div>
                 <span className="hero-badge">
                   <i className="bi bi-heart-fill"></i> CareBridge NGO
                 </span>
-                <h1>
-                  <span>{typedLine1}</span>
-                  {typedLine1.length >= 17 && <br />}
-                  <span className="text-accent">{typedLine2}</span>
+                <h1 className="fade-in">
+                  <span>Together We Care.</span>
+                  <br />
+                  <span className="text-accent">Together We Change.</span>
                 </h1>
                 <p className="hero-desc">
-                  {typedDesc}
+                  We support children, families and communities through education, food, healthcare and meaningful volunteer activities. Every small action creates a lasting impact.
                 </p>
                 <div className="hero-btns">
                   <Link to="/donate" className="btn-cta-primary">
@@ -330,7 +280,7 @@ function Home() {
               {
                 img: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=800&q=80",
                 title: "Back to School Drive 2026",
-                desc: "Help us provide school kits, uniforms and learning materials for 200+ children across rural Maharashtra before the new academic year begins.",
+                desc: "Help us provide school kits, uniforms and learning materials for 200+ children across Mumbai before the new academic year begins.",
                 tag: "Education",
                 raised: "₹1.2L",
                 goal: "₹3L",
@@ -339,7 +289,7 @@ function Home() {
               {
                 img: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80",
                 title: "Community Health Camp",
-                desc: "Free health checkups, medicines and awareness sessions for underserved communities in Pune and Nagpur. Doctors needed too!",
+                desc: "Free health checkups, medicines and awareness sessions for underserved communities in Mumbai. Doctors needed too!",
                 tag: "Healthcare",
                 raised: "₹85K",
                 goal: "₹2L",
@@ -356,7 +306,7 @@ function Home() {
               },
             ].map((c, i) => (
               <div className="col-md-6 col-lg-4 mb-4" key={i}>
-                <Link to={`/campaign/${i + 1}`} className={`campaign-card fade-in stagger-${i + 1} text-decoration-none d-block text-dark`}>
+                <Link to={`/campaign/${i + 1}`} className={`campaign-card fade-in stagger-${i + 1} text-decoration-none d-flex flex-column h-100 text-dark`}>
                   <div className="campaign-img">
                     <img src={c.img} alt={c.title} />
                     <span className="campaign-badge">{c.tag}</span>
@@ -380,7 +330,7 @@ function Home() {
                         ></div>
                       </div>
                     </div>
-                    <div className="campaign-btn" style={{pointerEvents: 'none'}}>
+                    <div className="campaign-btn">
                       <i className="bi bi-heart"></i> Support Campaign
                     </div>
                   </div>
@@ -432,7 +382,7 @@ function Home() {
                     <span style={{ fontSize: "12px", color: "var(--text-muted)", marginBottom: "10px" }}><i className="bi bi-calendar3"></i> {blog.date}</span>
                     <h4 style={{ fontSize: "18px", fontWeight: "700", marginBottom: "10px" }}>{blog.title}</h4>
                     <p style={{ fontSize: "14px", color: "var(--text-muted)", flexGrow: 1 }}>{blog.desc}</p>
-                    <span style={{ fontWeight: "bold", color: "var(--primary)" }}>Read More <i className="bi bi-arrow-right"></i></span>
+                    <span className="read-more-link" style={{ fontWeight: "bold", color: "var(--primary)" }}>Read More <i className="bi bi-arrow-right"></i></span>
                   </div>
                 </Link>
               </div>

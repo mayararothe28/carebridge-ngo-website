@@ -228,11 +228,13 @@
 }
 .hero-stats-wrapper {
   margin-top: 35px;
-  padding: 28px 20px 8px;
-  background: #f8faf9;
-  border: 1px solid #e2e8e5;
-  border-radius: 22px;
-  box-shadow: 0 6px 20px rgba(26, 46, 37, 0.04);
+  padding: 30px 20px;
+  background: #ffffff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 10;
 }
 
 .stat-card {
@@ -635,6 +637,7 @@
 
 
 .campaign-btn {
+  transition: all 0.3s ease !important;
   display: flex;
   align-items: center;
   justify-content: center;

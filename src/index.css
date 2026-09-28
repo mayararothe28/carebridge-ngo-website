@@ -394,3 +394,14 @@ section {
   }
 }
 
+
+/* Hover animation for Read More arrows */
+.read-more-link i {
+  display: inline-block;
+  transition: transform 0.3s ease !important;
+}
+
+.story-card:hover .read-more-link i,
+.blog-card:hover .read-more-link i {
+  transform: translateX(6px) !important;
+}
