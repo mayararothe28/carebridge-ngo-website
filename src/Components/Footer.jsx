@@ -142,14 +142,16 @@ function Footer() {
         
         <div className="footer-bottom">
           <p>&copy; 2026 CareBridge NGO. All Rights Reserved.</p>
-          <p>Together We Care. Together We Change.</p>
-          <button
-            className="back-to-top"
-            onClick={scrollToTop}
-            aria-label="Back to top"
-          >
-            <i className="bi bi-arrow-up"></i>
-          </button>
+          <div className="footer-bottom-right">
+            <p>Together We Care. Together We Change.</p>
+            <button
+              className="back-to-top"
+              onClick={scrollToTop}
+              aria-label="Back to top"
+            >
+              <i className="bi bi-arrow-up"></i>
+            </button>
+          </div>
         </div>
       </div>
     </footer>

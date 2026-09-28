@@ -112,53 +112,13 @@ textarea.contact-input {
 /* Move contact content upward */
 .contact-page {
   padding-top: 5px !important;
-  padding-bottom: 40px !important;
+  padding-bottom: 30px !important;
   min-height: auto !important;
   display: block !important;
 }
 
 .contact-page .container {
   margin-top: 0 !important;
-}
-
-/* ================================
-   FAQ
-================================ */
-.contact-faq-section {
-  background: #f8f9fa;
-  margin-top: 40px;
-}
-
-.contact-accordion .accordion-item {
-  border: none;
-  margin-bottom: 15px;
-  border-radius: var(--radius-md) !important;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.contact-accordion .accordion-button {
-  padding: 20px 25px;
-  font-weight: 700;
-  color: var(--text-dark);
-  background-color: white;
-  box-shadow: none !important;
-}
-
-.contact-accordion .accordion-button:not(.collapsed) {
-  color: var(--primary);
-  background-color: white;
-}
-
-.contact-accordion .accordion-button::after {
-  background-size: 1rem;
-}
-
-.contact-accordion .accordion-body {
-  padding: 0 25px 25px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  background-color: white;
 }
 
 @media (max-width: 768px) {

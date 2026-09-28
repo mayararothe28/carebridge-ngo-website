@@ -396,16 +396,9 @@ function Home() {
       
       <section className="events" id="events" ref={sectionRefs.events}>
         <div className="container">
-          <div className="row align-items-end mb-5">
-            <div className="col-lg-7 fade-in-left">
-              <span className="section-label">Upcoming Events</span>
-              <h2>Join Us in Making a Difference</h2>
-            </div>
-            <div className="col-lg-5 text-lg-end fade-in-right">
-              <Link to="/events" className="btn-see-all">
-                View All Events <i className="bi bi-arrow-right"></i>
-              </Link>
-            </div>
+          <div className="section-header fade-in">
+            <span className="section-label">Upcoming Events</span>
+            <h2>Join Us in Making a Difference</h2>
           </div>
 
           <div className="row horizontal-scroll-mobile">
@@ -451,6 +444,11 @@ function Home() {
                 </Link>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-4">
+            <Link to="/events" className="btn-see-all" style={{ padding: "10px 25px", border: "2px solid var(--primary)", borderRadius: "30px", textDecoration: "none", color: "var(--primary)", fontWeight: "bold" }}>
+              View All Events <i className="bi bi-arrow-right"></i>
+            </Link>
           </div>
         </div>
       </section>
