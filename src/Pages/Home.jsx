@@ -118,10 +118,6 @@ function Home() {
                   alt="Children supported by NGO"
                   className="hero-img"
                 />
-                <div className="hero-float-card">
-                  <span className="float-number">10K+</span>
-                  <span className="float-label">Meals Served</span>
-                </div>
               </div>
             </div>
           </div>

@@ -288,8 +288,8 @@
 
 .about-experience {
   position: absolute;
-  bottom: -20px;
-  right: -15px;
+  top: -20px;
+  left: -15px;
   background: var(--primary);
   color: white;
   padding: 22px 28px;
@@ -298,6 +298,7 @@
   flex-direction: column;
   align-items: center;
   box-shadow: 0 8px 25px rgba(25, 135, 84, 0.25);
+  z-index: 2;
 }
 
 .about-experience strong {
@@ -1127,8 +1128,10 @@
   }
 
   .about-experience {
-    right: 10px;
-    bottom: -15px;
+    top: -15px;
+    left: 10px;
+    bottom: auto;
+    right: auto;
   }
 
   .donate-card {
