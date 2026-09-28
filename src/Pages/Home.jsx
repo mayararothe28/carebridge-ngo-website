@@ -39,31 +39,56 @@ function Home() {
 
   const [typedLine1, setTypedLine1] = useState("");
   const [typedLine2, setTypedLine2] = useState("");
+  const [typedDesc, setTypedDesc] = useState("");
 
   useEffect(() => {
     const fullLine1 = "Together We Care.";
     const fullLine2 = "Together We Change.";
+    const fullDesc =
+      "We support children, families and communities through education, food, healthcare and meaningful volunteer activities. Every small action creates a lasting impact.";
+
     let idx1 = 0;
     let idx2 = 0;
+    let idxDesc = 0;
+    let timer1 = null;
+    let timer2 = null;
+    let timerDesc = null;
+    let pause1 = null;
+    let pause2 = null;
 
-    const timer1 = setInterval(() => {
+    timer1 = setInterval(() => {
       idx1++;
       setTypedLine1(fullLine1.slice(0, idx1));
       if (idx1 >= fullLine1.length) {
         clearInterval(timer1);
-        setTimeout(() => {
-          const timer2 = setInterval(() => {
+        pause1 = setTimeout(() => {
+          timer2 = setInterval(() => {
             idx2++;
             setTypedLine2(fullLine2.slice(0, idx2));
             if (idx2 >= fullLine2.length) {
               clearInterval(timer2);
+              pause2 = setTimeout(() => {
+                timerDesc = setInterval(() => {
+                  idxDesc++;
+                  setTypedDesc(fullDesc.slice(0, idxDesc));
+                  if (idxDesc >= fullDesc.length) {
+                    clearInterval(timerDesc);
+                  }
+                }, 22);
+              }, 220);
             }
-          }, 75);
+          }, 55);
         }, 180);
       }
-    }, 75);
+    }, 55);
 
-    return () => clearInterval(timer1);
+    return () => {
+      if (timer1) clearInterval(timer1);
+      if (timer2) clearInterval(timer2);
+      if (timerDesc) clearInterval(timerDesc);
+      if (pause1) clearTimeout(pause1);
+      if (pause2) clearTimeout(pause2);
+    };
   }, []);
 
   const handleAmountClick = (amount) => {
@@ -103,12 +128,9 @@ function Home() {
                   <span>{typedLine1}</span>
                   {typedLine1.length >= 17 && <br />}
                   <span className="text-accent">{typedLine2}</span>
-                  <span className="hero-typing-cursor">|</span>
                 </h1>
                 <p className="hero-desc">
-                  We support children, families and communities through
-                  education, food, healthcare and meaningful volunteer
-                  activities. Every small action creates a lasting impact.
+                  {typedDesc}
                 </p>
                 <div className="hero-btns">
                   <Link to="/donate" className="btn-cta-primary">

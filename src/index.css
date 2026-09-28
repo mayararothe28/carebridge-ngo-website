@@ -224,10 +224,10 @@ section {
 .donate-hero,
 .volunteer-hero,
 .our-work-hero {
-  height: 340px !important;
-  min-height: 340px !important;
-  max-height: 340px !important;
-  padding: 0 20px !important;
+  height: 380px !important;
+  min-height: 380px !important;
+  max-height: 380px !important;
+  padding: 72px 20px 0 !important;
   text-align: center !important;
   background: linear-gradient(135deg, #eaf7ef, #f6fbf8) !important;
   width: 100% !important;
@@ -357,9 +357,9 @@ section {
   .volunteer-hero,
   .our-work-hero {
     height: auto !important;
-    min-height: 270px !important;
+    min-height: 290px !important;
     max-height: none !important;
-    padding: 40px 15px !important;
+    padding: 85px 15px 35px !important;
   }
 
   .page-hero h1,

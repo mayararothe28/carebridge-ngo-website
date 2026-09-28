@@ -9,9 +9,10 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 25);
     };
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -42,7 +43,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className={`site-navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+      <nav className={`site-navbar ${scrolled || menuOpen ? "navbar-scrolled" : ""}`}>
         <div className="container">
           <div className="navbar-inner">
             <Link to="/" className="navbar-brand">
