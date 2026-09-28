@@ -42,18 +42,19 @@
 
 .hero {
   position: relative;
-  padding: 110px 0 35px;
+  padding: 110px 0 0;
   background: linear-gradient(135deg, #f3faf6 0%, #eef7f1 50%, #f8fdfb 100%);
-  overflow: hidden;
+  z-index: 2 !important;
+  
 }
 
 .hero-bg-pattern {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 45%;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 70% 30%, rgba(25, 135, 84, 0.06) 0%, transparent 60%);
+  background: radial-gradient(circle at 85% 30%, rgba(25, 135, 84, 0.06) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -235,6 +236,8 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   position: relative;
   z-index: 10;
+  transform: translateY(80px);
+  margin-bottom: 0;
 }
 
 .stat-card {
@@ -333,7 +336,7 @@
   flex-direction: column;
   align-items: center;
   box-shadow: 0 8px 25px rgba(25, 135, 84, 0.25);
-  z-index: 2;
+  z-index: 2 !important;
 }
 
 .about-experience strong {
@@ -1133,7 +1136,7 @@
 
 @media (max-width: 991px) {
   .hero {
-    padding: 100px 0 60px;
+    padding: 100px 0 0;
   }
 
   .hero h1 {
@@ -1227,11 +1230,14 @@
   }
 
   .about-experience {
-    position: static;
-    display: inline-flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-top: 15px;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    gap: 0;
+    padding: 12px 18px;
     border-radius: var(--radius-sm);
   }
 
@@ -1353,4 +1359,9 @@ section.campaigns .campaign-card .campaign-body a.campaign-btn:hover {
   background-color: #146c43 !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+}
+.about-home {
+  padding-top: 120px !important;
+  position: relative !important;
+  z-index: 1 !important;
 }

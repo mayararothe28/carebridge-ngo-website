@@ -13,7 +13,7 @@ function StatCard({ end, suffix, label, icon }) {
         <div className="stat-icon-wrapper m-0 flex-shrink-0">
           <i className={`bi ${icon}`}></i>
         </div>
-        <div className="stat-text-wrapper text-start">
+        <div className="stat-text-wrapper text-start" style={{ width: "150px" }}>
           <h3 className="mb-0">
             {count.toLocaleString()}
             {suffix}
@@ -40,6 +40,43 @@ function Home() {
   const [donateAmount, setDonateAmount] = useState(1000);
   const [customAmount, setCustomAmount] = useState("");
   const [donateSuccess, setDonateSuccess] = useState(false);
+
+  const [typedLine1, setTypedLine1] = useState("");
+  const [typedLine2, setTypedLine2] = useState("");
+
+  useEffect(() => {
+    const fullLine1 = "Together We Care.";
+    const fullLine2 = "Together We Change.";
+    
+    let idx1 = 0;
+    let idx2 = 0;
+    let timer1 = null;
+    let timer2 = null;
+    let pause1 = null;
+
+    timer1 = setInterval(() => {
+      idx1++;
+      setTypedLine1(fullLine1.slice(0, idx1));
+      if (idx1 >= fullLine1.length) {
+        clearInterval(timer1);
+        pause1 = setTimeout(() => {
+          timer2 = setInterval(() => {
+            idx2++;
+            setTypedLine2(fullLine2.slice(0, idx2));
+            if (idx2 >= fullLine2.length) {
+              clearInterval(timer2);
+            }
+          }, 55);
+        }, 180);
+      }
+    }, 55);
+
+    return () => {
+      if (timer1) clearInterval(timer1);
+      if (timer2) clearInterval(timer2);
+      if (pause1) clearTimeout(pause1);
+    };
+  }, []);
 
       
   
@@ -77,9 +114,9 @@ function Home() {
                   <i className="bi bi-heart-fill"></i> CareBridge NGO
                 </span>
                 <h1 className="fade-in">
-                  <span>Together We Care.</span>
+                  <span>{typedLine1}</span>
                   <br />
-                  <span className="text-accent">Together We Change.</span>
+                  <span className="text-accent">{typedLine2}</span>
                 </h1>
                 <p className="hero-desc">
                   We support children, families and communities through education, food, healthcare and meaningful volunteer activities. Every small action creates a lasting impact.
