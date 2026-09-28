@@ -397,6 +397,9 @@ function Home() {
             <h2>
               Latest <span className="text-accent">Updates & Insights</span>
             </h2>
+            <p className="section-subtitle">
+              Explore our latest articles, inspiring success stories, and updates from the ground.
+            </p>
           </div>
 
           <div className="row horizontal-scroll-mobile">
@@ -447,6 +450,9 @@ function Home() {
           <div className="section-header fade-in">
             <span className="section-label">Upcoming Events</span>
             <h2>Join Us in Making a Difference</h2>
+            <p className="section-subtitle">
+              Be part of our upcoming drives, workshops, and community outreach programs.
+            </p>
           </div>
 
           <div className="row horizontal-scroll-mobile">
