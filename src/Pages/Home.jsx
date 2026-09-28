@@ -37,6 +37,35 @@ function Home() {
   const [customAmount, setCustomAmount] = useState("");
   const [donateSuccess, setDonateSuccess] = useState(false);
 
+  const [typedLine1, setTypedLine1] = useState("");
+  const [typedLine2, setTypedLine2] = useState("");
+
+  useEffect(() => {
+    const fullLine1 = "Together We Care.";
+    const fullLine2 = "Together We Change.";
+    let idx1 = 0;
+    let idx2 = 0;
+
+    const timer1 = setInterval(() => {
+      idx1++;
+      setTypedLine1(fullLine1.slice(0, idx1));
+      if (idx1 >= fullLine1.length) {
+        clearInterval(timer1);
+        setTimeout(() => {
+          const timer2 = setInterval(() => {
+            idx2++;
+            setTypedLine2(fullLine2.slice(0, idx2));
+            if (idx2 >= fullLine2.length) {
+              clearInterval(timer2);
+            }
+          }, 75);
+        }, 180);
+      }
+    }, 75);
+
+    return () => clearInterval(timer1);
+  }, []);
+
   const handleAmountClick = (amount) => {
     setDonateAmount(amount);
     setCustomAmount("");
@@ -71,9 +100,10 @@ function Home() {
                   <i className="bi bi-heart-fill"></i> CareBridge NGO
                 </span>
                 <h1>
-                  Together We Care.
-                  <br />
-                  <span className="text-accent">Together We Change.</span>
+                  <span>{typedLine1}</span>
+                  {typedLine1.length >= 17 && <br />}
+                  <span className="text-accent">{typedLine2}</span>
+                  <span className="hero-typing-cursor">|</span>
                 </h1>
                 <p className="hero-desc">
                   We support children, families and communities through

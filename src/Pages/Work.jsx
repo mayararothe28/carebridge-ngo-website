@@ -1,24 +1,14 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Work.css";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { workData } from "../data/workData";
 
 function Work() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
   const sectionRefs = {
     hero: useScrollAnimation(),
     grid: useScrollAnimation(),
     cta: useScrollAnimation(),
   };
-
-  const categories = ["All", ...new Set(workData.map((item) => item.tag))];
-
-  const filteredData =
-    activeCategory === "All"
-      ? workData
-      : workData.filter((item) => item.tag === activeCategory);
 
   return (
     <main className="work-page">
@@ -40,25 +30,9 @@ function Work() {
       {/* Grid of 12 Initiatives */}
       <section className="work-grid-section" ref={sectionRefs.grid}>
         <div className="container">
-          {/* Category Filter Bar */}
-          <div className="work-filter-bar fade-in">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                className={`work-filter-btn ${
-                  activeCategory === cat ? "active" : ""
-                }`}
-                onClick={() => setActiveCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
           {/* Cards Grid: 4 cards per row (desktop), 2 (tablet), 1 (mobile) */}
           <div className="row g-4">
-            {filteredData.map((item, i) => (
+            {workData.map((item, i) => (
               <div className="col-md-6 col-lg-3 mb-4" key={item.id}>
                 <Link
                   to={`/work/${item.id}`}

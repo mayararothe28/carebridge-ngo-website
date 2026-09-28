@@ -134,7 +134,7 @@ export const workData = [
     title: "Clean Water & Sanitation",
     tag: "Hygiene & Water",
     icon: "bi-droplet-half",
-    img: "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=1200&q=80",
+    img: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=1200&q=80",
     subtitle: "Ensuring reliable access to safe drinking water and dignified hygienic facilities",
     desc: "Community water filtration units, hygienic sanitation facilities, and health awareness.",
     stats: [
