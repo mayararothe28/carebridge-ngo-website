@@ -390,3 +390,8 @@
     align-items: center;
   }
 }
+@media (max-width: 768px) {
+  .about-mission {
+    padding-top: 10px !important;
+  }
+}
