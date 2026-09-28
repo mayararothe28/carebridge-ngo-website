@@ -8,12 +8,12 @@ import { Link } from "react-router-dom";
 function StatCard({ end, suffix, label, icon }) {
   const { count, ref } = useCountUp(end);
   return (
-    <div className="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0" ref={ref}>
-      <div className="stat-card d-flex align-items-center justify-content-center justify-content-lg-center gap-3">
-        <div className="stat-icon-wrapper m-0 flex-shrink-0">
+    <div className="col-6 col-md-6 col-lg-3 stat-card-col" ref={ref}>
+      <div className="stat-card d-flex flex-column flex-lg-row align-items-center justify-content-center gap-2 gap-lg-3">
+        <div className="stat-icon-wrapper flex-shrink-0 mx-auto mx-lg-0">
           <i className={`bi ${icon}`}></i>
         </div>
-        <div className="stat-text-wrapper text-start" style={{ width: "150px" }}>
+        <div className="stat-text-wrapper text-center text-lg-start">
           <h3 className="mb-0">
             {count.toLocaleString()}
             {suffix}
@@ -294,7 +294,7 @@ function Home() {
           </div>
 
           <div className="text-center mt-3 fade-in">
-            <Link to="/work" className="btn-see-all fs-6">
+            <Link to="/work" className="btn-see-all">
               View All 12 Initiatives <i className="bi bi-arrow-right"></i>
             </Link>
           </div>
@@ -375,6 +375,12 @@ function Home() {
               </div>
             ))}
           </div>
+
+          <div className="text-center mt-4 fade-in">
+            <Link to="/campaigns" className="btn-see-all">
+              View All Campaigns <i className="bi bi-arrow-right"></i>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -426,7 +432,7 @@ function Home() {
             ))}
           </div>
           <div className="text-center mt-4">
-            <Link to="/blogs" className="btn-see-all" style={{ padding: "10px 25px", border: "2px solid var(--primary)", borderRadius: "30px", textDecoration: "none", color: "var(--primary)", fontWeight: "bold" }}>
+            <Link to="/blogs" className="btn-see-all">
               View All Blogs <i className="bi bi-arrow-right"></i>
             </Link>
           </div>
