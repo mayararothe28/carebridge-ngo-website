@@ -43,9 +43,6 @@ function Work() {
                   <div className="work-card-img">
                     <img src={item.img} alt={item.title} />
                     <span className="work-card-badge">{item.tag}</span>
-                    <div className="work-card-icon">
-                      <i className={`bi ${item.icon}`}></i>
-                    </div>
                   </div>
 
                   <div className="work-card-body text-dark">
