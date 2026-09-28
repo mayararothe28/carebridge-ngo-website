@@ -10,7 +10,9 @@ function StatCard({ end, suffix, label, icon }) {
   return (
     <div className="col-6 col-lg-3 mb-4" ref={ref}>
       <div className="stat-card">
-        <i className={`bi ${icon}`}></i>
+        <div className="stat-icon-wrapper">
+          <i className={`bi ${icon}`}></i>
+        </div>
         <h3>
           {count.toLocaleString()}
           {suffix}
