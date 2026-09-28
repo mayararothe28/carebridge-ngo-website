@@ -177,8 +177,8 @@ function About() {
                   <div className="team-img">
                     <img src={member.img} alt={member.name} />
                     <div className="team-socials">
-                      <a href="#"><i className="bi bi-linkedin"></i></a>
-                      <a href="#"><i className="bi bi-twitter-x"></i></a>
+                      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
+                      <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="bi bi-twitter-x"></i></a>
                     </div>
                   </div>
                   <div className="team-info">

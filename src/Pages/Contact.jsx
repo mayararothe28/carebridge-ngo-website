@@ -123,10 +123,10 @@ function Contact() {
               <div className="social-links mt-auto pt-4 border-top border-light">
                 <h6 className="fw-bold mb-3">Follow Us</h6>
                 <div className="d-flex gap-3">
-                  <a href="#" className="social-icon"><i className="bi bi-facebook"></i></a>
-                  <a href="#" className="social-icon"><i className="bi bi-twitter-x"></i></a>
-                  <a href="#" className="social-icon"><i className="bi bi-instagram"></i></a>
-                  <a href="#" className="social-icon"><i className="bi bi-linkedin"></i></a>
+                  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook"><i className="bi bi-facebook"></i></a>
+                  <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Twitter"><i className="bi bi-twitter-x"></i></a>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram"><i className="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>

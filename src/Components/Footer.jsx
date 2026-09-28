@@ -82,17 +82,45 @@ function Footer() {
               </div>
 
               <div className="footer-social">
-                <a href="#" aria-label="Instagram">
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
                   <i className="bi bi-instagram"></i>
                 </a>
-                <a href="#" aria-label="Facebook">
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
                   <i className="bi bi-facebook"></i>
                 </a>
-                <a href="#" aria-label="LinkedIn">
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
                   <i className="bi bi-linkedin"></i>
                 </a>
-                <a href="#" aria-label="Twitter">
+                <a
+                  href="https://x.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                >
                   <i className="bi bi-twitter-x"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <i className="bi bi-youtube"></i>
                 </a>
               </div>
             </div>
